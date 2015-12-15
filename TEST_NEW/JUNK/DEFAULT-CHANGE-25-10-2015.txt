@@ -1,0 +1,56 @@
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Default.aspx.vb" Inherits="TEST_NEW._Default" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>B & R ELECTRICAL WORKS</title>
+    <link href="content/bootstrap.min.css" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+</head>
+<body style ="background-color:lightcyan ">
+    <form id="form1" runat="server">
+        <div style="width: 96%; margin-right: 2%; margin-left: 2%; text-align: center">
+            <h1>B. & R. ELECTRICAL WORKS</h1>
+            <p>AUTHORIZED SERVICE & SPARES DEALER OF TAFE MOTORS & TRACTORS LIMITED</p>
+        </div>
+       <div style="width: 40%; margin-right:auto ; margin-left:auto ; text-align: center">
+           <div class="panel panel-default">
+                 <div class="header" style ="background-color :#2FBDF1; height :30px; color :white ; line-height :30px; text-align :center ; font-weight :bold ">
+                     Please Sign In
+                 </div>
+                <div class="panel-body" style ="background-color:lightcyan; border-style :double; border-color :red; text-align :center;  margin-right:auto ; margin-left:auto ">
+                    <asp:Login ID="Login1" runat="server" OnAuthenticate="ValidateUser" LoginButtonStyle-CssClass="btn btn-primary btn-sm btn-block " TextBoxStyle-CssClass="form-control"  LabelStyle-CssClass ="form-control label-info" TitleText ="" ></asp:Login>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+ Protected Sub ValidateUser(sender As Object, e As EventArgs)
+        Try
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("APPHARBOR").ConnectionString)
+            con.Open()
+            Dim cmd As New SqlCommand("select * from User1 where UID =@username and Pass=@password", con)
+            cmd.Parameters.AddWithValue("@username", Login1.UserName)
+            cmd.Parameters.AddWithValue("@password", Login1.Password)
+            Dim da As New SqlDataAdapter(cmd)
+            Dim dt As New DataTable()
+            da.Fill(dt)
+            If dt.Rows.Count > 0 Then
+                Session("user_name") = "Logged in as  " & dt.Rows(0)("fname") & "  " & dt.Rows(0)("lname")
+                FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet)
+            Else
+                Login1.FailureText = "Username and/or password is incorrect."
+            End If
+        Catch ex As Exception
+            ClientScript.RegisterStartupScript(Page.[GetType](), "validation", "<script language='javascript'>alert('" & ex.Message & "')</script>")
+        End Try
+    End Sub
