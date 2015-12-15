@@ -1,14 +1,13 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="BILL.aspx.vb" Inherits="TEST_NEW.BILL" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="BILL_PUR.aspx.vb" Inherits="TEST_NEW.BILL_PUR" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-
 <!DOCTYPE html>
 
 <html lang="en">
 <head runat="server">
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>B & R ELECTRICAL WORKS (INVOICE)</title>
+    <title>B & R ELECTRICAL WORKS (PURCHASE)</title>
     <link href="content/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="~/DESIGN/favicon.ico" />
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -87,7 +86,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -241,7 +240,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lblsname" runat="server" Text="Site Name" />
+                                        <asp:Label ID="lblsname" runat="server" Text="Branch Name" />
                                     </td>
                                     <td style="width: 2%"></td>
                                     <td>
@@ -337,7 +336,7 @@
                                     <ItemStyle Width="50px"></ItemStyle>
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="PART_NO" HeaderText="PART_NO" SortExpression="PART_NO" ItemStyle-Width="100px" />
-                                <asp:BoundField DataField="PARTI" HeaderText="PARTI" SortExpression="PARTI" ItemStyle-Width="300px" />
+                                <asp:BoundField DataField="PARTI" HeaderText="PRODUCT NAME" SortExpression="PARTI" ItemStyle-Width="300px" />
                                 <asp:BoundField DataField="QTY" HeaderText="QTY" SortExpression="QTY" ItemStyle-Width="40px" />
                                 <asp:BoundField DataField="MRP" HeaderText="MRP" SortExpression="MRP" ItemStyle-Width="60px" />
                                 <asp:BoundField DataField="SPRICE" HeaderText="SPRICE" SortExpression="SPRICE" ItemStyle-Width="100px" Visible="false" />

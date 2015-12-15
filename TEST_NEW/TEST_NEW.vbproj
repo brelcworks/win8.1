@@ -109,6 +109,7 @@
     <Content Include="App_Data\DB1.sdf" />
     <Content Include="App_Data\TestDB.mdb" />
     <Content Include="BILL.aspx" />
+    <Content Include="BILL_PUR.aspx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -118,9 +119,11 @@
     <Content Include="Design\21.jpg" />
     <Content Include="Design\ACB.jpg" />
     <Content Include="Design\ALTERNATOR.jpg" />
+    <Content Include="Design\BR.png" />
     <Content Include="Design\calendar.png" />
     <Content Include="Design\DG.jpg" />
     <Content Include="Design\DG1.jpg" />
+    <Content Include="Design\favicon.ico" />
     <Content Include="Design\loader.gif" />
     <Content Include="Design\MOTOR.jpg" />
     <Content Include="Design\PANEL.jpg" />
@@ -128,6 +131,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Login.aspx" />
     <Content Include="MAIN.aspx" />
+    <Content Include="NEW_MAIN.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -178,6 +182,13 @@
       <DependentUpon>BILL.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="BILL_PUR.aspx.designer.vb">
+      <DependentUpon>BILL_PUR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BILL_PUR.aspx.vb">
+      <DependentUpon>BILL_PUR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
@@ -218,6 +229,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NEW_MAIN.aspx.designer.vb">
+      <DependentUpon>NEW_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NEW_MAIN.aspx.vb">
+      <DependentUpon>NEW_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="PLAN.aspx.designer.vb">
       <DependentUpon>PLAN.aspx</DependentUpon>

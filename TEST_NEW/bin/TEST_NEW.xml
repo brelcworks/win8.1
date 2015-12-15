@@ -6,7 +6,7 @@ TEST_NEW
 </name>
 </assembly>
 <members>
-<member name="F:TEST_NEW.PLLIST.form1">
+<member name="F:TEST_NEW.NEW_MAIN.form1">
 	<summary>
 form1 control.
 </summary>
@@ -14,112 +14,39 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.PLLIST.uname1">
+</member><member name="F:TEST_NEW.NEW_MAIN.txtuname">
 	<summary>
-uname1 control.
+txtuname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.PLLIST.LoginStatus1">
+</member><member name="F:TEST_NEW.NEW_MAIN.txtpass">
 	<summary>
-LoginStatus1 control.
+txtpass control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.PLLIST.tlsp2">
+</member><member name="F:TEST_NEW.NEW_MAIN.btnlogin">
 	<summary>
-tlsp2 control.
+btnlogin control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.PLLIST.DG1">
+</member><member name="F:TEST_NEW.NEW_MAIN.pnlLOGO">
 	<summary>
-DG1 control.
+pnlLOGO control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.PLLIST.err">
-	<summary>
-err control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLLIST.errdisplay">
-	<summary>
-errdisplay control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLLIST.btnerrcls">
-	<summary>
-btnerrcls control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLLIST.btnerr">
-	<summary>
-btnerr control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLLIST.errpopup">
-	<summary>
-errpopup control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLLIST.btnexport">
-	<summary>
-btnexport control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="P:TEST_NEW.My.MyWebExtension.Computer">
-	<summary>
- Returns information about the host computer.
- </summary>
-</member><member name="P:TEST_NEW.My.MyWebExtension.User">
-	<summary>
- Returns information for the current Web user.
- </summary>
-</member><member name="P:TEST_NEW.My.MyWebExtension.Request">
-	<summary>
- Returns Request object.
- </summary>
-</member><member name="P:TEST_NEW.My.MyWebExtension.Response">
-	<summary>
- Returns Response object.
- </summary>
-</member><member name="P:TEST_NEW.My.MyWebExtension.Log">
-	<summary>
- Returns the Asp log object.
- </summary>
-</member><member name="T:TEST_NEW.My.MyWebExtension">
-	<summary>
- Module used to define the properties that are available in the My Namespace for Web projects.
- </summary>
-	<remarks></remarks>
-</member><member name="F:TEST_NEW.STOCK1.form1">
+</member><member name="F:TEST_NEW.BILL_PUR.form1">
 	<summary>
 form1 control.
 </summary>
@@ -127,7 +54,7 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.uname1">
+</member><member name="F:TEST_NEW.BILL_PUR.uname1">
 	<summary>
 uname1 control.
 </summary>
@@ -135,7 +62,7 @@ uname1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LoginStatus1">
+</member><member name="F:TEST_NEW.BILL_PUR.LoginStatus1">
 	<summary>
 LoginStatus1 control.
 </summary>
@@ -143,7 +70,7 @@ LoginStatus1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.tlsp2">
+</member><member name="F:TEST_NEW.BILL_PUR.tlsp2">
 	<summary>
 tlsp2 control.
 </summary>
@@ -151,55 +78,15 @@ tlsp2 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.DG1">
+</member><member name="F:TEST_NEW.BILL_PUR.upd1">
 	<summary>
-DG1 control.
+upd1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.err">
-	<summary>
-err control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.STOCK1.errdisplay">
-	<summary>
-errdisplay control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.STOCK1.btnerrcls">
-	<summary>
-btnerrcls control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.STOCK1.btnerr">
-	<summary>
-btnerr control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.STOCK1.errpopup">
-	<summary>
-errpopup control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.STOCK1.pnlAddEdit">
+</member><member name="F:TEST_NEW.BILL_PUR.pnlAddEdit">
 	<summary>
 pnlAddEdit control.
 </summary>
@@ -207,479 +94,791 @@ pnlAddEdit control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLRID">
+</member><member name="F:TEST_NEW.BILL_PUR.lblbdate">
 	<summary>
-LBLRID control.
+lblbdate control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTRID">
+</member><member name="F:TEST_NEW.BILL_PUR.txtbdate">
 	<summary>
-TXTRID control.
+txtbdate control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLSTOT">
+</member><member name="F:TEST_NEW.BILL_PUR.cash">
 	<summary>
-LBLSTOT control.
+cash control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTSTOT">
+</member><member name="F:TEST_NEW.BILL_PUR.credit">
 	<summary>
-TXTSTOT control.
+credit control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLPTNAME">
+</member><member name="F:TEST_NEW.BILL_PUR.lblptname">
 	<summary>
-LBLPTNAME control.
+lblptname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTPTNAME">
+</member><member name="F:TEST_NEW.BILL_PUR.txtptname">
 	<summary>
-TXTPTNAME control.
+txtptname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLTVAL">
+</member><member name="F:TEST_NEW.BILL_PUR.lblqty">
 	<summary>
-LBLTVAL control.
+lblqty control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTTVAL">
+</member><member name="F:TEST_NEW.BILL_PUR.txtqty">
 	<summary>
-TXTTVAL control.
+txtqty control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLPTNO">
+</member><member name="F:TEST_NEW.BILL_PUR.lblbno">
 	<summary>
-LBLPTNO control.
+lblbno control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTPTNO">
+</member><member name="F:TEST_NEW.BILL_PUR.txtbno">
 	<summary>
-TXTPTNO control.
+txtbno control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLTYPE">
+</member><member name="F:TEST_NEW.BILL_PUR.lblptno">
 	<summary>
-LBLTYPE control.
+lblptno control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTTYPE">
+</member><member name="F:TEST_NEW.BILL_PUR.txtptno">
 	<summary>
-TXTTYPE control.
+txtptno control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLMRP">
+</member><member name="F:TEST_NEW.BILL_PUR.lbltval">
 	<summary>
-LBLMRP control.
+lbltval control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTMRP">
+</member><member name="F:TEST_NEW.BILL_PUR.txttval">
 	<summary>
-TXTMRP control.
+txttval control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLUNIT">
+</member><member name="F:TEST_NEW.BILL_PUR.BTNITMCALC">
 	<summary>
-LBLUNIT control.
+BTNITMCALC control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTUNIT">
+</member><member name="F:TEST_NEW.BILL_PUR.btnsave">
 	<summary>
-TXTUNIT control.
+btnsave control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLTAX">
+</member><member name="F:TEST_NEW.BILL_PUR.lblcname">
 	<summary>
-LBLTAX control.
+lblcname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTTAX">
+</member><member name="F:TEST_NEW.BILL_PUR.txtcname">
 	<summary>
-TXTTAX control.
+txtcname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLRCKNO">
+</member><member name="F:TEST_NEW.BILL_PUR.lblmrp">
 	<summary>
-LBLRCKNO control.
+lblmrp control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTRCNO">
+</member><member name="F:TEST_NEW.BILL_PUR.txtmrp">
 	<summary>
-TXTRCNO control.
+txtmrp control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLSPRICE">
+</member><member name="F:TEST_NEW.BILL_PUR.lblitot">
 	<summary>
-LBLSPRICE control.
+lblitot control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTSPRICE">
+</member><member name="F:TEST_NEW.BILL_PUR.txtitot">
 	<summary>
-TXTSPRICE control.
+txtitot control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.BTNCACL">
+</member><member name="F:TEST_NEW.BILL_PUR.lbladdr">
 	<summary>
-BTNCACL control.
+lbladdr control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLEOR">
+</member><member name="F:TEST_NEW.BILL_PUR.txtaddr">
 	<summary>
-LBLEOR control.
+txtaddr control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTEOR">
+</member><member name="F:TEST_NEW.BILL_PUR.lblrate">
 	<summary>
-TXTEOR control.
+lblrate control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLPPRICE">
+</member><member name="F:TEST_NEW.BILL_PUR.txtrate">
 	<summary>
-LBLPPRICE control.
+txtrate control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTPPRICE">
+</member><member name="F:TEST_NEW.BILL_PUR.lblgtot">
 	<summary>
-TXTPPRICE control.
+lblgtot control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLGROP">
+</member><member name="F:TEST_NEW.BILL_PUR.txtgtot">
 	<summary>
-LBLGROP control.
+txtgtot control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTGROP">
+</member><member name="F:TEST_NEW.BILL_PUR.lblsname">
 	<summary>
-TXTGROP control.
+lblsname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLQTY">
+</member><member name="F:TEST_NEW.BILL_PUR.txtsname">
 	<summary>
-LBLQTY control.
+txtsname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTQTY">
+</member><member name="F:TEST_NEW.BILL_PUR.lblinstock">
 	<summary>
-TXTQTY control.
+lblinstock control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLDPCODE">
+</member><member name="F:TEST_NEW.BILL_PUR.txtinstock">
 	<summary>
-LBLDPCODE control.
+txtinstock control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTDPCODE">
+</member><member name="F:TEST_NEW.BILL_PUR.lvlntval">
 	<summary>
-TXTDPCODE control.
+lvlntval control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLTOT">
+</member><member name="F:TEST_NEW.BILL_PUR.txtntval">
 	<summary>
-LBLTOT control.
+txtntval control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTTOT">
+</member><member name="F:TEST_NEW.BILL_PUR.lblbal">
 	<summary>
-TXTTOT control.
+lblbal control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.LBLUSER">
+</member><member name="F:TEST_NEW.BILL_PUR.txtbal">
 	<summary>
-LBLUSER control.
+txtbal control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.TXTUSER">
+</member><member name="F:TEST_NEW.BILL_PUR.lbltrate">
 	<summary>
-TXTUSER control.
+lbltrate control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.btnCancel">
+</member><member name="F:TEST_NEW.BILL_PUR.txttrate">
 	<summary>
-btnCancel control.
+txttrate control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.btncls">
+</member><member name="F:TEST_NEW.BILL_PUR.lblround">
 	<summary>
-btncls control.
+lblround control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.btnSave">
+</member><member name="F:TEST_NEW.BILL_PUR.txtround">
 	<summary>
-btnSave control.
+txtround control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.nitem">
+</member><member name="F:TEST_NEW.BILL_PUR.lblvno">
 	<summary>
-nitem control.
+lblvno control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.popup">
+</member><member name="F:TEST_NEW.BILL_PUR.txtvno">
 	<summary>
-popup control.
+txtvno control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.pnlPLLIST">
+</member><member name="F:TEST_NEW.BILL_PUR.lbtunit">
 	<summary>
-pnlPLLIST control.
+lbtunit control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLRIDLBL">
+</member><member name="F:TEST_NEW.BILL_PUR.txtunit">
 	<summary>
-PLRIDLBL control.
+txtunit control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLRIDTXT">
+</member><member name="F:TEST_NEW.BILL_PUR.lblntot">
 	<summary>
-PLRIDTXT control.
+lblntot control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLGROPLBL">
+</member><member name="F:TEST_NEW.BILL_PUR.txtntot">
 	<summary>
-PLGROPLBL control.
+txtntot control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLGROPTXT">
+</member><member name="F:TEST_NEW.BILL_PUR.bid">
 	<summary>
-PLGROPTXT control.
+bid control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLPTNNAMELBL">
+</member><member name="F:TEST_NEW.BILL_PUR.pnldg">
 	<summary>
-PLPTNNAMELBL control.
+pnldg control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLPTNAMETXT">
+</member><member name="F:TEST_NEW.BILL_PUR.dg1">
 	<summary>
-PLPTNAMETXT control.
+dg1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLTYPELBL">
+</member><member name="F:TEST_NEW.BILL_PUR.Panel1">
 	<summary>
-PLTYPELBL control.
+Panel1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLTYPETXT">
+</member><member name="F:TEST_NEW.BILL_PUR.DG2">
 	<summary>
-PLTYPETXT control.
+DG2 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLPTNOLBL">
+</member><member name="F:TEST_NEW.BILL_PUR.err">
 	<summary>
-PLPTNOLBL control.
+err control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLPTNOTXT">
+</member><member name="F:TEST_NEW.BILL_PUR.errdisplay">
 	<summary>
-PLPTNOTXT control.
+errdisplay control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLTRATELBL">
+</member><member name="F:TEST_NEW.BILL_PUR.btnerrcls">
 	<summary>
-PLTRATELBL control.
+btnerrcls control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLTRATETXT">
+</member><member name="F:TEST_NEW.BILL_PUR.pnlitmedt">
 	<summary>
-PLTRATETXT control.
+pnlitmedt control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLMRPLBL">
+</member><member name="F:TEST_NEW.BILL_PUR.lblrec">
 	<summary>
-PLMRPLBL control.
+lblrec control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLMRPTXT">
+</member><member name="F:TEST_NEW.BILL_PUR.txtrec">
 	<summary>
-PLMRPTXT control.
+txtrec control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLUNITLBL">
+</member><member name="F:TEST_NEW.BILL_PUR.Label1">
 	<summary>
-PLUNITLBL control.
+Label1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLUNITTXT">
+</member><member name="F:TEST_NEW.BILL_PUR.txtptnameedt">
 	<summary>
-PLUNITTXT control.
+txtptnameedt control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.Button1">
+</member><member name="F:TEST_NEW.BILL_PUR.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.txtptnoedt">
+	<summary>
+txtptnoedt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.txtmrpedt">
+	<summary>
+txtmrpedt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.txtqtyedt">
+	<summary>
+txtqtyedt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Label7">
+	<summary>
+Label7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.txttaxedt">
+	<summary>
+txttaxedt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.txtrateedt">
+	<summary>
+txtrateedt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.calcedt">
+	<summary>
+calcedt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Label8">
+	<summary>
+Label8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.txttvaledt">
+	<summary>
+txttvaledt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Label10">
+	<summary>
+Label10 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.txtstotedt">
+	<summary>
+txtstotedt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Label6">
+	<summary>
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.txttotedt">
+	<summary>
+txttotedt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Label9">
+	<summary>
+Label9 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.txtunitedt">
+	<summary>
+txtunitedt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.hgtot">
+	<summary>
+hgtot control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.hqty">
+	<summary>
+hqty control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.edtokbtn">
+	<summary>
+edtokbtn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.edtupdbtn">
+	<summary>
+edtupdbtn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.edtdelbtn">
+	<summary>
+edtdelbtn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.errpopup">
+	<summary>
+errpopup control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.btnerr">
+	<summary>
+btnerr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.edtitmpop">
+	<summary>
+edtitmpop control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.edtitm">
+	<summary>
+edtitm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.NEW_BILL">
+	<summary>
+NEW_BILL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Del_bill">
+	<summary>
+Del_bill control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.add_item">
+	<summary>
+add_item control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Print">
+	<summary>
+Print control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.bilcan">
+	<summary>
+bilcan control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.UpdateProgress1">
+	<summary>
+UpdateProgress1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.pnlprint">
+	<summary>
+pnlprint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.lblprint">
+	<summary>
+lblprint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.challan">
+	<summary>
+challan control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.bill">
+	<summary>
+bill control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.btnprintcnl">
+	<summary>
+btnprintcnl control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.BILL_PUR.Button1">
 	<summary>
 Button1 control.
 </summary>
@@ -687,49 +886,17 @@ Button1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.Button2">
+</member><member name="F:TEST_NEW.BILL_PUR.popchallan">
 	<summary>
-Button2 control.
+popchallan control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.STOCK1.PLLISTSAVE">
+</member><member name="F:TEST_NEW.BILL_PUR.challan1">
 	<summary>
-PLLISTSAVE control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.STOCK1.POPUP1">
-	<summary>
-POPUP1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.STOCK1.btnAdd">
-	<summary>
-btnAdd control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.STOCK1.btnexport">
-	<summary>
-btnexport control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.STOCK1.BTNPLIST">
-	<summary>
-BTNPLIST control.
+challan1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1591,7 +1758,7 @@ challan1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.Login.form1">
+</member><member name="F:TEST_NEW._Default.form1">
 	<summary>
 form1 control.
 </summary>
@@ -1599,7 +1766,7 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.Login.txtuname">
+</member><member name="F:TEST_NEW._Default.txtuname">
 	<summary>
 txtuname control.
 </summary>
@@ -1607,7 +1774,7 @@ txtuname control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.Login.txtpass">
+</member><member name="F:TEST_NEW._Default.txtpass">
 	<summary>
 txtpass control.
 </summary>
@@ -1615,7 +1782,7 @@ txtpass control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.Login.btnlogin">
+</member><member name="F:TEST_NEW._Default.btnlogin">
 	<summary>
 btnlogin control.
 </summary>
@@ -2487,7 +2654,32 @@ Btnfnddg control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.TESTING.form1">
+</member><member name="P:TEST_NEW.My.MyWebExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:TEST_NEW.My.MyWebExtension.User">
+	<summary>
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:TEST_NEW.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:TEST_NEW.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:TEST_NEW.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="T:TEST_NEW.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:TEST_NEW.PLLIST.form1">
 	<summary>
 form1 control.
 </summary>
@@ -2495,15 +2687,87 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.TESTING.Add_clm">
+</member><member name="F:TEST_NEW.PLLIST.uname1">
 	<summary>
-Add_clm control.
+uname1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW._Default.form1">
+</member><member name="F:TEST_NEW.PLLIST.LoginStatus1">
+	<summary>
+LoginStatus1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLLIST.tlsp2">
+	<summary>
+tlsp2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLLIST.DG1">
+	<summary>
+DG1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLLIST.err">
+	<summary>
+err control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLLIST.errdisplay">
+	<summary>
+errdisplay control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLLIST.btnerrcls">
+	<summary>
+btnerrcls control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLLIST.btnerr">
+	<summary>
+btnerr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLLIST.errpopup">
+	<summary>
+errpopup control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLLIST.btnexport">
+	<summary>
+btnexport control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.form1">
 	<summary>
 form1 control.
 </summary>
@@ -2511,25 +2775,665 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW._Default.txtuname">
+</member><member name="F:TEST_NEW.STOCK1.uname1">
 	<summary>
-txtuname control.
+uname1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW._Default.txtpass">
+</member><member name="F:TEST_NEW.STOCK1.LoginStatus1">
 	<summary>
-txtpass control.
+LoginStatus1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW._Default.btnlogin">
+</member><member name="F:TEST_NEW.STOCK1.tlsp2">
 	<summary>
-btnlogin control.
+tlsp2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.DG1">
+	<summary>
+DG1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.err">
+	<summary>
+err control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.errdisplay">
+	<summary>
+errdisplay control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.btnerrcls">
+	<summary>
+btnerrcls control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.btnerr">
+	<summary>
+btnerr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.errpopup">
+	<summary>
+errpopup control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.pnlAddEdit">
+	<summary>
+pnlAddEdit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLRID">
+	<summary>
+LBLRID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTRID">
+	<summary>
+TXTRID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLSTOT">
+	<summary>
+LBLSTOT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTSTOT">
+	<summary>
+TXTSTOT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLPTNAME">
+	<summary>
+LBLPTNAME control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTPTNAME">
+	<summary>
+TXTPTNAME control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLTVAL">
+	<summary>
+LBLTVAL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTTVAL">
+	<summary>
+TXTTVAL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLPTNO">
+	<summary>
+LBLPTNO control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTPTNO">
+	<summary>
+TXTPTNO control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLTYPE">
+	<summary>
+LBLTYPE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTTYPE">
+	<summary>
+TXTTYPE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLMRP">
+	<summary>
+LBLMRP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTMRP">
+	<summary>
+TXTMRP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLUNIT">
+	<summary>
+LBLUNIT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTUNIT">
+	<summary>
+TXTUNIT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLTAX">
+	<summary>
+LBLTAX control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTTAX">
+	<summary>
+TXTTAX control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLRCKNO">
+	<summary>
+LBLRCKNO control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTRCNO">
+	<summary>
+TXTRCNO control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLSPRICE">
+	<summary>
+LBLSPRICE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTSPRICE">
+	<summary>
+TXTSPRICE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.BTNCACL">
+	<summary>
+BTNCACL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLEOR">
+	<summary>
+LBLEOR control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTEOR">
+	<summary>
+TXTEOR control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLPPRICE">
+	<summary>
+LBLPPRICE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTPPRICE">
+	<summary>
+TXTPPRICE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLGROP">
+	<summary>
+LBLGROP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTGROP">
+	<summary>
+TXTGROP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLQTY">
+	<summary>
+LBLQTY control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTQTY">
+	<summary>
+TXTQTY control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLDPCODE">
+	<summary>
+LBLDPCODE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTDPCODE">
+	<summary>
+TXTDPCODE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLTOT">
+	<summary>
+LBLTOT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTTOT">
+	<summary>
+TXTTOT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.LBLUSER">
+	<summary>
+LBLUSER control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.TXTUSER">
+	<summary>
+TXTUSER control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.btnCancel">
+	<summary>
+btnCancel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.btncls">
+	<summary>
+btncls control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.btnSave">
+	<summary>
+btnSave control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.nitem">
+	<summary>
+nitem control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.popup">
+	<summary>
+popup control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.pnlPLLIST">
+	<summary>
+pnlPLLIST control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLRIDLBL">
+	<summary>
+PLRIDLBL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLRIDTXT">
+	<summary>
+PLRIDTXT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLGROPLBL">
+	<summary>
+PLGROPLBL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLGROPTXT">
+	<summary>
+PLGROPTXT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLPTNNAMELBL">
+	<summary>
+PLPTNNAMELBL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLPTNAMETXT">
+	<summary>
+PLPTNAMETXT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLTYPELBL">
+	<summary>
+PLTYPELBL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLTYPETXT">
+	<summary>
+PLTYPETXT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLPTNOLBL">
+	<summary>
+PLPTNOLBL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLPTNOTXT">
+	<summary>
+PLPTNOTXT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLTRATELBL">
+	<summary>
+PLTRATELBL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLTRATETXT">
+	<summary>
+PLTRATETXT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLMRPLBL">
+	<summary>
+PLMRPLBL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLMRPTXT">
+	<summary>
+PLMRPTXT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLUNITLBL">
+	<summary>
+PLUNITLBL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLUNITTXT">
+	<summary>
+PLUNITTXT control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.Button2">
+	<summary>
+Button2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.PLLISTSAVE">
+	<summary>
+PLLISTSAVE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.POPUP1">
+	<summary>
+POPUP1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.btnAdd">
+	<summary>
+btnAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.btnexport">
+	<summary>
+btnexport control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.STOCK1.BTNPLIST">
+	<summary>
+BTNPLIST control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.MAIN.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.MAIN.sct">
+	<summary>
+sct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.MAIN.uname1">
+	<summary>
+uname1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.MAIN.LoginStatus1">
+	<summary>
+LoginStatus1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.MAIN.upd1">
+	<summary>
+upd1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.MAIN.stimeout">
+	<summary>
+stimeout control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.MAIN.timer1">
+	<summary>
+timer1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -3311,7 +4215,7 @@ btnAdd control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.MAIN.form1">
+</member><member name="F:TEST_NEW.Login.form1">
 	<summary>
 form1 control.
 </summary>
@@ -3319,15 +4223,39 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.MAIN.sct">
+</member><member name="F:TEST_NEW.Login.txtuname">
 	<summary>
-sct control.
+txtuname control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.MAIN.uname1">
+</member><member name="F:TEST_NEW.Login.txtpass">
+	<summary>
+txtpass control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.Login.btnlogin">
+	<summary>
+btnlogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLAN.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLAN.uname1">
 	<summary>
 uname1 control.
 </summary>
@@ -3335,7 +4263,7 @@ uname1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.MAIN.LoginStatus1">
+</member><member name="F:TEST_NEW.PLAN.LoginStatus1">
 	<summary>
 LoginStatus1 control.
 </summary>
@@ -3343,25 +4271,65 @@ LoginStatus1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.MAIN.upd1">
+</member><member name="F:TEST_NEW.PLAN.tlsp2">
 	<summary>
-upd1 control.
+tlsp2 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.MAIN.stimeout">
+</member><member name="F:TEST_NEW.PLAN.DG1">
 	<summary>
-stimeout control.
+DG1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.MAIN.timer1">
+</member><member name="F:TEST_NEW.PLAN.err">
 	<summary>
-timer1 control.
+err control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLAN.errdisplay">
+	<summary>
+errdisplay control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLAN.btnerrcls">
+	<summary>
+btnerrcls control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLAN.btnerr">
+	<summary>
+btnerr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLAN.errpopup">
+	<summary>
+errpopup control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:TEST_NEW.PLAN.btnexport">
+	<summary>
+btnexport control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -4959,7 +5927,7 @@ btnerr control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.PLAN.form1">
+</member><member name="F:TEST_NEW.TESTING.form1">
 	<summary>
 form1 control.
 </summary>
@@ -4967,81 +5935,9 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:TEST_NEW.PLAN.uname1">
+</member><member name="F:TEST_NEW.TESTING.Add_clm">
 	<summary>
-uname1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLAN.LoginStatus1">
-	<summary>
-LoginStatus1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLAN.tlsp2">
-	<summary>
-tlsp2 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLAN.DG1">
-	<summary>
-DG1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLAN.err">
-	<summary>
-err control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLAN.errdisplay">
-	<summary>
-errdisplay control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLAN.btnerrcls">
-	<summary>
-btnerrcls control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLAN.btnerr">
-	<summary>
-btnerr control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLAN.errpopup">
-	<summary>
-errpopup control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:TEST_NEW.PLAN.btnexport">
-	<summary>
-btnexport control.
+Add_clm control.
 </summary>
 	<remarks>
 Auto-generated field.

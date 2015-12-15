@@ -5,11 +5,9 @@ Imports System.Web.Security
 Imports System.Data.SqlServerCe
 Imports ClosedXML.Excel
 Imports System.IO
-
-Public Class BILL
+Public Class BILL_PUR
     Inherits System.Web.UI.Page
-    Public DV As New DataView(BILL_tbl)
-
+    Public DV As New DataView(PURCHSE_tbl)
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If Not Me.Page.User.Identity.IsAuthenticated Then
@@ -21,9 +19,9 @@ Public Class BILL
                 End If
                 If sqlcon.State <> ConnectionState.Open Then sqlcon.Open()
                 If Not Me.IsPostBack Then
-                    For i As Integer = 0 To BILL1_tbl.Rows.Count - 1
-                        If Not IsDBNull(BILL1_tbl.Rows(i)("cust")) Then txtcname.Items.Add(BILL1_tbl.Rows(i)("cust"))
-                        If Not IsDBNull(BILL1_tbl.Rows(i)("SNAME")) Then txtsname.Items.Add(BILL1_tbl.Rows(i)("SNAME"))
+                    For i As Integer = 0 To PURCHSE1_tbl.Rows.Count - 1
+                        If Not IsDBNull(PURCHSE1_tbl.Rows(i)("cust")) Then txtcname.Items.Add(PURCHSE1_tbl.Rows(i)("cust"))
+                        If Not IsDBNull(PURCHSE1_tbl.Rows(i)("SNAME")) Then txtsname.Items.Add(PURCHSE1_tbl.Rows(i)("SNAME"))
                     Next
                     For i As Integer = 0 To stock_tbl.Rows.Count - 1
                         txtptname.Items.Add(stock_tbl.Rows(i)("PARTI"))
@@ -33,18 +31,17 @@ Public Class BILL
                 DV.RowFilter = "bill_no='" & txtbno.Text & "'"
                 dg1.DataSource = DV
                 dg1.DataBind()
-                DG2.DataSource = BILL1_tbl
+                DG2.DataSource = PURCHSE1_tbl
                 DG2.DataBind()
             End If
         Catch ex As Exception
             err_display(ex.ToString)
         End Try
     End Sub
-
     Protected Sub txtcname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtcname.SelectedIndexChanged
         Try
             If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
-            Dim DV1 As New DataView(BILL1_tbl)
+            Dim DV1 As New DataView(PURCHSE1_tbl)
             DV1.RowFilter = "cust='" & txtcname.SelectedValue.ToString & "'"
 
             If DV1.Count > 0 Then
@@ -54,9 +51,9 @@ Public Class BILL
                 For I As Integer = 0 To DV1.Count - 1
                     If Not IsDBNull(DV1(I)("SNAME")) Then txtsname.Items.Add(DV1(I)("SNAME"))
                 Next
-                Dim X As New SqlCommand("SELECT SUM(NTOT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", sqlcon)
+                Dim X As New SqlCommand("SELECT SUM(NTOT) FROM PURCHSE1 WHERE cust='" & txtcname.Text & "'", sqlcon)
                 Dim X1 As String = X.ExecuteScalar & ""
-                Dim Y As New SqlCommand("SELECT SUM(PAYMENT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", sqlcon)
+                Dim Y As New SqlCommand("SELECT SUM(PAYMENT) FROM PURCHSE1 WHERE cust='" & txtcname.Text & "'", sqlcon)
                 Dim Y1 As String = Y.ExecuteScalar & ""
                 txtbal.Text = Val(X1) - Val(Y1)
             End If
@@ -69,7 +66,7 @@ Public Class BILL
 
     End Sub
 
-    
+
 
     Protected Sub txtptname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtptname.SelectedIndexChanged
         Try
@@ -99,7 +96,7 @@ Public Class BILL
 
     Protected Sub add_item_Click(sender As Object, e As EventArgs) Handles add_item.Click
         Try
-            Dim dr As DataRow = BILL_tbl.NewRow
+            Dim dr As DataRow = PURCHSE_tbl.NewRow
             dr("bid") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
             dr("bill_no") = txtbno.Text
             dr("bdate") = txtbdate.Text
@@ -125,7 +122,7 @@ Public Class BILL
             dr("SSTA") = "NEW"
             dr("DPCODE") = "A1587"
             dr("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
-            BILL_tbl.Rows.Add(dr)
+            PURCHSE_tbl.Rows.Add(dr)
 
             Dim DV1 As New DataView(stock_tbl, "", "part_no", DataViewRowState.CurrentRows)
             Dim index As Integer = DV1.Find(txtptno.Text)
@@ -180,7 +177,7 @@ Public Class BILL
                 Next
                 txtbdate.Text = Now.ToString("dd-MMMM-yyyy")
                 Dim yy As String = Today.ToString("yy")
-                Dim dv1 As New DataView(BILL1_tbl)
+                Dim dv1 As New DataView(PURCHSE1_tbl)
                 dv1.RowFilter = "BNO LIKE '%" & "MB" & "%'"
                 Dim Y As Integer = dv1.Count - 1
                 DV.RowFilter = "bill_no='" & txtbno.Text & "'"
@@ -200,7 +197,7 @@ Public Class BILL
                 txtsname.SelectedValue = Nothing
             Else
                 If bid.Text = "" Then
-                    Dim DR As DataRow = BILL1_tbl.NewRow
+                    Dim DR As DataRow = PURCHSE1_tbl.NewRow
                     DR("bid1") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
                     DR("BDATE") = txtbdate.Text
                     DR("BNO") = txtbno.Text
@@ -227,25 +224,25 @@ Public Class BILL
                     DR("DPCODE") = "A1587"
                     DR("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
                     DR("VNO") = txtvno.Text
-                    BILL1_tbl.Rows.Add(DR)
+                    PURCHSE1_tbl.Rows.Add(DR)
                     stock_adapter.Update(stock_tbl)
                     stock_tbl.AcceptChanges()
                     stock_tbl.Clear()
                     stock_adapter.Fill(stock_tbl)
-                    BILL_adapter.Update(BILL_tbl)
-                    BILL_tbl.AcceptChanges()
-                    BILL_tbl.Clear()
-                    BILL_adapter.Fill(BILL_tbl)
-                    BILL1_adapter.Update(BILL1_tbl)
-                    BILL1_tbl.AcceptChanges()
-                    BILL1_tbl.Clear()
-                    BILL1_adapter.Fill(BILL1_tbl)
+                    PURCHSE_adapter.Update(PURCHSE_tbl)
+                    PURCHSE_tbl.AcceptChanges()
+                    PURCHSE_tbl.Clear()
+                    PURCHSE_adapter.Fill(PURCHSE_tbl)
+                    PURCHSE1_adapter.Update(PURCHSE1_tbl)
+                    PURCHSE1_tbl.AcceptChanges()
+                    PURCHSE1_tbl.Clear()
+                    PURCHSE1_adapter.Fill(PURCHSE1_tbl)
                     NEW_BILL.Text = "New Bill"
                     DG2.DataBind()
                     bid.Text = ""
                     popchallan.Show()
                 Else
-                    Dim dv1 As New DataView(BILL1_tbl, "", "bid", DataViewRowState.CurrentRows)
+                    Dim dv1 As New DataView(PURCHSE1_tbl, "", "bid", DataViewRowState.CurrentRows)
                     Dim index As Integer = dv1.Find(bid.Text)
                     If Not index = -1 Then
                         dv1(index)("BDATE") = txtbdate.Text
@@ -272,7 +269,7 @@ Public Class BILL
                         dv1(index)("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
                         dv1(index)("VNO") = txtvno.Text
 
-                        Dim DV3 As New DataView(BILL1_tbl)
+                        Dim DV3 As New DataView(PURCHSE1_tbl)
                         DV3.RowFilter = "cust = '" & txtcname.Text & "'"
                         For i As Integer = 0 To DV3.Count - 1
                             Dim tot As String
@@ -290,14 +287,14 @@ Public Class BILL
                     stock_tbl.AcceptChanges()
                     stock_tbl.Clear()
                     stock_adapter.Fill(stock_tbl)
-                    BILL_adapter.Update(BILL_tbl)
-                    BILL_tbl.AcceptChanges()
-                    BILL_tbl.Clear()
-                    BILL_adapter.Fill(BILL_tbl)
-                    BILL1_adapter.Update(BILL1_tbl)
-                    BILL1_tbl.AcceptChanges()
-                    BILL1_tbl.Clear()
-                    BILL1_adapter.Fill(BILL1_tbl)
+                    PURCHSE_adapter.Update(PURCHSE_tbl)
+                    PURCHSE_tbl.AcceptChanges()
+                    PURCHSE_tbl.Clear()
+                    PURCHSE_adapter.Fill(PURCHSE_tbl)
+                    PURCHSE1_adapter.Update(PURCHSE1_tbl)
+                    PURCHSE1_tbl.AcceptChanges()
+                    PURCHSE1_tbl.Clear()
+                    PURCHSE1_adapter.Fill(PURCHSE1_tbl)
                     NEW_BILL.Text = "New Bill"
                     DG2.DataBind()
                     bid.Text = ""
@@ -313,7 +310,7 @@ Public Class BILL
             Dim btnsubmit As LinkButton = TryCast(sender, LinkButton)
             Dim gRow As GridViewRow = DirectCast(btnsubmit.NamingContainer, GridViewRow)
             Dim fid As String = DG2.DataKeys(gRow.RowIndex).Value.ToString()
-            Dim dv1 As New DataView(BILL1_tbl)
+            Dim dv1 As New DataView(PURCHSE1_tbl)
             bid.Text = fid
             dv1.RowFilter = "bID='" & fid & "'"
             txtbno.Text = dv1(0)("bno")
@@ -333,14 +330,14 @@ Public Class BILL
     End Sub
 
     Private Sub challan1_Click(sender As Object, e As EventArgs) Handles challan1.Click
-        
+
     End Sub
     Protected Sub Edit_itm(sender As Object, e As EventArgs)
         Try
             Dim btnsubmit As LinkButton = TryCast(sender, LinkButton)
             Dim gRow As GridViewRow = DirectCast(btnsubmit.NamingContainer, GridViewRow)
             Dim fid As String = dg1.DataKeys(gRow.RowIndex).Values(1).ToString
-            Dim dv1 As New DataView(BILL_tbl)
+            Dim dv1 As New DataView(PURCHSE_tbl)
             dv1.RowFilter = "BID='" & fid & "'"
             txtptnameedt.Text = dv1(0)("parti")
             txtptnoedt.Text = dv1(0)("part_no")
@@ -365,7 +362,7 @@ Public Class BILL
         Try
             txttval.Text = Val(txtqty.Text) * Val(txtrate.Text) * Val(txttrate.Text) / 100
             txtitot.Text = Val(txtqty.Text) * Val(txtrate.Text)
-            Dim dr As DataRow = BILL_tbl.NewRow
+            Dim dr As DataRow = PURCHSE_tbl.NewRow
             dr("bid") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
             dr("bill_no") = txtbno.Text
             dr("bdate") = txtbdate.Text
@@ -391,7 +388,7 @@ Public Class BILL
             dr("SSTA") = "NEW"
             dr("DPCODE") = "A1587"
             dr("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
-            BILL_tbl.Rows.Add(dr)
+            PURCHSE_tbl.Rows.Add(dr)
 
             Dim DV1 As New DataView(stock_tbl, "", "part_no", DataViewRowState.CurrentRows)
             Dim index As Integer = DV1.Find(txtptno.Text)
@@ -699,7 +696,7 @@ Public Class BILL
     Protected Sub edtupdbtn_Click(sender As Object, e As EventArgs) Handles edtupdbtn.Click
         Try
             Dim lq1 As String = String.Empty
-            Dim dv1 As New DataView(BILL_tbl)
+            Dim dv1 As New DataView(PURCHSE_tbl)
             dv1.RowFilter = "BID='" & txtrec.Text & "'"
             dv1(0)("parti") = txtptnameedt.Text
             dv1(0)("part_no") = txtptnoedt.Text
@@ -757,9 +754,9 @@ Public Class BILL
     Private Sub edtdelbtn_Click(sender As Object, e As EventArgs) Handles edtdelbtn.Click
         Try
             Dim lq1 As String = String.Empty
-            For i As Integer = 0 To BILL_tbl.Rows.Count - 1
-                If BILL_tbl(i)("bid") = txtrec.Text Then
-                    BILL_tbl(i).Delete()
+            For i As Integer = 0 To PURCHSE_tbl.Rows.Count - 1
+                If PURCHSE_tbl(i)("bid") = txtrec.Text Then
+                    PURCHSE_tbl(i).Delete()
                     DV.RowFilter = "bill_no='" & txtbno.Text & "'"
                     dg1.DataBind()
                     txtgtot.Text = Val(txtgtot.Text) - Val(hgtot.Text)
@@ -793,8 +790,8 @@ Public Class BILL
 
     Protected Sub bilcan_Click(sender As Object, e As EventArgs) Handles bilcan.Click
         Try
-            BILL_tbl.RejectChanges()
-            BILL1_tbl.RejectChanges()
+            PURCHSE_tbl.RejectChanges()
+            PURCHSE1_tbl.RejectChanges()
             stock_tbl.RejectChanges()
             For Each c As Control In pnlAddEdit.Controls
                 If TypeOf c Is TextBox Then
@@ -832,8 +829,8 @@ Public Class BILL
                     End If
                 Next
 
-                For y As Integer = 0 To BILL_tbl.Rows.Count - 1
-                    Dim dv2 As New DataView(BILL_tbl, "", "Bill_no", DataViewRowState.CurrentRows)
+                For y As Integer = 0 To PURCHSE_tbl.Rows.Count - 1
+                    Dim dv2 As New DataView(PURCHSE_tbl, "", "PURCHSE_no", DataViewRowState.CurrentRows)
                     Dim index1 As Integer = dv2.Find(txtbno.Text)
                     If Not index1 = -1 Then
                         dv2(index1).Delete()
@@ -841,14 +838,14 @@ Public Class BILL
                 Next
             End If
 
-            Dim dv3 As New DataView(BILL1_tbl, "", "bid", DataViewRowState.CurrentRows)
+            Dim dv3 As New DataView(PURCHSE1_tbl, "", "bid", DataViewRowState.CurrentRows)
             Dim index As Integer = dv3.Find(bid.Text)
             If index = -1 Then
                 err_display("Something Went Wrong, Please Contact to The Developer!")
                 Exit Sub
             Else
                 dv3(index).Delete()
-                Dim DV4 As New DataView(BILL1_tbl)
+                Dim DV4 As New DataView(PURCHSE1_tbl)
                 DV4.RowFilter = "cust = '" & txtcname.Text & "'"
                 For i As Integer = 0 To DV4.Count - 1
                     Dim tot As String
@@ -865,14 +862,14 @@ Public Class BILL
                 stock_tbl.AcceptChanges()
                 stock_tbl.Clear()
                 stock_adapter.Fill(stock_tbl)
-                BILL_adapter.Update(BILL_tbl)
-                BILL_tbl.AcceptChanges()
-                BILL_tbl.Clear()
-                BILL_adapter.Fill(BILL_tbl)
-                BILL1_adapter.Update(BILL1_tbl)
-                BILL1_tbl.AcceptChanges()
-                BILL1_tbl.Clear()
-                BILL1_adapter.Fill(BILL1_tbl)
+                PURCHSE_adapter.Update(PURCHSE_tbl)
+                PURCHSE_tbl.AcceptChanges()
+                PURCHSE_tbl.Clear()
+                PURCHSE_adapter.Fill(PURCHSE_tbl)
+                PURCHSE1_adapter.Update(PURCHSE1_tbl)
+                PURCHSE1_tbl.AcceptChanges()
+                PURCHSE1_tbl.Clear()
+                PURCHSE1_adapter.Fill(PURCHSE1_tbl)
                 NEW_BILL.Text = "New Bill"
                 DG2.DataBind()
                 For Each c As Control In pnlAddEdit.Controls

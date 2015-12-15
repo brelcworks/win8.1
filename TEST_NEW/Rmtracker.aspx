@@ -11,6 +11,7 @@
     <title>B & R ELECTRICAL WORKS (RM- TRACKER)</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/DESIGN/favicon.ico" />
     <script src="Scripts/jquery-2.1.4.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <style type="text/css">

@@ -12,6 +12,8 @@ Module Module1
     Public BILL_adapter As New SqlDataAdapter("select * from BILL order BY BILLID", sqlcon)
     Public BILL1_adapter As New SqlDataAdapter("select * from BILL1 order BY BID", sqlcon)
     Public CUSTOMER_adapter As New SqlDataAdapter("select * from CUSTOMER order BY CID", sqlcon)
+    Public PURCHSE_adapter As New SqlDataAdapter("select * from PURCHSE order BY BILLID", sqlcon)
+    Public PURCHSE1_adapter As New SqlDataAdapter("select * from PURCHSE1 order BY BID", sqlcon)
     Public mainpop_builder As New SqlCommandBuilder(mainpop_adapter)
     Public pmr_builder As New SqlCommandBuilder(pmr_adapter)
     Public sheet1_builder As New SqlCommandBuilder(sheet1_adapter)
@@ -19,6 +21,8 @@ Module Module1
     Public BILL_builder As New SqlCommandBuilder(BILL_adapter)
     Public BILL1_builder As New SqlCommandBuilder(BILL1_adapter)
     Public CUSTOMER_builder As New SqlCommandBuilder(CUSTOMER_adapter)
+    Public PURCHSE_builder As New SqlCommandBuilder(BILL_adapter)
+    Public PURCHSE1_builder As New SqlCommandBuilder(BILL1_adapter)
     Public mainpop_tbl As New DataTable
     Public pmr_tbl As New DataTable
     Public sheet1_tbl As New DataTable
@@ -26,4 +30,6 @@ Module Module1
     Public BILL_tbl As New DataTable
     Public BILL1_tbl As New DataTable
     Public CUSTOMER_tbl As New DataTable
+    Public PURCHSE_tbl As New DataTable
+    Public PURCHSE1_tbl As New DataTable
 End Module

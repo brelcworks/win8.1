@@ -1,9 +1,10 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Default.aspx.vb" Inherits="TEST_NEW._Default" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="NEW_MAIN.aspx.vb" Inherits="TEST_NEW.NEW_MAIN" %>
 
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+<head runat="server">
+   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>B & R ELECTRICAL WORKS</title>
@@ -13,8 +14,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 </head>
 <body>
-   <form id="form1" runat="server">
-         <nav class="navbar navbar-inverse">
+    <form id="form1" runat="server">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -37,10 +38,16 @@
             </div>
         </div>
     </nav>
+        <div style="width: 35%; margin-right: 1%; margin-left: 1%; text-align:center ; height: 200px; overflow: auto">
+            <asp:Panel ID="pnlLOGO" runat="server" CssClass="panel">
+                <div class="col-md-4">
+                     <img src="/DESIGN/BR.PNG"
+        style="position: absolute; top: 20PX; left: 80PX; z-index: -5000; width :60%;height :100PX">
+                </div>
+            </asp:Panel>
+        </div>
     </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <img src="http://p1.pichost.me/i/66/1910819.jpg"
-        style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -5000;">
 </body>
 </html>

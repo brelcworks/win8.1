@@ -40,6 +40,10 @@ Public Class _Default
                 pmr_tbl.Clear()
                 mainpop_adapter.Fill(mainpop_tbl)
                 pmr_adapter.Fill(pmr_tbl)
+                PURCHSE_tbl.Clear()
+                PURCHSE1_tbl.Clear()
+                PURCHSE_adapter.Fill(PURCHSE_tbl)
+                PURCHSE1_adapter.Fill(PURCHSE1_tbl)
                 FormsAuthentication.RedirectFromLoginPage(txtuname.Text, False)
             Else
                 ClientScript.RegisterStartupScript(Page.[GetType](), "validation", "<script language='javascript'>alert('Wrong User Id or Password!')</script>")
