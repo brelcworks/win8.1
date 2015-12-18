@@ -6101,6 +6101,42 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:TEST_NEW.SLREPORT._err">
+<summary>
+err control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.SLREPORT._errdisplay">
+<summary>
+errdisplay control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.SLREPORT._btnerrcls">
+<summary>
+btnerrcls control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.SLREPORT._errpopup">
+<summary>
+errpopup control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:TEST_NEW.STOCK1._form1">
 <summary>
 form1 control.

@@ -151,6 +151,14 @@
                             <asp:CalendarExtender ID="CDATICLNDR" runat="server" TargetControlID="cdati" PopupButtonID="ImageButton1" Format="dd-MMM-yyyy hh:mm:ss tt"></asp:CalendarExtender>
              <asp:Button ID="FND" runat ="server" Text ="FIND" CssClass ="btn btn-primary btn-xs " />
          </div>
+         <asp:Panel ID="err" runat="server" CssClass="modalPopup " Style="display: none">
+                  <div class="header">
+                    ERROR
+                </div>
+                 <asp:Label ID="errdisplay" runat ="server" />
+                  <asp:Button ID="btnerrcls" CssClass="btn btn-danger btn-xs" runat="server" Text="Cancel" />
+             </asp:Panel> 
+              <asp:ModalPopupExtender ID="errpopup" runat="server" OkControlID="btnerrcls" PopupControlID="err" TargetControlID="btnerr"></asp:ModalPopupExtender> 
     </form>
 </body>
 </html>

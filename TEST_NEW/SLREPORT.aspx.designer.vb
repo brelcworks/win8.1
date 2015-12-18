@@ -120,4 +120,40 @@ Partial Public Class SLREPORT
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents FND As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''err control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents err As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''errdisplay control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents errdisplay As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''btnerrcls control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnerrcls As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''errpopup control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents errpopup As Global.AjaxControlToolkit.ModalPopupExtender
 End Class

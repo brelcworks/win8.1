@@ -13,7 +13,7 @@ Public Class SLREPORT
                 DG1.DataBind()
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            err_display(ex.ToString)
         End Try
     End Sub
     Protected Sub CREATEBILLTBL()
@@ -74,7 +74,7 @@ Public Class SLREPORT
                 DT.Rows.Add(DR)
             Next
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            err_display(ex.ToString)
         End Try
     End Sub
 
@@ -90,7 +90,11 @@ Public Class SLREPORT
             DG1.DataSource = dv
             DG1.DataBind()
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            err_display(ex.ToString)
         End Try
+    End Sub
+    Protected Sub err_display(ByVal msg As String)
+        errdisplay.Text = msg
+        errpopup.Show()
     End Sub
 End Class
