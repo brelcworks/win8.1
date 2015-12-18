@@ -32,4 +32,20 @@ Module Module1
     Public CUSTOMER_tbl As New DataTable
     Public PURCHSE_tbl As New DataTable
     Public PURCHSE1_tbl As New DataTable
+
+
+
+    Public mainpop_tbl_M As New DataTable
+    Public pmr_tbl_M As New DataTable
+    Public sheet1_tbl_M As New DataTable
+    Public stock_tbl_M As New DataTable
+    Public BILL_tbl_M As New DataTable
+    Public BILL1_tbl_M As New DataTable
+    Public CUSTOMER_tbl_M As New DataTable
+    Public PURCHSE_tbl_M As New DataTable
+    Public PURCHSE1_tbl_M As New DataTable
+    Public Sub CREATEPMRTBL()
+        Dim dt As New DataTable()
+
+    End Sub
 End Module

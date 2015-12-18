@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class TESTING
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class TESTING
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''Add_clm control.
     '''</summary>
@@ -30,4 +30,40 @@ Partial Public Class TESTING
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Add_clm As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Mongo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Mongo As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''mongoupd control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mongoupd As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''BILLADD control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BILLADD As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''GridView1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 End Class
