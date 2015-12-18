@@ -42,7 +42,7 @@ Public Class SLREPORT
             DT.Columns.Add("DPCODE", GetType(String))
             DT.Columns.Add("LMODI", GetType(String))
             DT.Columns.Add("AEDT", GetType(String))
-            Dim db = New LiteDatabase(Server.MapPath(".\DB1.db"))
+            Dim db = New LiteDatabase(Server.MapPath("~/App_Data/DB1.db"))
             BILL_M_TBL = db.GetCollection(Of BILLM)("BILL")
             Dim list = db.GetCollection(Of BILLM)("BILL").FindAll().ToList
             For Each P In list

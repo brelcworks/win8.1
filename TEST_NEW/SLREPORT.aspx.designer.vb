@@ -122,6 +122,15 @@ Partial Public Class SLREPORT
     Protected WithEvents FND As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''btnerr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnerr As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''err control.
     '''</summary>
     '''<remarks>

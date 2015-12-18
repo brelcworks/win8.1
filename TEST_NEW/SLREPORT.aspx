@@ -150,6 +150,7 @@
                             <asp:ImageButton ID="ImageButton1" ImageUrl="Design/calendar.png" ImageAlign="Bottom" runat="server" />
                             <asp:CalendarExtender ID="CDATICLNDR" runat="server" TargetControlID="cdati" PopupButtonID="ImageButton1" Format="dd-MMM-yyyy hh:mm:ss tt"></asp:CalendarExtender>
              <asp:Button ID="FND" runat ="server" Text ="FIND" CssClass ="btn btn-primary btn-xs " />
+             <asp:Button ID="btnerr" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
          </div>
          <asp:Panel ID="err" runat="server" CssClass="modalPopup " Style="display: none">
                   <div class="header">
