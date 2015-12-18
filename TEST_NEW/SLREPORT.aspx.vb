@@ -73,6 +73,10 @@ Public Class SLREPORT
                 DR("AEDT") = P.AEDT
                 DT.Rows.Add(DR)
             Next
+            DG1.DataSource = Nothing
+            DG1.DataBind()
+            DG1.DataSource = DT
+            DG1.DataBind()
         Catch ex As Exception
             err_display(ex.ToString)
         End Try
@@ -96,5 +100,48 @@ Public Class SLREPORT
     Protected Sub err_display(ByVal msg As String)
         errdisplay.Text = msg
         errpopup.Show()
+    End Sub
+
+    Private Sub BILLADD_Click(sender As Object, e As EventArgs) Handles BILLADD.Click
+        Try
+            Dim db = New LiteDatabase(Server.MapPath("~/App_Data/DB1.db"))
+            BILL_M_TBL = db.GetCollection(Of BILLM)("BILL")
+            If sqlcon.State <> ConnectionState.Open Then sqlcon.Open()
+            Dim DA As New SqlDataAdapter("SELECT * FROM BILL", sqlcon)
+                Dim DT As New DataTable
+                DA.Fill(DT)
+                For I As Integer = 0 To DT.Rows.Count - 1
+                    Dim P = New BILLM() With {
+                        .BID = DT(I)("BID").ToString,
+                        .BILL_NO = DT(I)("BILL_NO").ToString,
+                        .BDATE = DT(I)("BDATE").ToString,
+                        .DNAME = DT(I)("DNAME").ToString,
+                        .CUST = DT(I)("CUST").ToString,
+                        .PART_NO = DT(I)("PART_NO").ToString,
+                        .PARTI = DT(I)("PARTI").ToString,
+                        .QTY = DT(I)("QTY").ToString,
+                        .MRP = DT(I)("MRP").ToString,
+                        .SPRICE = DT(I)("SPRICE").ToString,
+                        .TOTAL = DT(I)("TOTAL").ToString,
+                        .TAX = DT(I)("TAX").ToString,
+                        .TVAL = DT(I)("TVAL").ToString,
+                        .STOT = DT(I)("STOT").ToString,
+                        .CMP = DT(I)("CMP").ToString,
+                        .UNIT = DT(I)("UNIT").ToString,
+                       .USER = DT(I)("USER1").ToString,
+                       .MODE = DT(I)("MODE").ToString,
+                       .SSTA = DT(I)("SSTA").ToString,
+                       .AEDT = DT(I)("AEDT").ToString,
+                       .LMODI = DT(I)("LMODI").ToString,
+                       .BILLID = DT(I)("BILLID").ToString,
+                      .DPCODE = DT(I)("DPCODE").ToString
+                        }
+                    BILL_M_TBL.Insert(P)
+                Next
+            err_display("OK")
+            CREATEBILLTBL()
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
     End Sub
 End Class
