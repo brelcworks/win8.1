@@ -3,14 +3,11 @@ Imports LiteDB
 
 Public Class SLREPORT
     Inherits System.Web.UI.Page
-    Private db = New LiteDatabase(Server.MapPath(".\DB1.db"))
-    Private BILL_M_TBL = db.GetCollection(Of BILLM)("BILL")
+    Private BILL_M_TBL
     Private DT As New DataTable
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If Not Me.IsPostBack Then
-
-
                 CREATEBILLTBL()
                 DG1.DataSource = DT
                 DG1.DataBind()
@@ -45,7 +42,8 @@ Public Class SLREPORT
             DT.Columns.Add("DPCODE", GetType(String))
             DT.Columns.Add("LMODI", GetType(String))
             DT.Columns.Add("AEDT", GetType(String))
-
+            Dim db = New LiteDatabase(Server.MapPath(".\DB1.db"))
+            BILL_M_TBL = db.GetCollection(Of BILLM)("BILL")
             Dim list = db.GetCollection(Of BILLM)("BILL").FindAll().ToList
             For Each P In list
                 Dim DR As DataRow = DT.NewRow
