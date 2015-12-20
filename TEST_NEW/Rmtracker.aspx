@@ -101,6 +101,14 @@
                             <li><a href="STOCK1.aspx">STOCK LIST</a></li>
                         </ul>
                     </li> 
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounting<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="bill.ASPX">Sales</a></li>
+                                <li><a href="bill_pur.ASPX">Purchase</a></li>
+                                 <li><a href="slreport.ASPX">Sales Report</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class=" navbar-form navbar-right" role="status">
                         <asp:Label ID="uname1" runat="server" CssClass="label label-success" />

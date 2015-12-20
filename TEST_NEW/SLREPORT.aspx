@@ -102,6 +102,14 @@
                             <li><a href="STOCK1.aspx">STOCK LIST</a></li>
                         </ul>
                     </li> 
+                    <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounting<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="bill.ASPX">Sales</a></li>
+                                <li><a href="bill_pur.ASPX">Purchase</a></li>
+                                 <li><a href="slreport.ASPX">Sales Report</a></li>
+                            </ul>
+                        </li>
                 </ul>
                 <div class=" navbar-form navbar-right" role="status">
                         <asp:Label ID="uname1" runat="server" CssClass="label label-success" />
@@ -151,7 +159,7 @@
                             <asp:CalendarExtender ID="CDATICLNDR" runat="server" TargetControlID="cdati" PopupButtonID="ImageButton1" Format="dd-MMM-yyyy hh:mm:ss tt"></asp:CalendarExtender>
              <asp:Button ID="FND" runat ="server" Text ="FIND" CssClass ="btn btn-primary btn-xs " />
              <asp:Button ID="btnerr" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
-             <asp:Button ID="BILLADD" runat ="server" Text ="BILL ADD" />
+             <asp:Button ID="BILLADD" runat ="server" Text ="UPDATE" />
          </div>
          <asp:Panel ID="err" runat="server" CssClass="modalPopup " Style="display: none">
                   <div class="header">

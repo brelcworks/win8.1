@@ -716,9 +716,80 @@ Public Class POP
                     End If
                 Next
                 GridView1.DataBind()
+            Else
+                Dim dv As New DataView(dt)
+                dv.RowFilter = "recid1='" & PMRRECID.Text & "'"
+                dv(0)("sid") = PMRSID.Text
+                dv(0)("sname") = PMRSNAME.Text
+                dv(0)("engine_no") = Engine_no.Text
+                If IsDate(DOS.Text) Then dv(0)("dos") = DOS.Text
+                dv(0)("stype") = stype1.Text
+                dv(0)("hmr") = HMR.Text
+                dv(0)("report") = reportNo.Text
+                dv(0)("Technician") = technician.Text
+                dv(0)("METERIAL") = meterial.Text
+                dv(0)("cust") = cust.Text
+                If IsDate(cdati.Text) Then dv(0)("cdati") = cdati.Text
+                dv(0)("dist") = PMRDIST.Text
+                dv(0)("sta") = sta.Text
+                dv(0)("DGNO") = PMRDGNO.Text
+                dv(0)("AMAKE") = PMRAMAKE.Text
+                dv(0)("ALSN") = PMRALSN.Text
+                dv(0)("BSN") = PMRBSN.Text
+                dv(0)("sLA") = sla.Text
+                dv(0)("RESLA") = resla.Text
+                dv(0)("TTR") = ttr.Text
+                dv(0)("TSLOT") = tslot.Text
+                dv(0)("RFAIL") = rfail.Text
+                dv(0)("ACTION") = PMRACTION.Text
+                dv(0)("WARR") = PMRWARR.Text
+                dv(0)("OEA") = PMROEA.Text
+                dv(0)("AMC") = PMRAMC.Text
+                dv(0)("staTE") = PMRSTATE.Text
+                dv(0)("CCATE") = ccate.Text
+                dv(0)("CNAT") = Cnat.Text
+                dv(0)("sERV") = serv.Text
+                dv(0)("DPCODE") = PMRDPCODE.Text
+                dv(0)("KVA") = kva.Text
+                dv(0)("MODEL") = PMRMODEL.Text
+                dv(0)("DOI") = doi.Text
+                dv(0)("ssta") = "NEW"
+                dv(0)("lmodi") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+                dv(0)("recid") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+                dv(0)("AEDT") = "TRUE"
+
+                Dim dv1 As New DataView(dt1, "", "ENS", DataViewRowState.CurrentRows)
+                Dim index As Integer = dv1.Find(Engine_no.Text)
+                If Not index = -1 Then
+                    dv1(index)("chmr") = HMR.Text
+                    If IsDate(cdati.Text) Then dv1(index)("chmd") = cdati.Text
+                    dv1(index)("SSTA") = "MOD"
+                    dv1(index)("hmage") = hmage1.Text
+                    dv1(index)("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+                    dv1(index)("AHM") = PMRAHM.Text
+                    dv1(index)("action") = PMRACTION.Text
+                    dv1(index)("AEDT") = "TRUE"
+                    If stype1.Text = "OIL SERVICE" Then
+                        dv1(index)("LHMR") = HMR.Text
+                        dv1(index)("LSD") = cdati.Text
+                        dv1(index)("NSD") = uname.Text
+                    End If
+                End If
+                DA.Update(dt)
+                DA1.Update(dt1)
+                pmr_tbl.Clear()
+                pmr_adapter.Fill(pmr_tbl)
+                mainpop_tbl.Clear()
+                mainpop_adapter.Fill(mainpop_tbl)
+                For Each c As Control In ADDPMR.Controls
+                    If TypeOf c Is TextBox Then
+                        CType(c, TextBox).Text = ""
+                    End If
+                Next
+                GridView1.DataBind()
             End If
         Catch ex As Exception
-            err_display(ex.Message)
+            err_display(ex.ToString)
         End Try
     End Sub
     Protected Sub PMRADDDG2(ByVal sender As Object, ByVal e As EventArgs)

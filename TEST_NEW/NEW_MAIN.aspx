@@ -12,6 +12,73 @@
     <link rel="shortcut icon" href="~/DESIGN/favicon.ico" />
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        .modalBackground {
+            background-color: Black;
+            filter: alpha(opacity=40);
+            opacity: 0.4;
+        }
+
+        .modalPopup {
+            background-color: #FFFFFF;
+            border: 3px solid #0DA9D0;
+            width: 100%;
+            float: left;
+        }
+
+            .modalPopup .header {
+                background-color: #2FBDF1;
+                height: 30px;
+                color: White;
+                line-height: 30px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .modalPopup .body {
+                min-height: 50px;
+                line-height: 30px;
+                text-align: center;
+                padding: 5px;
+            }
+
+            .modalPopup .footer {
+                padding: 3px;
+            }
+
+            .modalPopup .button {
+                height: 23px;
+                color: White;
+                line-height: 23px;
+                text-align: center;
+                font-weight: bold;
+                cursor: pointer;
+                background-color: #9F9F9F;
+                border: 1px solid #5C5C5C;
+            }
+
+            .modalPopup td {
+                text-align: left;
+            }
+ .left
+    {
+        float:left;
+        width:400px;
+        margin:0;
+        padding:1em;
+    }
+    .right
+    {
+        width:728px;
+        margin-left:410px;
+        padding:1em;
+    }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -38,13 +105,24 @@
             </div>
         </div>
     </nav>
-        <div style="width: 35%; margin-right: 1%; margin-left: 1%; text-align:center ; height: 200px; overflow: auto">
-            <asp:Panel ID="pnlLOGO" runat="server" CssClass="panel">
+        <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align: center; height: 200px; overflow: auto">
+            <asp:Panel ID="pnlLOGO" runat="server" CssClass="left">
                 <div class="col-md-4">
-                     <img src="/DESIGN/BR.PNG"
-        style="position: absolute; top: 20PX; left: 80PX; z-index: -5000; width :60%;height :100PX">
+                    <img src="/DESIGN/BR.PNG"
+                        style="position: absolute; left: 25PX; z-index: -5000; width: 100%; height: 160PX">
                 </div>
             </asp:Panel>
+            <asp:Panel ID="Panel1" runat="server" CssClass="right">
+                    <h1 style="font-family:'Book Antiqua'">
+                        B. & R. ELECTRICAL WORKS
+                    </h1>
+                    <h3>
+                        AUTORIZED SERVICE CENTER OF K.E.C
+                    </h3>
+            </asp:Panel>
+        </div>
+        <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align: center; height: 600px; overflow: auto">
+
         </div>
     </form>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -4,49 +4,31 @@ Imports LiteDB
 Public Class SLREPORT
     Inherits System.Web.UI.Page
     Private BILL_M_TBL
-    Private DT As New DataTable
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
-            If Not Me.IsPostBack Then
-                CREATEBILLTBL()
-                DG1.DataSource = DT
-                DG1.DataBind()
+            If Not Me.Page.User.Identity.IsAuthenticated Then
+                FormsAuthentication.RedirectToLoginPage()
+            Else
+                If Session("user_name") = "" Then
+                    FormsAuthentication.RedirectToLoginPage()
+                    Exit Sub
+                End If
+                uname1.Text = Session("user_name").ToString
+                If Not Me.IsPostBack Then
+                    CREATEBILLTBL()
+                    LOADBILLTBL()
+                End If
             End If
         Catch ex As Exception
             err_display(ex.ToString)
         End Try
     End Sub
-    Protected Sub CREATEBILLTBL()
+    Protected Sub LOADBILLTBL()
         Try
-            DT.Columns.Add("BILLID", GetType(Integer))
-            DT.Columns.Add("BID", GetType(String))
-            DT.Columns.Add("_id", GetType(Integer))
-            DT.Columns.Add("BILL_NO", GetType(String))
-            DT.Columns.Add("BDATE", GetType(DateTime))
-            DT.Columns.Add("DNAME", GetType(String))
-            DT.Columns.Add("CUST", GetType(String))
-            DT.Columns.Add("PART_NO", GetType(String))
-            DT.Columns.Add("PARTI", GetType(String))
-            DT.Columns.Add("QTY", GetType(String))
-            DT.Columns.Add("MRP", GetType(String))
-            DT.Columns.Add("SPRICE", GetType(String))
-            DT.Columns.Add("TOTAL", GetType(String))
-            DT.Columns.Add("TAX", GetType(String))
-            DT.Columns.Add("TVAL", GetType(String))
-            DT.Columns.Add("STOT", GetType(String))
-            DT.Columns.Add("CMP", GetType(String))
-            DT.Columns.Add("UNIT", GetType(String))
-            DT.Columns.Add("USER1", GetType(String))
-            DT.Columns.Add("SSTA", GetType(String))
-            DT.Columns.Add("MODE", GetType(String))
-            DT.Columns.Add("DPCODE", GetType(String))
-            DT.Columns.Add("LMODI", GetType(String))
-            DT.Columns.Add("AEDT", GetType(String))
-            Dim db = New LiteDatabase(Server.MapPath("~/App_Data/DB1.db"))
-            BILL_M_TBL = db.GetCollection(Of BILLM)("BILL")
-            Dim list = db.GetCollection(Of BILLM)("BILL").FindAll().ToList
+            Dim LDB = New LiteDatabase(Server.MapPath("~/App_Data/DB1.db"))
+            Dim list = LDB.GetCollection(Of BILLM)("BILL").FindAll().ToList
             For Each P In list
-                Dim DR As DataRow = DT.NewRow
+                Dim DR As DataRow = BILL_tbl_M.NewRow
                 DR("BILLID") = P.BILLID
                 DR("BID") = P.BID
                 DR("BILL_NO") = P.BILL_NO
@@ -71,11 +53,11 @@ Public Class SLREPORT
                 DR("DPCODE") = P.DPCODE
                 DR("LMODI") = P.LMODI
                 DR("AEDT") = P.AEDT
-                DT.Rows.Add(DR)
+                BILL_tbl_M.Rows.Add(DR)
             Next
             DG1.DataSource = Nothing
             DG1.DataBind()
-            DG1.DataSource = DT
+            DG1.DataSource = BILL_tbl
             DG1.DataBind()
         Catch ex As Exception
             err_display(ex.ToString)
@@ -86,8 +68,7 @@ Public Class SLREPORT
         Try
             Dim D1 As DateTime = DOS.Text
             Dim D2 As DateTime = cdati.Text
-            CREATEBILLTBL()
-            Dim dv As New DataView(DT)
+            Dim dv As New DataView(BILL_tbl)
             dv.RowFilter = "BDATE >= #" & D1 & "# and BDATE <= #" & D2 & "#"
             DG1.DataSource = Nothing
             DG1.DataBind()
@@ -104,42 +85,45 @@ Public Class SLREPORT
 
     Private Sub BILLADD_Click(sender As Object, e As EventArgs) Handles BILLADD.Click
         Try
-            Dim db = New LiteDatabase(Server.MapPath("~/App_Data/DB1.db"))
-            BILL_M_TBL = db.GetCollection(Of BILLM)("BILL")
+            Dim LDB = New LiteDatabase(Server.MapPath("~/App_Data/DB1.db"))
+            BILL_M_TBL = LDB.GetCollection(Of BILLM)("BILL")
             If sqlcon.State <> ConnectionState.Open Then sqlcon.Open()
-            Dim DA As New SqlDataAdapter("SELECT * FROM BILL", sqlcon)
-                Dim DT As New DataTable
-                DA.Fill(DT)
-                For I As Integer = 0 To DT.Rows.Count - 1
-                    Dim P = New BILLM() With {
-                        .BID = DT(I)("BID").ToString,
-                        .BILL_NO = DT(I)("BILL_NO").ToString,
-                        .BDATE = DT(I)("BDATE").ToString,
-                        .DNAME = DT(I)("DNAME").ToString,
-                        .CUST = DT(I)("CUST").ToString,
-                        .PART_NO = DT(I)("PART_NO").ToString,
-                        .PARTI = DT(I)("PARTI").ToString,
-                        .QTY = DT(I)("QTY").ToString,
-                        .MRP = DT(I)("MRP").ToString,
-                        .SPRICE = DT(I)("SPRICE").ToString,
-                        .TOTAL = DT(I)("TOTAL").ToString,
-                        .TAX = DT(I)("TAX").ToString,
-                        .TVAL = DT(I)("TVAL").ToString,
-                        .STOT = DT(I)("STOT").ToString,
-                        .CMP = DT(I)("CMP").ToString,
-                        .UNIT = DT(I)("UNIT").ToString,
-                       .USER = DT(I)("USER1").ToString,
-                       .MODE = DT(I)("MODE").ToString,
-                       .SSTA = DT(I)("SSTA").ToString,
-                       .AEDT = DT(I)("AEDT").ToString,
-                       .LMODI = DT(I)("LMODI").ToString,
-                       .BILLID = DT(I)("BILLID").ToString,
-                      .DPCODE = DT(I)("DPCODE").ToString
-                        }
-                    BILL_M_TBL.Insert(P)
+            For I As Integer = 0 To BILL_tbl.Rows.Count - 1
+                Dim apd As String = BILL_tbl(I)("BID").ToString
+                Dim query1 = Query.EQ("BID", apd)
+                Dim prod = LDB.GetCollection(Of BILLM)("BILL").Find(query1)
+                For Each P In prod
+                    If P.BID = "" Then
+                        Dim P1 = New BILLM() With {
+                       .BID = BILL_tbl("BID").ToString,
+                       .BILL_NO = BILL_tbl("BILL_NO").ToString,
+                       .BDATE = BILL_tbl("BDATE").ToString,
+                       .DNAME = BILL_tbl("DNAME").ToString,
+                       .CUST = BILL_tbl("CUST").ToString,
+                       .PART_NO = BILL_tbl("PART_NO").ToString,
+                       .PARTI = BILL_tbl("PARTI").ToString,
+                       .QTY = BILL_tbl("QTY").ToString,
+                       .MRP = BILL_tbl("MRP").ToString,
+                       .SPRICE = BILL_tbl("SPRICE").ToString,
+                       .TOTAL = BILL_tbl("TOTAL").ToString,
+                       .TAX = BILL_tbl("TAX").ToString,
+                       .TVAL = BILL_tbl("TVAL").ToString,
+                       .STOT = BILL_tbl("STOT").ToString,
+                       .CMP = BILL_tbl("CMP").ToString,
+                       .UNIT = BILL_tbl("UNIT").ToString,
+                      .USER = BILL_tbl("USER1").ToString,
+                      .MODE = BILL_tbl("MODE").ToString,
+                      .SSTA = BILL_tbl("SSTA").ToString,
+                      .AEDT = BILL_tbl("AEDT").ToString,
+                      .LMODI = BILL_tbl("LMODI").ToString,
+                      .BILLID = BILL_tbl("BILLID").ToString,
+                      .DPCODE = BILL_tbl("DPCODE").ToString
+                       }
+                        BILL_M_TBL.Insert(P1)
+                    End If
                 Next
+            Next
             err_display("OK")
-            CREATEBILLTBL()
         Catch ex As Exception
             err_display(ex.ToString)
         End Try

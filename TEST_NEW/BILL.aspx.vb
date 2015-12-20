@@ -19,7 +19,8 @@ Public Class BILL
                     FormsAuthentication.RedirectToLoginPage()
                     Exit Sub
                 End If
-                If sqlcon.State <> ConnectionState.Open Then sqlcon.Open()
+                uname1.Text = Session("user_name").ToString
+                If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
                 If Not Me.IsPostBack Then
                     For i As Integer = 0 To BILL1_tbl.Rows.Count - 1
                         If Not IsDBNull(BILL1_tbl.Rows(i)("cust")) Then txtcname.Items.Add(BILL1_tbl.Rows(i)("cust"))
@@ -54,9 +55,9 @@ Public Class BILL
                 For I As Integer = 0 To DV1.Count - 1
                     If Not IsDBNull(DV1(I)("SNAME")) Then txtsname.Items.Add(DV1(I)("SNAME"))
                 Next
-                Dim X As New SqlCommand("SELECT SUM(NTOT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", sqlcon)
+                Dim X As New SqlCeCommand("SELECT SUM(NTOT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", SQLCE)
                 Dim X1 As String = X.ExecuteScalar & ""
-                Dim Y As New SqlCommand("SELECT SUM(PAYMENT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", sqlcon)
+                Dim Y As New SqlCeCommand("SELECT SUM(PAYMENT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", SQLCE)
                 Dim Y1 As String = Y.ExecuteScalar & ""
                 txtbal.Text = Val(X1) - Val(Y1)
             End If
@@ -73,15 +74,15 @@ Public Class BILL
 
     Protected Sub txtptname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtptname.SelectedIndexChanged
         Try
-            Dim DV1 As New DataView(stock_tbl)
-            DV1.RowFilter = "PARTI='" & txtptname.SelectedValue.ToString & "'"
-            If DV1.Count > 0 Then
-                txtptno.Text = DV1(0)("PART_NO")
-                txtmrp.Text = DV1(0)("MRP")
-                txttrate.Text = DV1(0)("TAX")
-                txtrate.Text = DV1(0)("SPRICE")
-                txtunit.Text = DV1(0)("UNIT")
-                txtinstock.Text = DV1(0)("QTY")
+            Dim dv1 As New DataView(stock_tbl, "", "parti", DataViewRowState.CurrentRows)
+            Dim index As Integer = dv1.Find(txtptname.SelectedValue.ToString)
+            If Not index = -1 Then
+                txtptno.Text = dv1(index)("PART_NO")
+                txtmrp.Text = dv1(index)("MRP")
+                txttrate.Text = dv1(index)("TAX")
+                txtrate.Text = dv1(index)("SPRICE")
+                txtunit.Text = dv1(index)("UNIT")
+                txtinstock.Text = dv1(index)("QTY").ToString
             End If
         Catch ex As Exception
             err_display(ex.ToString)
@@ -131,7 +132,7 @@ Public Class BILL
             Dim index As Integer = DV1.Find(txtptno.Text)
             If Not index = -1 Then
                 Dim Z As String = CType(DV1(index)("qty"), String)
-                DV1(index)("qty") = Val(Z) - Val(txtinstock.Text)
+                DV1(index)("qty") = Val(Z) - Val(txtqty.Text)
                 Dim x1 As String = CType(DV1(index)("qty"), String)
                 DV1(index)("stotal") = Val(x1) * CType(DV1(index)("SPRICE"), String)
                 DV1(index)("total") = Val(x1) * CType(DV1(index)("mrp"), String)
@@ -397,7 +398,7 @@ Public Class BILL
             Dim index As Integer = DV1.Find(txtptno.Text)
             If Not index = -1 Then
                 Dim Z As String = CType(DV1(index)("qty"), String)
-                DV1(index)("qty") = Val(Z) - Val(txtinstock.Text)
+                DV1(index)("qty") = Val(Z) - Val(txtqty.Text)
                 Dim x1 As String = CType(DV1(index)("qty"), String)
                 DV1(index)("stotal") = Val(x1) * CType(DV1(index)("SPRICE"), String)
                 DV1(index)("total") = Val(x1) * CType(DV1(index)("mrp"), String)
@@ -718,7 +719,7 @@ Public Class BILL
             dg1.DataBind()
             txtgtot.Text = Val(txtgtot.Text) + (Val(txtstotedt.Text) - Val(hgtot.Text))
             txtntval.Text = Val(txtgtot.Text) * 14.5 / 100
-            txtntot.Text = Format(Val(txtgtot.Text) + Val(txtntval.Text), "fixed")
+            txtntot.Text = Math.Round(Val(txtgtot.Text) + Val(txtntval.Text))
             txtround.Text = FormatNumber(Val(txtntot.Text) - (Val(txtgtot.Text) + Val(txtntval.Text)), 2)
 
             Dim dv2 As New DataView(stock_tbl, "", "part_no", DataViewRowState.CurrentRows)

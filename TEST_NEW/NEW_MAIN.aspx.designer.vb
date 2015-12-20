@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class NEW_MAIN
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class NEW_MAIN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''txtuname control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class NEW_MAIN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtuname As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''txtpass control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class NEW_MAIN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtpass As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btnlogin control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class NEW_MAIN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnlogin As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''pnlLOGO control.
     '''</summary>
@@ -57,4 +57,13 @@ Partial Public Class NEW_MAIN
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlLOGO As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Panel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 End Class

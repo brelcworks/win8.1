@@ -17,7 +17,8 @@ Public Class BILL_PUR
                     FormsAuthentication.RedirectToLoginPage()
                     Exit Sub
                 End If
-                If sqlcon.State <> ConnectionState.Open Then sqlcon.Open()
+                uname1.Text = Session("user_name").ToString
+                If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
                 If Not Me.IsPostBack Then
                     For i As Integer = 0 To PURCHSE1_tbl.Rows.Count - 1
                         If Not IsDBNull(PURCHSE1_tbl.Rows(i)("cust")) Then txtcname.Items.Add(PURCHSE1_tbl.Rows(i)("cust"))
@@ -76,7 +77,7 @@ Public Class BILL_PUR
                 txtptno.Text = DV1(0)("PART_NO")
                 txtmrp.Text = DV1(0)("MRP")
                 txttrate.Text = DV1(0)("TAX")
-                txtrate.Text = DV1(0)("SPRICE")
+
                 txtunit.Text = DV1(0)("UNIT")
                 txtinstock.Text = DV1(0)("QTY")
             End If
@@ -87,8 +88,12 @@ Public Class BILL_PUR
 
     Protected Sub BTNITMCALC_Click(sender As Object, e As EventArgs) Handles BTNITMCALC.Click
         Try
-            txttval.Text = Val(txtqty.Text) * Val(txtrate.Text) * Val(txttrate.Text) / 100
-            txtitot.Text = Val(txtqty.Text) * Val(txtrate.Text)
+            If Not txtrate.Text = "" Then
+                txttval.Text = Val(txtqty.Text) * Val(txtrate.Text) * Val(txttrate.Text) / 100
+                txtitot.Text = Val(txtqty.Text) * Val(txtrate.Text)
+            Else
+                err_display("Please Fill the Rate Field!")
+            End If
         Catch ex As Exception
             err_display(ex.ToString)
         End Try
@@ -128,7 +133,7 @@ Public Class BILL_PUR
             Dim index As Integer = DV1.Find(txtptno.Text)
             If Not index = -1 Then
                 Dim Z As String = CType(DV1(index)("qty"), String)
-                DV1(index)("qty") = Val(Z) - Val(txtinstock.Text)
+                DV1(index)("qty") = Val(Z) + Val(txtqty.Text)
                 Dim x1 As String = CType(DV1(index)("qty"), String)
                 DV1(index)("stotal") = Val(x1) * CType(DV1(index)("SPRICE"), String)
                 DV1(index)("total") = Val(x1) * CType(DV1(index)("mrp"), String)
@@ -360,6 +365,7 @@ Public Class BILL_PUR
 
     Protected Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
         Try
+            If txtrate.Text = "" Then Exit Sub
             txttval.Text = Val(txtqty.Text) * Val(txtrate.Text) * Val(txttrate.Text) / 100
             txtitot.Text = Val(txtqty.Text) * Val(txtrate.Text)
             Dim dr As DataRow = PURCHSE_tbl.NewRow
@@ -394,7 +400,7 @@ Public Class BILL_PUR
             Dim index As Integer = DV1.Find(txtptno.Text)
             If Not index = -1 Then
                 Dim Z As String = CType(DV1(index)("qty"), String)
-                DV1(index)("qty") = Val(Z) - Val(txtinstock.Text)
+                DV1(index)("qty") = Val(Z) + Val(txtqty.Text)
                 Dim x1 As String = CType(DV1(index)("qty"), String)
                 DV1(index)("stotal") = Val(x1) * CType(DV1(index)("SPRICE"), String)
                 DV1(index)("total") = Val(x1) * CType(DV1(index)("mrp"), String)
@@ -714,15 +720,15 @@ Public Class BILL_PUR
             DV.RowFilter = "bill_no='" & txtbno.Text & "'"
             dg1.DataBind()
             txtgtot.Text = Val(txtgtot.Text) + (Val(txtstotedt.Text) - Val(hgtot.Text))
-            txtntval.Text = Val(txtgtot.Text) * 14.5 / 100
-            txtntot.Text = Format(Val(txtgtot.Text) + Val(txtntval.Text), "fixed")
+            txtntval.Text = Val(txtgtot.Text) * Val(txttaxedt.Text) / 100
+            txtntot.Text = Math.Round(Val(txtgtot.Text) + Val(txtntval.Text))
             txtround.Text = FormatNumber(Val(txtntot.Text) - (Val(txtgtot.Text) + Val(txtntval.Text)), 2)
 
             Dim dv2 As New DataView(stock_tbl, "", "part_no", DataViewRowState.CurrentRows)
             Dim index1 As Integer = dv2.Find(txtptnoedt.Text)
             If Not index1 = -1 Then
                 Dim lq As String = dv2(index1)("qty").ToString
-                dv2(index1)("qty") = Val(lq) + (Val(hqty.Text) - Val(txtqtyedt.Text))
+                dv2(index1)("qty") = Val(lq) - (Val(hqty.Text) + Val(txtqtyedt.Text))
                 lq1 = dv2(index1)("qty").ToString
                 dv2(index1)("total") = Val(lq1) * Val(dv2(index1)("mrp").ToString)
                 dv2(index1)("stotal") = Val(lq1) * Val(dv2(index1)("sprice").ToString)
@@ -767,7 +773,7 @@ Public Class BILL_PUR
                     Dim index1 As Integer = dv2.Find(txtptnoedt.Text)
                     If Not index1 = -1 Then
                         Dim lq As String = dv2(index1)("qty").ToString
-                        dv2(index1)("qty") = Val(lq) + Val(hqty.Text)
+                        dv2(index1)("qty") = Val(lq) - Val(hqty.Text)
                         lq1 = dv2(index1)("qty").ToString
                         dv2(index1)("total") = Val(lq1) * Val(dv2(index1)("mrp").ToString)
                         dv2(index1)("stotal") = Val(lq1) * Val(dv2(index1)("sprice").ToString)
@@ -820,7 +826,7 @@ Public Class BILL_PUR
                     Dim index1 As Integer = dv1.Find(dg1.Rows(i).Cells(0).Text)
                     If Not index1 = -1 Then
                         Dim lq As String = dv1(index1)("qty").ToString
-                        dv1(index1)("qty") = Val(lq) + Val(dg1.Rows(i).Cells(2).Text)
+                        dv1(index1)("qty") = Val(lq) - Val(dg1.Rows(i).Cells(2).Text)
                         lq1 = dv1(index1)("qty").ToString
                         dv1(index1)("total") = Val(lq1) * Val(dv1(index1)(3).ToString)
                         dv1(index1)("stotal") = Val(lq1) * Val(dv1(index1)(4).ToString)

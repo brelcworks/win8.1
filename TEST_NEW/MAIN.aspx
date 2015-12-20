@@ -18,7 +18,7 @@
         <div>
             <asp:ScriptManager ID="sct" runat="server" />
         </div>
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse" style ="background-color :indigo  ">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -52,6 +52,8 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounting<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="bill.ASPX">Sales</a></li>
+                                <li><a href="bill_pur.ASPX">Purchase</a></li>
+                                <li><a href="slreport.ASPX">Sales Report</a></li>
                             </ul>
                         </li>
                     </ul>
