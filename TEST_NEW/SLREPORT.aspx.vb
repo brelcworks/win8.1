@@ -87,7 +87,7 @@ Public Class SLREPORT
         Try
             Dim LDB = New LiteDatabase(Server.MapPath("~/App_Data/DB1.db"))
             BILL_M_TBL = LDB.GetCollection(Of BILLM)("BILL")
-            If sqlcon.State <> ConnectionState.Open Then sqlcon.Open()
+            If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
             For I As Integer = 0 To BILL_tbl.Rows.Count - 1
                 Dim apd As String = BILL_tbl(I)("BID").ToString
                 Dim query1 = Query.EQ("BID", apd)

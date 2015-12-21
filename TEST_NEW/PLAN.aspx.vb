@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Data.SqlServerCe
 Public Class PLAN
     Inherits System.Web.UI.Page
 
@@ -12,7 +13,7 @@ Public Class PLAN
                     Exit Sub
                 End If
                 uname1.Text = Session("user_name").ToString
-                If sqlcon.State <> ConnectionState.Open Then sqlcon.Open()
+                If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
                 Dim D1 As Date = DateAdd(DateInterval.Month, 1, Today)
                 Dim DV As New DataView(mainpop_tbl)
                 DV.RowFilter = "NSD < #" & D1 & "# "

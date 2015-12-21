@@ -5,10 +5,10 @@ Imports System.Web
 Imports System.Web.UI
 Imports System.Web.UI.WebControls
 Imports System.Web.Security
+Imports System.Data.SqlServerCe
 Public Class Rmtracker
     Inherits System.Web.UI.Page
-    Public con As New SqlConnection(ConfigurationManager.ConnectionStrings("APPHARBOR").ConnectionString)
-   
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If Not Me.Page.User.Identity.IsAuthenticated Then
@@ -20,8 +20,8 @@ Public Class Rmtracker
                 End If
                 uname1.Text = Session("user_name").ToString
                 If Not Me.IsPostBack Then
-                    If con.State <> ConnectionState.Open Then con.Open()
-                    Dim DA As New SqlDataAdapter("SELECT * FROM PMR ORDER BY DOS DESC", con)
+                    If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+                    Dim DA As New SqlCEDataAdapter("SELECT * FROM PMR ORDER BY DOS DESC", SQLCE)
                     Dim DT As New DataTable
                     DA.Fill(DT)
                     Dim DT1 As Date
@@ -88,7 +88,7 @@ Public Class Rmtracker
     End Sub
     Protected Sub Edit(ByVal sender As Object, ByVal e As EventArgs)
         Try
-            Dim DA As New SqlDataAdapter("SELECT * FROM PMR ORDER BY DOS DESC", con)
+            Dim DA As New SqlCeDataAdapter("SELECT * FROM PMR ORDER BY DOS DESC", SQLCE)
             Dim DT As New DataTable
             DA.Fill(DT)
             Dim btnsubmit As LinkButton = TryCast(sender, LinkButton)
@@ -139,7 +139,7 @@ Public Class Rmtracker
 
     Private Sub FIND_Click(sender As Object, e As EventArgs) Handles FIND.Click
         Try
-            Dim DA As New SqlDataAdapter("SELECT * FROM PMR ORDER BY DOS DESC", con)
+            Dim DA As New SqlCeDataAdapter("SELECT * FROM PMR ORDER BY DOS DESC", SQLCE)
             Dim DT As New DataTable
             DA.Fill(DT)
             Dim DTFRM As Date = DTFROM.Text
@@ -160,7 +160,7 @@ Public Class Rmtracker
     Private Sub EXPORT_Click(sender As Object, e As EventArgs) Handles EXPORT.Click
         Try
             If DTFROM.Text = "" Then
-                If con.State <> ConnectionState.Open Then con.Open()
+                If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
                 Dim DT1 As Date
                 Dim D1 As DateTime
                 Dim D2 As DateTime
@@ -209,7 +209,7 @@ Public Class Rmtracker
                 Else
                     DT1 = DateAdd(DateInterval.Day, -1, Today)
                 End If
-                Dim DA1 As New SqlDataAdapter("SELECT cust as Customer, stype as Amc_Out_of_Scope, DOS as Dt_of_Complaint, recid as Complaint_Service_No, Sid as Site_id, sname as Site_Name, dist as District, State, ccate as Complaint_Category, Engine_no, Model, KVA, DOI, dgno as Genset_no, amake as Alt_Make, alsn as Alt_Sr_no, bsn as Battery_Sr_no, HMR, cnat as Complaint_Nature, serv as Severity, rfail as Reason_of_Failure, sta as Status, cdati as Complaint_Closure_Date, warr as O_W_U_W, action as Action_taken, meterial as Meterial_Changed, dpcode as Service_Dealer, technician, Oea, amc as Amc_status, TTR, sla as Sla_Osla, tslot as Time_Slot, resla as Reason_of_Sla FROM PMR", con)
+                Dim DA1 As New SqlCeDataAdapter("SELECT cust as Customer, stype as Amc_Out_of_Scope, DOS as Dt_of_Complaint, recid as Complaint_Service_No, Sid as Site_id, sname as Site_Name, dist as District, State, ccate as Complaint_Category, Engine_no, Model, KVA, DOI, dgno as Genset_no, amake as Alt_Make, alsn as Alt_Sr_no, bsn as Battery_Sr_no, HMR, cnat as Complaint_Nature, serv as Severity, rfail as Reason_of_Failure, sta as Status, cdati as Complaint_Closure_Date, warr as O_W_U_W, action as Action_taken, meterial as Meterial_Changed, dpcode as Service_Dealer, technician, Oea, amc as Amc_status, TTR, sla as Sla_Osla, tslot as Time_Slot, resla as Reason_of_Sla FROM PMR", SQLCE)
                 Dim DT2 As New DataTable
                 DA1.Fill(DT2)
                 Dim dv As New DataView(DT2)
@@ -260,12 +260,12 @@ Public Class Rmtracker
                 HttpContext.Current.Response.Flush()
                 HttpContext.Current.Response.[End]()
             Else
-                If con.State <> ConnectionState.Open Then con.Open()
+                If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
                 Dim DTFRM As Date = DTFROM.Text
                 Dim DTTOO As Date = DTTO.Text
                 Dim ts As TimeSpan = New TimeSpan(23, 59, 59)
                 DTTOO = DTTOO + ts
-                Dim DA1 As New SqlDataAdapter("SELECT cust as Customer, stype as Amc_Out_of_Scope, DOS as Dt_of_Complaint, recid as Complaint_Service_No, Sid as Site_id, sname as Site_Name, dist as District, State, ccate as Complaint_Category, Engine_no, Model, KVA, DOI, dgno as Genset_no, amake as Alt_Make, alsn as Alt_Sr_no, bsn as Battery_Sr_no, HMR, cnat as Complaint_Nature, serv as Severity, rfail as Reason_of_Failure, sta as Status, cdati as Complaint_Closure_Date, warr as O_W_U_W, action as Action_taken, meterial as Meterial_Changed, dpcode as Service_Dealer, technician, Oea, amc as Amc_status, TTR, sla as Sla_Osla, tslot as Time_Slot, resla as Reason_of_Sla FROM PMR", con)
+                Dim DA1 As New SqlCeDataAdapter("SELECT cust as Customer, stype as Amc_Out_of_Scope, DOS as Dt_of_Complaint, recid as Complaint_Service_No, Sid as Site_id, sname as Site_Name, dist as District, State, ccate as Complaint_Category, Engine_no, Model, KVA, DOI, dgno as Genset_no, amake as Alt_Make, alsn as Alt_Sr_no, bsn as Battery_Sr_no, HMR, cnat as Complaint_Nature, serv as Severity, rfail as Reason_of_Failure, sta as Status, cdati as Complaint_Closure_Date, warr as O_W_U_W, action as Action_taken, meterial as Meterial_Changed, dpcode as Service_Dealer, technician, Oea, amc as Amc_status, TTR, sla as Sla_Osla, tslot as Time_Slot, resla as Reason_of_Sla FROM PMR", SQLCE)
                 Dim DT2 As New DataTable
                 DA1.Fill(DT2)
                 Dim DV As New DataView(DT2)

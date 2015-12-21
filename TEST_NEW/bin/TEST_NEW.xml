@@ -5021,6 +5021,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:TEST_NEW.POP._PMRDEL">
+<summary>
+PMRDEL control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:TEST_NEW.POP._PMRPOPUP">
 <summary>
 PMRPOPUP control.
@@ -6896,6 +6905,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:TEST_NEW.TESTING._BILLADD">
 <summary>
 BILLADD control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.TESTING._BULK_COPY">
+<summary>
+BULK_COPY control.
 </summary>
 <remarks>
 Auto-generated field.

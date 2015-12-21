@@ -59,6 +59,15 @@ Partial Public Class TESTING
     Protected WithEvents BILLADD As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''BULK_COPY control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BULK_COPY As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''GridView1 control.
     '''</summary>
     '''<remarks>

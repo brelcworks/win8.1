@@ -164,6 +164,7 @@
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\ScrollableGridViewPlugin_ASP.NetAJAXmin.js" />
     <Content Include="SLREPORT.aspx" />
     <Content Include="STOCK1.aspx" />
     <Content Include="TESTING.aspx" />

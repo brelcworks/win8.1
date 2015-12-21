@@ -52,9 +52,9 @@ Public Class BILL_PUR
                 For I As Integer = 0 To DV1.Count - 1
                     If Not IsDBNull(DV1(I)("SNAME")) Then txtsname.Items.Add(DV1(I)("SNAME"))
                 Next
-                Dim X As New SqlCommand("SELECT SUM(NTOT) FROM PURCHSE1 WHERE cust='" & txtcname.Text & "'", sqlcon)
+                Dim X As New SqlCeCommand("SELECT SUM(NTOT) FROM PURCHSE1 WHERE cust='" & txtcname.Text & "'", SQLCE)
                 Dim X1 As String = X.ExecuteScalar & ""
-                Dim Y As New SqlCommand("SELECT SUM(PAYMENT) FROM PURCHSE1 WHERE cust='" & txtcname.Text & "'", sqlcon)
+                Dim Y As New SqlCeCommand("SELECT SUM(PAYMENT) FROM PURCHSE1 WHERE cust='" & txtcname.Text & "'", SQLCE)
                 Dim Y1 As String = Y.ExecuteScalar & ""
                 txtbal.Text = Val(X1) - Val(Y1)
             End If
@@ -836,7 +836,7 @@ Public Class BILL_PUR
                 Next
 
                 For y As Integer = 0 To PURCHSE_tbl.Rows.Count - 1
-                    Dim dv2 As New DataView(PURCHSE_tbl, "", "PURCHSE_no", DataViewRowState.CurrentRows)
+                    Dim dv2 As New DataView(PURCHSE_tbl, "", "Bill_no", DataViewRowState.CurrentRows)
                     Dim index1 As Integer = dv2.Find(txtbno.Text)
                     If Not index1 = -1 Then
                         dv2(index1).Delete()

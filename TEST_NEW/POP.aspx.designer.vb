@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class POP
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''uname1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uname1 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LoginStatus1 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LoginStatus1 As Global.System.Web.UI.WebControls.LoginStatus
-
+    
     '''<summary>
     '''tlsp2 control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tlsp2 As Global.AjaxControlToolkit.ToolkitScriptManager
-
+    
     '''<summary>
     '''GridView1 control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''SqlDataSource1 control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
-
+    
     '''<summary>
     '''btnShowPopup control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnShowPopup As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''pnlAddEdit control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlAddEdit As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''Label1 control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''recid1 control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents recid1 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label12 control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''rat_ph control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rat_ph As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label14 control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''cntype control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cntype As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label2 control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''cname control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cname As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label15 control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label15 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''phase control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents phase As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label17 control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label17 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''cnmake control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cnmake As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label3 control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''sname control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sname As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label16 control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label16 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''model control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents model As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label18 control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label18 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''sauto control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sauto As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label4 control.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''sid control.
     '''</summary>
@@ -264,7 +264,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sid As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label5 control.
     '''</summary>
@@ -273,7 +273,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''ens control.
     '''</summary>
@@ -282,7 +282,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ens As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label19 control.
     '''</summary>
@@ -291,7 +291,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label19 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''chmr control.
     '''</summary>
@@ -300,7 +300,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents chmr As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label6 control.
     '''</summary>
@@ -309,7 +309,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''addr control.
     '''</summary>
@@ -318,7 +318,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents addr As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label20 control.
     '''</summary>
@@ -327,7 +327,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label20 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''dgno control.
     '''</summary>
@@ -336,7 +336,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dgno As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label21 control.
     '''</summary>
@@ -345,7 +345,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label21 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''chmd control.
     '''</summary>
@@ -354,7 +354,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents chmd As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label7 control.
     '''</summary>
@@ -363,7 +363,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''dist control.
     '''</summary>
@@ -372,7 +372,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dist As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label22 control.
     '''</summary>
@@ -381,7 +381,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label22 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''amake control.
     '''</summary>
@@ -390,7 +390,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents amake As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label23 control.
     '''</summary>
@@ -399,7 +399,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label23 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Lhmr control.
     '''</summary>
@@ -408,7 +408,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Lhmr As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label8 control.
     '''</summary>
@@ -417,7 +417,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''state control.
     '''</summary>
@@ -426,7 +426,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents state As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label24 control.
     '''</summary>
@@ -435,7 +435,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label24 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''alsn control.
     '''</summary>
@@ -444,7 +444,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents alsn As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label25 control.
     '''</summary>
@@ -453,7 +453,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label25 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lsd control.
     '''</summary>
@@ -462,7 +462,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lsd As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label9 control.
     '''</summary>
@@ -471,7 +471,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''cpn control.
     '''</summary>
@@ -480,7 +480,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cpn As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label26 control.
     '''</summary>
@@ -489,7 +489,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label26 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''frame control.
     '''</summary>
@@ -498,7 +498,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents frame As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label27 control.
     '''</summary>
@@ -507,7 +507,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label27 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''nsd control.
     '''</summary>
@@ -516,7 +516,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents nsd As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label13 control.
     '''</summary>
@@ -525,7 +525,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''phno control.
     '''</summary>
@@ -534,7 +534,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents phno As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label28 control.
     '''</summary>
@@ -543,7 +543,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label28 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''bsn control.
     '''</summary>
@@ -552,7 +552,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents bsn As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label29 control.
     '''</summary>
@@ -561,7 +561,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label29 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''spin control.
     '''</summary>
@@ -570,7 +570,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents spin As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label10 control.
     '''</summary>
@@ -579,7 +579,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''oea control.
     '''</summary>
@@ -588,7 +588,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents oea As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label30 control.
     '''</summary>
@@ -597,7 +597,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label30 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''llop control.
     '''</summary>
@@ -606,7 +606,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents llop As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label31 control.
     '''</summary>
@@ -615,7 +615,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label31 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''hmage control.
     '''</summary>
@@ -624,7 +624,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hmage As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label11 control.
     '''</summary>
@@ -633,7 +633,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''doc control.
     '''</summary>
@@ -642,7 +642,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents doc As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label32 control.
     '''</summary>
@@ -651,7 +651,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label32 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''solenoid control.
     '''</summary>
@@ -660,7 +660,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents solenoid As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label33 control.
     '''</summary>
@@ -669,7 +669,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label33 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''ahm control.
     '''</summary>
@@ -678,7 +678,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ahm As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label34 control.
     '''</summary>
@@ -687,7 +687,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label34 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''amc control.
     '''</summary>
@@ -696,7 +696,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents amc As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label35 control.
     '''</summary>
@@ -705,7 +705,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label35 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''chalt control.
     '''</summary>
@@ -714,7 +714,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents chalt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label36 control.
     '''</summary>
@@ -723,7 +723,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label36 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''dpcode control.
     '''</summary>
@@ -732,7 +732,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dpcode As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label37 control.
     '''</summary>
@@ -741,7 +741,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label37 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''warr control.
     '''</summary>
@@ -750,7 +750,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents warr As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label38 control.
     '''</summary>
@@ -759,7 +759,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label38 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''starter control.
     '''</summary>
@@ -768,7 +768,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents starter As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label39 control.
     '''</summary>
@@ -777,7 +777,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label39 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''action control.
     '''</summary>
@@ -786,7 +786,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents action As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btnCancel control.
     '''</summary>
@@ -795,7 +795,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnCancel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btnSave control.
     '''</summary>
@@ -804,7 +804,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btncls control.
     '''</summary>
@@ -813,7 +813,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btncls As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''popup control.
     '''</summary>
@@ -822,7 +822,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents popup As Global.AjaxControlToolkit.ModalPopupExtender
-
+    
     '''<summary>
     '''Panel1 control.
     '''</summary>
@@ -831,7 +831,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''SDTL control.
     '''</summary>
@@ -840,7 +840,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents SDTL As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''DG1 control.
     '''</summary>
@@ -849,7 +849,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DG1 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>
@@ -858,7 +858,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''popup1 control.
     '''</summary>
@@ -867,7 +867,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents popup1 As Global.AjaxControlToolkit.ModalPopupExtender
-
+    
     '''<summary>
     '''Panel2 control.
     '''</summary>
@@ -876,7 +876,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''Label40 control.
     '''</summary>
@@ -885,7 +885,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label40 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''dg2 control.
     '''</summary>
@@ -894,7 +894,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dg2 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''Button2 control.
     '''</summary>
@@ -903,7 +903,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''popup2 control.
     '''</summary>
@@ -912,7 +912,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents popup2 As Global.AjaxControlToolkit.ModalPopupExtender
-
+    
     '''<summary>
     '''ADDPMR control.
     '''</summary>
@@ -921,7 +921,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ADDPMR As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''Label41 control.
     '''</summary>
@@ -930,7 +930,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label41 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRRECID control.
     '''</summary>
@@ -939,7 +939,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRRECID As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label42 control.
     '''</summary>
@@ -948,7 +948,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label42 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''cust control.
     '''</summary>
@@ -957,7 +957,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cust As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label43 control.
     '''</summary>
@@ -966,7 +966,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label43 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''ccate control.
     '''</summary>
@@ -975,7 +975,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ccate As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label44 control.
     '''</summary>
@@ -984,7 +984,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label44 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Engine_no control.
     '''</summary>
@@ -993,7 +993,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Engine_no As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label45 control.
     '''</summary>
@@ -1002,7 +1002,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label45 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''doi control.
     '''</summary>
@@ -1011,7 +1011,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents doi As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label46 control.
     '''</summary>
@@ -1020,7 +1020,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label46 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Cnat control.
     '''</summary>
@@ -1029,7 +1029,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Cnat As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label47 control.
     '''</summary>
@@ -1038,7 +1038,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label47 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRSNAME control.
     '''</summary>
@@ -1047,7 +1047,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRSNAME As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label48 control.
     '''</summary>
@@ -1056,7 +1056,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label48 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRWARR control.
     '''</summary>
@@ -1065,7 +1065,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRWARR As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label49 control.
     '''</summary>
@@ -1074,7 +1074,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label49 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''serv control.
     '''</summary>
@@ -1083,7 +1083,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents serv As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label50 control.
     '''</summary>
@@ -1092,7 +1092,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label50 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRSID control.
     '''</summary>
@@ -1101,7 +1101,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRSID As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label51 control.
     '''</summary>
@@ -1110,7 +1110,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label51 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMROEA control.
     '''</summary>
@@ -1119,7 +1119,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMROEA As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label52 control.
     '''</summary>
@@ -1128,7 +1128,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label52 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''sta control.
     '''</summary>
@@ -1137,7 +1137,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sta As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label53 control.
     '''</summary>
@@ -1146,7 +1146,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label53 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRDGNO control.
     '''</summary>
@@ -1155,7 +1155,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRDGNO As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label54 control.
     '''</summary>
@@ -1164,7 +1164,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label54 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRAMC control.
     '''</summary>
@@ -1173,7 +1173,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRAMC As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label55 control.
     '''</summary>
@@ -1182,7 +1182,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label55 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''rfail control.
     '''</summary>
@@ -1191,7 +1191,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rfail As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label56 control.
     '''</summary>
@@ -1200,7 +1200,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label56 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''kva control.
     '''</summary>
@@ -1209,7 +1209,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents kva As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label57 control.
     '''</summary>
@@ -1218,7 +1218,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label57 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''DOS control.
     '''</summary>
@@ -1227,7 +1227,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DOS As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''imgPopup control.
     '''</summary>
@@ -1236,7 +1236,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents imgPopup As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''DOSCLNDR control.
     '''</summary>
@@ -1245,7 +1245,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DOSCLNDR As Global.AjaxControlToolkit.CalendarExtender
-
+    
     '''<summary>
     '''Label58 control.
     '''</summary>
@@ -1254,7 +1254,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label58 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRACTION control.
     '''</summary>
@@ -1263,7 +1263,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRACTION As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label59 control.
     '''</summary>
@@ -1272,7 +1272,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label59 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRMODEL control.
     '''</summary>
@@ -1281,7 +1281,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRMODEL As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label60 control.
     '''</summary>
@@ -1290,7 +1290,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label60 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''cdati control.
     '''</summary>
@@ -1299,7 +1299,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cdati As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''ImageButton1 control.
     '''</summary>
@@ -1308,7 +1308,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ImageButton1 As Global.System.Web.UI.WebControls.ImageButton
-
+    
     '''<summary>
     '''CDATICLNDR control.
     '''</summary>
@@ -1317,7 +1317,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CDATICLNDR As Global.AjaxControlToolkit.CalendarExtender
-
+    
     '''<summary>
     '''Label61 control.
     '''</summary>
@@ -1326,7 +1326,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label61 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''reportNo control.
     '''</summary>
@@ -1335,7 +1335,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents reportNo As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label62 control.
     '''</summary>
@@ -1344,7 +1344,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label62 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRAMAKE control.
     '''</summary>
@@ -1353,7 +1353,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRAMAKE As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label63 control.
     '''</summary>
@@ -1362,7 +1362,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label63 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''HMR control.
     '''</summary>
@@ -1371,7 +1371,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HMR As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label64 control.
     '''</summary>
@@ -1380,7 +1380,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label64 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''technician control.
     '''</summary>
@@ -1389,7 +1389,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents technician As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label65 control.
     '''</summary>
@@ -1398,7 +1398,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label65 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRALSN control.
     '''</summary>
@@ -1407,7 +1407,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRALSN As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label66 control.
     '''</summary>
@@ -1416,7 +1416,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label66 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''stype1 control.
     '''</summary>
@@ -1425,7 +1425,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents stype1 As Global.AjaxControlToolkit.ComboBox
-
+    
     '''<summary>
     '''Label67 control.
     '''</summary>
@@ -1434,7 +1434,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label67 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''sla control.
     '''</summary>
@@ -1443,7 +1443,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents sla As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label68 control.
     '''</summary>
@@ -1452,7 +1452,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label68 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRBSN control.
     '''</summary>
@@ -1461,7 +1461,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRBSN As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label69 control.
     '''</summary>
@@ -1470,7 +1470,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label69 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''ttr control.
     '''</summary>
@@ -1479,7 +1479,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ttr As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''btncalc control.
     '''</summary>
@@ -1488,7 +1488,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btncalc As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Label70 control.
     '''</summary>
@@ -1497,7 +1497,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label70 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''resla control.
     '''</summary>
@@ -1506,7 +1506,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents resla As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label71 control.
     '''</summary>
@@ -1515,7 +1515,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label71 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRDIST control.
     '''</summary>
@@ -1524,7 +1524,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRDIST As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label72 control.
     '''</summary>
@@ -1533,7 +1533,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label72 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''tslot control.
     '''</summary>
@@ -1542,7 +1542,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tslot As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label73 control.
     '''</summary>
@@ -1551,7 +1551,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label73 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRDPCODE control.
     '''</summary>
@@ -1560,7 +1560,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRDPCODE As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label74 control.
     '''</summary>
@@ -1569,7 +1569,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label74 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRSTATE control.
     '''</summary>
@@ -1578,7 +1578,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRSTATE As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label75 control.
     '''</summary>
@@ -1587,7 +1587,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label75 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''meterial control.
     '''</summary>
@@ -1596,7 +1596,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents meterial As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label76 control.
     '''</summary>
@@ -1605,7 +1605,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label76 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''uname control.
     '''</summary>
@@ -1614,7 +1614,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uname As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label77 control.
     '''</summary>
@@ -1623,7 +1623,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label77 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''PMRAHM control.
     '''</summary>
@@ -1632,7 +1632,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRAHM As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label78 control.
     '''</summary>
@@ -1641,7 +1641,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label78 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''hmage1 control.
     '''</summary>
@@ -1650,7 +1650,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hmage1 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label79 control.
     '''</summary>
@@ -1659,7 +1659,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label79 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''uname2 control.
     '''</summary>
@@ -1668,7 +1668,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uname2 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''PMRCANCEL control.
     '''</summary>
@@ -1677,7 +1677,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRCANCEL As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''PMRSAVE control.
     '''</summary>
@@ -1686,7 +1686,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRSAVE As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''PMRCLS control.
     '''</summary>
@@ -1695,7 +1695,16 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRCLS As Global.System.Web.UI.WebControls.Button
-
+    
+    '''<summary>
+    '''PMRDEL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PMRDEL As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
     '''PMRPOPUP control.
     '''</summary>
@@ -1704,7 +1713,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PMRPOPUP As Global.AjaxControlToolkit.ModalPopupExtender
-
+    
     '''<summary>
     '''err control.
     '''</summary>
@@ -1713,7 +1722,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents err As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''errdisplay control.
     '''</summary>
@@ -1722,7 +1731,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents errdisplay As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''btnerrcls control.
     '''</summary>
@@ -1731,7 +1740,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnerrcls As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''errpopup control.
     '''</summary>
@@ -1740,7 +1749,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents errpopup As Global.AjaxControlToolkit.ModalPopupExtender
-
+    
     '''<summary>
     '''fnddg control.
     '''</summary>
@@ -1749,7 +1758,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents fnddg As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lnkEdit2 control.
     '''</summary>
@@ -1758,7 +1767,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lnkEdit2 As Global.System.Web.UI.WebControls.LinkButton
-
+    
     '''<summary>
     '''btnAdd control.
     '''</summary>
@@ -1767,7 +1776,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnAdd As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btnexport control.
     '''</summary>
@@ -1776,7 +1785,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnexport As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Btnfnddg control.
     '''</summary>
@@ -1785,7 +1794,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Btnfnddg As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''BTNADDPMR control.
     '''</summary>
@@ -1794,7 +1803,7 @@ Partial Public Class POP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNADDPMR As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btnerr control.
     '''</summary>

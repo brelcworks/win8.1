@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Web.Security
+Imports System.Data.SqlServerCe
 Public Class POP
     Inherits System.Web.UI.Page
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -13,7 +14,8 @@ Public Class POP
                 End If
                 uname1.Text = Session("user_name").ToString
                 If Not Me.IsPostBack Then
-                    Dim da As New SqlDataAdapter("select STYPE from pmr GROUP BY STYPE", sqlcon)
+                    If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+                    Dim da As New SqlCeDataAdapter("select STYPE from pmr GROUP BY STYPE", SQLCE)
                     Dim dt As New DataTable
                     da.Fill(dt)
                     If stype1.Items.Count = 0 Then
@@ -21,6 +23,8 @@ Public Class POP
                             stype1.Items.Add(dt(i)("stype").ToString)
                         Next
                     End If
+                    GridView1.DataSource = mainpop_tbl
+                    GridView1.DataBind()
                 End If
             End If
         Catch ex As Exception
@@ -29,9 +33,9 @@ Public Class POP
     End Sub
     Public Sub DATALOAD()
         Try
-            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("APPHARBOR").ConnectionString)
+            Dim con As New SqlCeConnection(ConfigurationManager.ConnectionStrings("SQLCE").ConnectionString)
             con.Open()
-            Dim da As New SqlDataAdapter("select * from MAINPOPU", con)
+            Dim da As New SqlCeDataAdapter("select * from MAINPOPU", con)
             Dim dt As New DataTable
             da.Fill(dt)
         Catch ex As Exception
@@ -177,6 +181,7 @@ Public Class POP
                 mainpop_tbl.AcceptChanges()
                 mainpop_tbl.Clear()
                 mainpop_adapter.Fill(mainpop_tbl)
+                GridView1.DataSource = mainpop_tbl
                 GridView1.DataBind()
                 recid1.Text = ""
                 sid.Text = ""
@@ -266,6 +271,7 @@ Public Class POP
                 mainpop_tbl.AcceptChanges()
                 mainpop_tbl.Clear()
                 mainpop_adapter.Fill(mainpop_tbl)
+                GridView1.DataSource = mainpop_tbl
                 GridView1.DataBind()
                 recid1.Text = ""
                 sid.Text = ""
@@ -541,17 +547,10 @@ Public Class POP
             End If
 
 
-            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("APPHARBOR").ConnectionString)
-            con.Open()
-            Dim DA As New SqlDataAdapter("SELECT * FROM PMR ORDER BY RECID1", con)
-            Dim dt As New DataTable
-            DA.Fill(dt)
-            Dim DA1 As New SqlDataAdapter("SELECT * FROM mainpopu order by rid", con)
-            Dim dt1 As New DataTable
-            DA1.Fill(dt1)
+
 
             If IsDate(cdati.Text) Then
-                Dim dv1 As New DataView(dt1, "", "ENS", DataViewRowState.CurrentRows)
+                Dim dv1 As New DataView(mainpop_tbl, "", "ENS", DataViewRowState.CurrentRows)
                 Dim index1 As Integer = dv1.Find(Engine_no.Text)
                 If Not index1 = -1 Then
                     Dim chmr1 As String = dv1(index1)("chmr") & ""
@@ -565,7 +564,7 @@ Public Class POP
                         chmd1 = DateAdd(DateInterval.Year, -1, Today)
                     End If
 
-                    Dim DV As New DataView(dt)
+                    Dim DV As New DataView(pmr_tbl)
                     DV.RowFilter = "engine_no='" & Engine_no.Text & "' and stype='" & "OIL SERVICE" & "'"
                     If DV.Count = 0 Then
                         Dim lasth As String = chmr1
@@ -635,18 +634,8 @@ Public Class POP
 
     Private Sub PMRSAVE_Click(sender As Object, e As EventArgs) Handles PMRSAVE.Click
         Try
-            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("APPHARBOR").ConnectionString)
-            con.Open()
-            Dim DA As New SqlDataAdapter("SELECT * FROM PMR", con)
-            Dim dabld As New SqlCommandBuilder(DA)
-            Dim dt As New DataTable
-            DA.Fill(dt)
-            Dim DA1 As New SqlDataAdapter("SELECT * FROM mainpopu", con)
-            Dim dabld1 As New SqlCommandBuilder(DA1)
-            Dim dt1 As New DataTable
-            DA1.Fill(dt1)
             If PMRRECID.Text = "" Then
-                Dim dr As DataRow = dt.NewRow
+                Dim dr As DataRow = pmr_tbl.NewRow
                 dr("sid") = PMRSID.Text
                 dr("sname") = PMRSNAME.Text
                 dr("engine_no") = Engine_no.Text
@@ -685,9 +674,9 @@ Public Class POP
                 dr("lmodi") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
                 dr("recid") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
                 dr("AEDT") = "TRUE"
-                dt.Rows.Add(dr)
+                pmr_tbl.Rows.Add(dr)
 
-                Dim dv As New DataView(dt1, "", "ENS", DataViewRowState.CurrentRows)
+                Dim dv As New DataView(mainpop_tbl, "", "ENS", DataViewRowState.CurrentRows)
                 Dim index As Integer = dv.Find(Engine_no.Text)
                 If Not index = -1 Then
                     dv(index)("chmr") = HMR.Text
@@ -704,8 +693,8 @@ Public Class POP
                         dv(index)("NSD") = uname.Text
                     End If
                 End If
-                DA.Update(dt)
-                DA1.Update(dt1)
+                pmr_adapter.Update(pmr_tbl)
+                mainpop_adapter.Update(mainpop_tbl)
                 pmr_tbl.Clear()
                 pmr_adapter.Fill(pmr_tbl)
                 mainpop_tbl.Clear()
@@ -715,9 +704,10 @@ Public Class POP
                         CType(c, TextBox).Text = ""
                     End If
                 Next
+                GridView1.DataSource = mainpop_tbl
                 GridView1.DataBind()
             Else
-                Dim dv As New DataView(dt)
+                Dim dv As New DataView(pmr_tbl)
                 dv.RowFilter = "recid1='" & PMRRECID.Text & "'"
                 dv(0)("sid") = PMRSID.Text
                 dv(0)("sname") = PMRSNAME.Text
@@ -758,7 +748,7 @@ Public Class POP
                 dv(0)("recid") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
                 dv(0)("AEDT") = "TRUE"
 
-                Dim dv1 As New DataView(dt1, "", "ENS", DataViewRowState.CurrentRows)
+                Dim dv1 As New DataView(mainpop_tbl, "", "ENS", DataViewRowState.CurrentRows)
                 Dim index As Integer = dv1.Find(Engine_no.Text)
                 If Not index = -1 Then
                     dv1(index)("chmr") = HMR.Text
@@ -775,8 +765,8 @@ Public Class POP
                         dv1(index)("NSD") = uname.Text
                     End If
                 End If
-                DA.Update(dt)
-                DA1.Update(dt1)
+                pmr_adapter.Update(pmr_tbl)
+                mainpop_adapter.Update(mainpop_tbl)
                 pmr_tbl.Clear()
                 pmr_adapter.Fill(pmr_tbl)
                 mainpop_tbl.Clear()
@@ -786,6 +776,7 @@ Public Class POP
                         CType(c, TextBox).Text = ""
                     End If
                 Next
+                GridView1.DataSource = mainpop_tbl
                 GridView1.DataBind()
             End If
         Catch ex As Exception
@@ -802,12 +793,7 @@ Public Class POP
             Dim btnsubmit As LinkButton = TryCast(sender, LinkButton)
             Dim gRow As GridViewRow = DirectCast(btnsubmit.NamingContainer, GridViewRow)
             Dim fid As String = dg2.DataKeys(gRow.RowIndex).Value.ToString()
-            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("APPHARBOR").ConnectionString)
-            con.Open()
-            Dim DA As New SqlDataAdapter("SELECT * FROM MAINPOPU", con)
-            Dim dt As New DataTable
-            DA.Fill(dt)
-            Dim dv As New DataView(dt)
+            Dim dv As New DataView(mainpop_tbl)
             dv.RowFilter = "RID='" & fid & "'"
             If Not dv.Count < 1 Then
                 Engine_no.Text = dv(0)("ENS").ToString
@@ -838,9 +824,9 @@ Public Class POP
     End Sub
 
     Private Sub ExporttoExcel()
-        Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("APPHARBOR").ConnectionString)
+        Dim con As New SqlCEConnection(ConfigurationManager.ConnectionStrings("APPHARBOR").ConnectionString)
         con.Open()
-        Dim DA As New SqlDataAdapter("SELECT cname as CUSTOMER, sname as SITE_NAME, SID AS SITE_ID, ENS AS ENGINE_NO, RAT_PH AS RATING, PHASE, MODEL, DIST AS DISTRICT, STATE, CPN AS CONTACT_PERSON, PHNO AS PHONE_NO, addr as ADDRESS, AMAKE AS ALT_MAKE, ALSN AS ALT_SR_NO, BSN AS BATTERY_SR_NO, DGNO AS DG_SET_NO, CHMR AS CURRENT_HMR, LHMR AS LAST_PM_HMR, LSD AS LAST_PM_DATE, NSD AS NEXT_PM_DATE, AHM AS AVG_HMR, HMAGE AS HMR_AGEING  FROM MAINPOPU", con)
+        Dim DA As New SqlCeDataAdapter("SELECT cname as CUSTOMER, sname as SITE_NAME, SID AS SITE_ID, ENS AS ENGINE_NO, RAT_PH AS RATING, PHASE, MODEL, DIST AS DISTRICT, STATE, CPN AS CONTACT_PERSON, PHNO AS PHONE_NO, addr as ADDRESS, AMAKE AS ALT_MAKE, ALSN AS ALT_SR_NO, BSN AS BATTERY_SR_NO, DGNO AS DG_SET_NO, CHMR AS CURRENT_HMR, LHMR AS LAST_PM_HMR, LSD AS LAST_PM_DATE, NSD AS NEXT_PM_DATE, AHM AS AVG_HMR, HMAGE AS HMR_AGEING  FROM MAINPOPU", con)
         Dim dt As New DataTable
         DA.Fill(dt)
         HttpContext.Current.Response.Clear()
@@ -936,6 +922,24 @@ Public Class POP
             PMRMODEL.Text = dv(0)("MODEL").ToString
             doi.Text = dv(0)("DOI").ToString
             PMRPOPUP.Show()
+        Catch ex As Exception
+            err_display(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub PMRDEL_Click(sender As Object, e As EventArgs) Handles PMRDEL.Click
+        Try
+            Dim dv As New DataView(pmr_tbl)
+            dv.RowFilter = "recid1='" & PMRRECID.Text & "'"
+            If Not dv.Count < 1 Then
+                dv.Delete(0)
+                pmr_adapter.Update(pmr_tbl)
+                pmr_tbl.AcceptChanges()
+                pmr_tbl.Clear()
+                pmr_adapter.Fill(pmr_tbl)
+                GridView1.DataSource = mainpop_tbl
+                GridView1.DataBind()
+            End If
         Catch ex As Exception
             err_display(ex.Message)
         End Try

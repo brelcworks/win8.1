@@ -13,6 +13,7 @@
          <asp:Button ID="Mongo" runat ="server" Text ="Mongo_Add" />
         <asp:Button ID="mongoupd" runat ="server" Text ="Mongo_Upd" />
         <asp:Button ID="BILLADD" runat ="server" Text ="BILL UPD" />
+        <asp:Button ID="BULK_COPY" runat ="server" Text ="BULK COPY" />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RECID1" CssClass="table table-hover table-striped" Width="940px" HorizontalAlign="Center" RowStyle-Wrap="false" AllowSorting="True" HeaderStyle-BackColor="YellowGreen" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Wrap="false" Font-Size="Smaller">
                 <Columns>
                     <asp:BoundField DataField="RECID1" HeaderText="RECID1" Visible="False" HtmlEncode="true" />

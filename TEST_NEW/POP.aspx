@@ -124,7 +124,7 @@
             <p>
                 POPULATION VIEW / ENTRY
             </p>
-             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RID" DataSourceID="SqlDataSource1" CssClass="table table-hover table-striped" Width="940px" HorizontalAlign="Center" RowStyle-Wrap="false" AllowSorting="True" HeaderStyle-BackColor ="YellowGreen" HeaderStyle-HorizontalAlign ="Center"  Font-Size ="Smaller" HeaderStyle-Wrap ="false">
+             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RID" CssClass="table table-hover table-striped" HorizontalAlign="Center" RowStyle-Wrap="false" AllowSorting="True" HeaderStyle-BackColor ="YellowGreen" HeaderStyle-HorizontalAlign ="Center"  Font-Size ="Smaller" HeaderStyle-Wrap ="false" Width ="940px">
                 <Columns>
                      <asp:TemplateField ItemStyle-Width="30PX" HeaderText="Details">
                         <ItemTemplate>
@@ -183,11 +183,10 @@
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [MAINPOPU] ORDER BY [DOC] DESC"></asp:SqlDataSource>
               <asp:Button ID="btnShowPopup" runat="server" BackColor ="LightCyan" BorderStyle ="None" />
-              <asp:Panel ID="pnlAddEdit" runat="server" CssClass="modalPopup " Style="display: none">
-                 <div class="header">
+              <asp:Panel ID="pnlAddEdit" runat="server" CssClass="table-responsive" Style="display: none; background-color :#FFFFFF;border-color :aqua ;border-style :double ;text-align :left  ">
+                 <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold; color: White ">
                      Details
                  </div>
-                 <div class ="table table-responsive ">
                      <table class="table table-bordered">
                      <tr>
                          <td>
@@ -450,7 +449,6 @@
                          </td>
                      </tr>
                  </table>
-                 </div>
                  <asp:Button ID="btnCancel" CssClass="btn btn btn-danger btn-xs" runat="server" Text="Cancel" />
                  <asp:Button ID="btnSave" CssClass="btn btn-success btn-xs " runat="server" Text="Save" />
                  <asp:Button ID="btncls" CssClass="btn btn btn-danger btn-xs " runat="server" Text="Clear" />
@@ -580,11 +578,10 @@
              </asp:Panel>
             <asp:ModalPopupExtender ID="popup2" runat="server" OkControlID="Button2" PopupControlID="Panel2" TargetControlID="Btnfnddg">
             </asp:ModalPopupExtender>
-              <asp:Panel ID="ADDPMR" runat="server" CssClass="modalPopup " Style="display: none">
-                <div class="header">
+              <asp:Panel ID="ADDPMR" runat="server" CssClass="table-responsive" Style="display: none; background-color :#FFFFFF;border-color :aqua ;border-style :double ;text-align :left">
+                <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold ; color: White">
                     ADD PMR / COMPLAINT
                 </div>
-                <div class ="table table-responsive ">
                     <table id="tblview" class="table table-bordered">
                     <tr>
                         <td>
@@ -853,10 +850,10 @@
                         </td>
                     </tr>
                 </table>
-                </div>
                 <asp:Button ID="PMRCANCEL" CssClass="btn btn-danger btn-xs" runat="server" Text="Cancel" />
                 <asp:Button ID="PMRSAVE" CssClass="btn btn-success btn-xs" runat="server" Text="Save" />
                 <asp:Button ID="PMRCLS" CssClass="btn btn-info btn-xs" runat="server" Text="Clear" />
+                   <asp:Button ID="PMRDEL" CssClass="btn btn-danger btn-xs" runat="server" Text="Delete" />
             </asp:Panel>
               <asp:ModalPopupExtender ID="PMRPOPUP" runat="server" OkControlID="PMRCANCEL" PopupControlID="ADDPMR" TargetControlID="BTNADDPMR">
             </asp:ModalPopupExtender>
