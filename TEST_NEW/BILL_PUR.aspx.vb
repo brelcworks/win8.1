@@ -76,8 +76,7 @@ Public Class BILL_PUR
             If DV1.Count > 0 Then
                 txtptno.Text = DV1(0)("PART_NO")
                 txtmrp.Text = DV1(0)("MRP")
-                txttrate.Text = DV1(0)("TAX")
-
+                txttrate.Text = "2"
                 txtunit.Text = DV1(0)("UNIT")
                 txtinstock.Text = DV1(0)("QTY")
             End If
@@ -135,6 +134,8 @@ Public Class BILL_PUR
                 Dim Z As String = CType(DV1(index)("qty"), String)
                 DV1(index)("qty") = Val(Z) + Val(txtqty.Text)
                 Dim x1 As String = CType(DV1(index)("qty"), String)
+                DV1(index)("SPRICE") = Format(Val(txtmrp.Text) / 114.5 * 100, "0.00")
+                DV1(index)("pPRICE") = Format(Val(txtrate.Text), "0.00")
                 DV1(index)("stotal") = Val(x1) * CType(DV1(index)("SPRICE"), String)
                 DV1(index)("total") = Val(x1) * CType(DV1(index)("mrp"), String)
                 DV1(index)("SSTA") = "MOD"
@@ -402,6 +403,8 @@ Public Class BILL_PUR
                 Dim Z As String = CType(DV1(index)("qty"), String)
                 DV1(index)("qty") = Val(Z) + Val(txtqty.Text)
                 Dim x1 As String = CType(DV1(index)("qty"), String)
+                DV1(index)("SPRICE") = Format(Val(txtmrp.Text) / 114.5 * 100, "0.00")
+                DV1(index)("pPRICE") = Format(Val(txtrate.Text), "0.00")
                 DV1(index)("stotal") = Val(x1) * CType(DV1(index)("SPRICE"), String)
                 DV1(index)("total") = Val(x1) * CType(DV1(index)("mrp"), String)
                 DV1(index)("SSTA") = "MOD"
@@ -555,7 +558,6 @@ Public Class BILL_PUR
                 dg1.DataBind()
                 DG2.DataBind()
             Else
-
                 Dim wb As XLWorkbook = New XLWorkbook
                 Dim ws = wb.Worksheets.Add("CHALLAN")
                 ws.Column(1).Width = 5.43

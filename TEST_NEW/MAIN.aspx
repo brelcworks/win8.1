@@ -51,9 +51,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounting<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="bill.ASPX">Sales</a></li>
-                                <li><a href="bill_pur.ASPX">Purchase</a></li>
-                                <li><a href="slreport.ASPX">Sales Report</a></li>
+                                <li><a href="bill.aspx">SALES</a></li>
+                                <li><a href="bill_pur.aspx">PURCHASE</a></li>
+                                 <li><a href="slreport.aspx">SALES REPORT</a></li>
                             </ul>
                         </li>
                     </ul>

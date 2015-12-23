@@ -314,4 +314,18 @@ Public Class STOCK1
             err_display(ex.ToString)
         End Try
     End Sub
+    Protected Sub DNLDDB(sender As Object, e As EventArgs)
+        Try
+            Response.Clear()
+            Response.Buffer = True
+            Response.Charset = ""
+            Response.ContentType = "application/sdf"
+            Dim x As String = Server.MapPath("~/App_data/db1.sdf")
+            Response.AppendHeader("content-disposition", "attachment; filename=db1.sdf")
+            Response.WriteFile(x)
+            Response.End()
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
 End Class

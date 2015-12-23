@@ -6128,9 +6128,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:TEST_NEW.SLREPORT._BILLADD">
+<member name="F:TEST_NEW.SLREPORT._BTNEXPORT">
 <summary>
-BILLADD control.
+BTNEXPORT control.
 </summary>
 <remarks>
 Auto-generated field.

@@ -103,10 +103,10 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounting<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="bill.ASPX">Sales</a></li>
-                                <li><a href="bill_pur.ASPX">Purchase</a></li>
-                                 <li><a href="slreport.ASPX">Sales Report</a></li>
+                             <ul class="dropdown-menu">
+                                <li><a href="bill.aspx">SALES</a></li>
+                                <li><a href="bill_pur.aspx">PURCHASE</a></li>
+                                 <li><a href="slreport.aspx">SALES REPORT</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -175,8 +175,8 @@
 
 
 
-            <asp:Panel ID="pnlAddEdit" runat="server" CssClass="modalPopup " Style="display: none">
-                <div class="header">
+            <asp:Panel ID="pnlAddEdit" runat="server" CssClass="table-responsive" Style="display: none; background-color :#FFFFFF;border-color :aqua ;border-style :double ;text-align :left  ">
+                <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold; color:red ">
                     Details
                 </div>
                 <table id="tblview" class="table table-bordered">

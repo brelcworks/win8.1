@@ -553,7 +553,6 @@ Public Class BILL
                 dg1.DataBind()
                 DG2.DataBind()
             Else
-
                 Dim wb As XLWorkbook = New XLWorkbook
                 Dim ws = wb.Worksheets.Add("CHALLAN")
                 ws.Column(1).Width = 5.43
@@ -610,12 +609,13 @@ Public Class BILL
                 ws.Range("a27", "k27").Style.Font.Bold = True
                 ws.Range("i24", "k24").Style.Font.Bold = True
                 ws.Range("i13", "i24").Style.NumberFormat.SetFormat("#.00")
-                ws.PageSetup.Margins.Left = 0.25
+                ws.PageSetup.Margins.Left = 0.34
                 ws.PageSetup.Margins.Right = 0.17
-                ws.PageSetup.Margins.Top = 0.15
+                ws.PageSetup.Margins.Top = 0.35
                 ws.PageSetup.Margins.Bottom = 0.02
                 ws.PageSetup.Margins.Header = 0.02
                 ws.PageSetup.Margins.Footer = 0.02
+                ws.PageSetup.PaperSize = XLPaperSize.A4Paper
                 For i As Integer = 0 To dg1.Rows.Count - 1
                     ws.Cell(i + 13, 1).Value = i.ToString + 1
                     ws.Cell(i + 13, 2).Value = "'" & dg1.Rows(i).Cells(1).Text

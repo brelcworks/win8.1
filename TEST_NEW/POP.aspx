@@ -106,9 +106,9 @@
                     <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounting<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="bill.ASPX">Sales</a></li>
-                                <li><a href="bill_pur.ASPX">Purchase</a></li>
-                                 <li><a href="slreport.ASPX">Sales Report</a></li>
+                                <li><a href="bill.aspx">SALES</a></li>
+                                <li><a href="bill_pur.aspx">PURCHASE</a></li>
+                                 <li><a href="slreport.aspx">SALES REPORT</a></li>
                             </ul>
                         </li>
                 </ul>
@@ -184,7 +184,7 @@
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [MAINPOPU] ORDER BY [DOC] DESC"></asp:SqlDataSource>
               <asp:Button ID="btnShowPopup" runat="server" BackColor ="LightCyan" BorderStyle ="None" />
               <asp:Panel ID="pnlAddEdit" runat="server" CssClass="table-responsive" Style="display: none; background-color :#FFFFFF;border-color :aqua ;border-style :double ;text-align :left  ">
-                 <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold; color: White ">
+                 <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold; color:red ">
                      Details
                  </div>
                      <table class="table table-bordered">
@@ -579,7 +579,7 @@
             <asp:ModalPopupExtender ID="popup2" runat="server" OkControlID="Button2" PopupControlID="Panel2" TargetControlID="Btnfnddg">
             </asp:ModalPopupExtender>
               <asp:Panel ID="ADDPMR" runat="server" CssClass="table-responsive" Style="display: none; background-color :#FFFFFF;border-color :aqua ;border-style :double ;text-align :left">
-                <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold ; color: White">
+                <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold ; color:red ">
                     ADD PMR / COMPLAINT
                 </div>
                     <table id="tblview" class="table table-bordered">
@@ -853,7 +853,7 @@
                 <asp:Button ID="PMRCANCEL" CssClass="btn btn-danger btn-xs" runat="server" Text="Cancel" />
                 <asp:Button ID="PMRSAVE" CssClass="btn btn-success btn-xs" runat="server" Text="Save" />
                 <asp:Button ID="PMRCLS" CssClass="btn btn-info btn-xs" runat="server" Text="Clear" />
-                   <asp:Button ID="PMRDEL" CssClass="btn btn-danger btn-xs" runat="server" Text="Delete" />
+                   <asp:Button ID="PMRDEL" CssClass="btn btn-warning btn-xs" runat="server" Text="Delete" />
             </asp:Panel>
               <asp:ModalPopupExtender ID="PMRPOPUP" runat="server" OkControlID="PMRCANCEL" PopupControlID="ADDPMR" TargetControlID="BTNADDPMR">
             </asp:ModalPopupExtender>

@@ -553,6 +553,7 @@ Public Class POP
                 Dim dv1 As New DataView(mainpop_tbl, "", "ENS", DataViewRowState.CurrentRows)
                 Dim index1 As Integer = dv1.Find(Engine_no.Text)
                 If Not index1 = -1 Then
+                    Dim doc As Date = dv1(index1)("doc")
                     Dim chmr1 As String = dv1(index1)("chmr") & ""
                     If Val(chmr1) = Val(HMR.Text) Then
                         chmr1 = Val(chmr1) - 0.5
@@ -565,7 +566,11 @@ Public Class POP
                     End If
 
                     Dim DV As New DataView(pmr_tbl)
-                    DV.RowFilter = "engine_no='" & Engine_no.Text & "' and stype='" & "OIL SERVICE" & "'"
+                    If stype1.Text = "OIL SERVICE" Then
+                        DV.RowFilter = "engine_no='" & Engine_no.Text & "' and stype='" & "OIL SERVICE" & "'"
+                    Else
+                        DV.RowFilter = "engine_no='" & Engine_no.Text & "'"
+                    End If
                     If DV.Count = 0 Then
                         Dim lasth As String = chmr1
                         Dim lastsd As Date = chmd1
@@ -588,16 +593,25 @@ Public Class POP
                             Dim bavg As Date = DateAdd(DateInterval.Day, Val(ab), CURSD)
                             Dim bdt As Date = DateAdd(DateInterval.Month, 6, CURSD)
                             If bavg > bdt Then
-                                uname.Text = Format(bdt, "dd-MMMM-yyyy hh:mm:ss tt")
+                                If stype1.Text = "OIL SERVICE" Then uname.Text = Format(bdt, "dd-MMMM-yyyy hh:mm:ss tt")
                             Else
-                                uname.Text = Format(bavg, "dd-MMMM-yyyy hh:mm:ss tt")
+                                If stype1.Text = "OIL SERVICE" Then uname.Text = Format(bavg, "dd-MMMM-yyyy hh:mm:ss tt")
                             End If
                             PMRAHM.Text = avgh
                         End If
                     Else
                         Dim I As Integer = DV.Count - 1
+                        Dim lastsd As Date
+                        If DV(I)("cdati") = cdati.Text Then
+                            If DV.Count > 1 Then
+                                lastsd = DV(I - 1)("cdati") & ""
+                            Else
+                                lastsd = doc
+                            End If
+                        Else
+                            lastsd = DV(I)("cdati") & ""
+                        End If
                         Dim lasth As String = DV(I)("HMR") & ""
-                        Dim lastsd As Date = DV(I)("cdati") & ""
                         Dim csd As Date = cdati.Text
                         If Val(HMR.Text) < Val(lasth) Then
                             ClientScript.RegisterStartupScript(Page.[GetType](), "validation", "<script language='javascript'>alert('Current Hmr is Lower Then The Privious HMR! Please Review')</script>")
@@ -617,9 +631,9 @@ Public Class POP
                             Dim bavg As Date = DateAdd(DateInterval.Day, Val(ab), CURSD)
                             Dim bdt As Date = DateAdd(DateInterval.Month, 6, CURSD)
                             If bavg > bdt Then
-                                uname.Text = Format(bdt, "dd-MMMM-yyyy hh:mm:ss tt")
+                                If stype1.Text = "OIL SERVICE" Then uname.Text = Format(bdt, "dd-MMMM-yyyy hh:mm:ss tt")
                             Else
-                                uname.Text = Format(bavg, "dd-MMMM-yyyy hh:mm:ss tt")
+                                If stype1.Text = "OIL SERVICE" Then uname.Text = Format(bavg, "dd-MMMM-yyyy hh:mm:ss tt")
                             End If
                             PMRAHM.Text = avgh
                         End If

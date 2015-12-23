@@ -70,61 +70,64 @@
     }   
 </style>
 </head>
-<body>
+<body style="background-color: lightcyan">
     <form id="form1" runat="server">
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="main.aspx">Home <span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="POP.aspx">POPULATION</a></li>
-                            <li><a href="pmr.aspx">PM / COMPLAINT</a></li>
-                            <li><a href="Rmtracker.aspx">R & M TRACKER</a></li>
-                            <li><a href ="PLAN.aspx">PM PLAN</a> </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventory<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="PLLIST.ASPX">PRICE LIST</a></li>
-                            <li><a href="STOCK1.aspx">STOCK LIST</a></li>
-                        </ul>
-                    </li> 
-                    <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounting<span class="caret"></span></a>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="main.aspx">Home <span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="bill.ASPX">Sales</a></li>
-                                <li><a href="bill_pur.ASPX">Purchase</a></li>
-                                 <li><a href="slreport.ASPX">Sales Report</a></li>
+                                <li><a href="POP.aspx">POPULATION</a></li>
+                                <li><a href="pmr.aspx">PM / COMPLAINT</a></li>
+                                <li><a href="Rmtracker.aspx">R & M TRACKER</a></li>
+                                <li><a href="PLAN.aspx">PM PLAN</a> </li>
                             </ul>
                         </li>
-                </ul>
-                <div class=" navbar-form navbar-right" role="status">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inventory<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="PLLIST.ASPX">PRICE LIST</a></li>
+                                <li><a href="STOCK1.aspx">STOCK LIST</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounting<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="bill.aspx">SALES</a></li>
+                                <li><a href="bill_pur.aspx">PURCHASE</a></li>
+                                 <li><a href="slreport.aspx">SALES REPORT</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class=" navbar-form navbar-right" role="status">
                         <asp:Label ID="uname1" runat="server" CssClass="label label-success" />
-                        <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass ="label label-warning "/>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="label label-warning " />
                     </div>
+                </div>
             </div>
-        </div>
-    </nav>
-         <asp:ToolkitScriptManager ID="tlsp2" runat="server"></asp:ToolkitScriptManager>
-        <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align:center ; height: 565px; overflow: auto" class ="table table-responsive ">
-            <asp:GridView ID="DG1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="BILLID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" CssClass="table table-hover table-striped" Width="940px" HorizontalAlign="Center" RowStyle-Wrap="false"  HeaderStyle-HorizontalAlign ="Center"  Font-Size ="Smaller" HeaderStyle-Wrap ="false">
+        </nav>
+        <asp:ToolkitScriptManager ID="tlsp2" runat="server"></asp:ToolkitScriptManager>
+        <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align: center; height: 550px; overflow: auto" class="table table-responsive ">
+            <p>
+                SALES REPORT
+            </p>
+            <asp:GridView ID="DG1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="BILLID" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" CssClass="table table-hover table-striped" Width="940px" HorizontalAlign="Center" RowStyle-Wrap="false" HeaderStyle-HorizontalAlign="Center" Font-Size="Smaller" HeaderStyle-Wrap="false">
                 <Columns>
                     <asp:BoundField DataField="BILL_NO" HeaderText="BILL_NO" SortExpression="BILL_NO" />
                     <asp:BoundField DataField="BDATE" HeaderText="BILL DATE" SortExpression="BDATE" DataFormatString="{0:dd-MMM-yyyy}" />
-                    <asp:BoundField DataField="DNAME" HeaderText="CUSTOMER" SortExpression="DNAME" ControlStyle-Width ="50PX"/>
+                    <asp:BoundField DataField="DNAME" HeaderText="CUSTOMER" SortExpression="DNAME" ControlStyle-Width="50PX" />
                     <asp:BoundField DataField="CUST" HeaderText="SITE NAME" SortExpression="CUST" />
                     <asp:BoundField DataField="PART_NO" HeaderText="PART_NO" SortExpression="PART_NO" />
                     <asp:BoundField DataField="PARTI" HeaderText="PRODUCT NAME" SortExpression="PARTI" />
@@ -133,10 +136,10 @@
                     <asp:BoundField DataField="SPRICE" HeaderText="SELL PRICE" SortExpression="SPRICE" />
                     <asp:BoundField DataField="TOTAL" HeaderText="TOTAL" SortExpression="TOTAL" />
                     <asp:BoundField DataField="TAX" HeaderText="TAX %" SortExpression="TAX" />
-                    <asp:BoundField DataField="TVAL" HeaderText="TAX VALUE" SortExpression="TVAL" Visible ="false"  />
+                    <asp:BoundField DataField="TVAL" HeaderText="TAX VALUE" SortExpression="TVAL" Visible="false" />
                     <asp:BoundField DataField="STOT" HeaderText="SELL TOTAL" SortExpression="STOT" />
                     <asp:BoundField DataField="UNIT" HeaderText="UNIT" SortExpression="UNIT" />
-                    <asp:BoundField DataField="BILLID" HeaderText="BILLID" InsertVisible="False" ReadOnly="True" SortExpression="BILLID" Visible ="false"  />
+                    <asp:BoundField DataField="BILLID" HeaderText="BILLID" InsertVisible="False" ReadOnly="True" SortExpression="BILLID" Visible="false" />
                 </Columns>
 
                 <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -150,25 +153,25 @@
                 <SortedDescendingHeaderStyle BackColor="#00547E" />
             </asp:GridView>
         </div>
-         <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align:left  " class ="table table-responsive ">
-             <asp:TextBox ID="DOS" runat="server"></asp:TextBox>
-                            <asp:ImageButton ID="imgPopup" ImageUrl="Design/calendar.png" ImageAlign="Bottom" runat="server" />
-                            <asp:CalendarExtender ID="DOSCLNDR" runat="server" TargetControlID="DOS" PopupButtonID="imgPopup" Format="dd-MMM-yyyy hh:mm:ss tt"></asp:CalendarExtender>
-             <asp:TextBox ID="cdati" runat="server"></asp:TextBox>
-                            <asp:ImageButton ID="ImageButton1" ImageUrl="Design/calendar.png" ImageAlign="Bottom" runat="server" />
-                            <asp:CalendarExtender ID="CDATICLNDR" runat="server" TargetControlID="cdati" PopupButtonID="ImageButton1" Format="dd-MMM-yyyy hh:mm:ss tt"></asp:CalendarExtender>
-             <asp:Button ID="FND" runat ="server" Text ="FIND" CssClass ="btn btn-primary btn-xs " />
-             <asp:Button ID="btnerr" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
-             <asp:Button ID="BILLADD" runat ="server" Text ="UPDATE" />
-         </div>
-         <asp:Panel ID="err" runat="server" CssClass="modalPopup " Style="display: none">
-                  <div class="header">
-                    ERROR
-                </div>
-                 <asp:Label ID="errdisplay" runat ="server" />
-                  <asp:Button ID="btnerrcls" CssClass="btn btn-danger btn-xs" runat="server" Text="Cancel" />
-             </asp:Panel> 
-              <asp:ModalPopupExtender ID="errpopup" runat="server" OkControlID="btnerrcls" PopupControlID="err" TargetControlID="btnerr"></asp:ModalPopupExtender> 
+        <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align: left" class="table table-responsive ">
+            <asp:TextBox ID="DOS" runat="server"></asp:TextBox>
+            <asp:ImageButton ID="imgPopup" ImageUrl="Design/calendar.png" ImageAlign="Bottom" runat="server" />
+            <asp:CalendarExtender ID="DOSCLNDR" runat="server" TargetControlID="DOS" PopupButtonID="imgPopup" Format="dd-MMM-yyyy hh:mm:ss tt"></asp:CalendarExtender>
+            <asp:TextBox ID="cdati" runat="server"></asp:TextBox>
+            <asp:ImageButton ID="ImageButton1" ImageUrl="Design/calendar.png" ImageAlign="Bottom" runat="server" />
+            <asp:CalendarExtender ID="CDATICLNDR" runat="server" TargetControlID="cdati" PopupButtonID="ImageButton1" Format="dd-MMM-yyyy hh:mm:ss tt"></asp:CalendarExtender>
+            <asp:Button ID="FND" runat="server" Text="FIND" CssClass="btn btn-primary btn-xs " />
+            <asp:Button ID="btnerr" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
+            <asp:Button ID="BTNEXPORT" runat="server" Text="EXPORT" CssClass="btn btn-info btn-xs" />
+        </div>
+        <asp:Panel ID="err" runat="server" CssClass="modalPopup " Style="display: none">
+            <div class="header">
+                ERROR
+            </div>
+            <asp:Label ID="errdisplay" runat="server" />
+            <asp:Button ID="btnerrcls" CssClass="btn btn-danger btn-xs" runat="server" Text="Cancel" />
+        </asp:Panel>
+        <asp:ModalPopupExtender ID="errpopup" runat="server" OkControlID="btnerrcls" PopupControlID="err" TargetControlID="btnerr"></asp:ModalPopupExtender>
     </form>
 </body>
 </html>
