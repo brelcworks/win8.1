@@ -26,9 +26,14 @@ Public Class BILL
                         If Not IsDBNull(BILL1_tbl.Rows(i)("cust")) Then txtcname.Items.Add(BILL1_tbl.Rows(i)("cust"))
                         If Not IsDBNull(BILL1_tbl.Rows(i)("SNAME")) Then txtsname.Items.Add(BILL1_tbl.Rows(i)("SNAME"))
                     Next
+                    txtptname.Items.Add("ADD NEW")
                     For i As Integer = 0 To stock_tbl.Rows.Count - 1
                         txtptname.Items.Add(stock_tbl.Rows(i)("PARTI"))
                         txtptno.Items.Add(stock_tbl.Rows(i)("PART_NO"))
+                    Next
+                    For i As Integer = 0 To sheet1_tbl.Rows.Count - 1
+                        STCTXTPTNAME.Items.Add(sheet1_tbl(i)("parti"))
+                        STCTXTPTNO.Items.Add(sheet1_tbl(i)("part_no"))
                     Next
                 End If
                 DV.RowFilter = "bill_no='" & txtbno.Text & "'"
@@ -74,15 +79,19 @@ Public Class BILL
 
     Protected Sub txtptname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtptname.SelectedIndexChanged
         Try
-            Dim dv1 As New DataView(stock_tbl, "", "parti", DataViewRowState.CurrentRows)
-            Dim index As Integer = dv1.Find(txtptname.SelectedValue.ToString)
-            If Not index = -1 Then
-                txtptno.Text = dv1(index)("PART_NO")
-                txtmrp.Text = dv1(index)("MRP")
-                txttrate.Text = dv1(index)("TAX")
-                txtrate.Text = dv1(index)("SPRICE")
-                txtunit.Text = dv1(index)("UNIT")
-                txtinstock.Text = dv1(index)("QTY").ToString
+            If txtptname.SelectedValue.ToString = "ADD NEW" Then
+                STOCKPOP.Show()
+            Else
+                Dim dv1 As New DataView(stock_tbl, "", "parti", DataViewRowState.CurrentRows)
+                Dim index As Integer = dv1.Find(txtptname.SelectedValue.ToString)
+                If Not index = -1 Then
+                    txtptno.Text = dv1(index)("PART_NO")
+                    txtmrp.Text = dv1(index)("MRP")
+                    txttrate.Text = dv1(index)("TAX")
+                    txtrate.Text = dv1(index)("SPRICE")
+                    txtunit.Text = dv1(index)("UNIT")
+                    txtinstock.Text = dv1(index)("QTY").ToString
+                End If
             End If
         Catch ex As Exception
             err_display(ex.ToString)
@@ -884,6 +893,193 @@ Public Class BILL
                 For Each c As Control In pnlAddEdit.Controls
                     If TypeOf c Is ComboBox Then
                         CType(c, ComboBox).SelectedValue = Nothing
+                    End If
+                Next
+            End If
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+    Protected Sub calc(sender As Object, e As EventArgs)
+        Try
+            STCTXTSPRICE.Text = Format(Val(STCTXTMRP.Text) / (Val(STCTXTTAX.Text) + 100) * 100, "0.00")
+            STCTXTPPRICE.Text = Format(Val(STCTXTMRP.Text) / 122 * 100, "0.00")
+            STCTXTTVAL.Text = Format(Val(STCTXTSPRICE.Text) * Val(STCTXTTAX.Text) / 100, "0.00")
+            STOCKPOP.Show()
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+
+    Protected Sub STCTXTPTNAME_SelectedIndexChanged(sender As Object, e As EventArgs) Handles STCTXTPTNAME.SelectedIndexChanged
+        Try
+            Dim DV1 As New DataView(sheet1_tbl)
+            DV1.RowFilter = "parti='" & STCTXTPTNAME.SelectedValue.ToString & "'"
+            If DV1.Count > 0 Then
+                STCTXTPTNO.Text = DV1(0)("part_no")
+                STCTXTMRP.Text = DV1(0)("mrp")
+                STCTXTTAX.Text = DV1(0)("trate")
+                STCTXTUNIT.Text = DV1(0)("UNIT")
+                STCTXTTYPE.Text = DV1(0)("cate")
+                STCTXTGROP.Text = DV1(0)("grop")
+            End If
+            STOCKPOP.Show()
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+
+    Protected Sub btncls_Click(sender As Object, e As EventArgs) Handles btncls.Click
+        For Each c As Control In STOCKPNL.Controls
+            If TypeOf c Is TextBox Then
+                CType(c, TextBox).Text = ""
+            End If
+        Next
+        STOCKPOP.Show()
+    End Sub
+
+    Protected Sub PLLISTSAVE_Click(sender As Object, e As EventArgs) Handles PLLISTSAVE.Click
+        Try
+            Dim DR As DataRow = sheet1_tbl.NewRow
+            DR("PARTI") = PLPTNAMETXT.Text
+            DR("PART_NO") = PLPTNOTXT.Text
+            DR("MRP") = PLMRPTXT.Text
+            DR("UNIT") = PLUNITTXT.Text
+            DR("GROP") = PLGROPTXT.Text
+            DR("CATE") = PLTYPETXT.Text
+            DR("TRATE") = PLTRATETXT.Text
+            DR("DPCODE") = "A1587"
+            DR("RID1") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+            DR("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+            sheet1_tbl.Rows.Add(DR)
+            sheet1_adapter.Update(sheet1_tbl)
+            sheet1_tbl.AcceptChanges()
+            sheet1_tbl.Clear()
+            sheet1_adapter.Fill(sheet1_tbl)
+            STCTXTPTNAME.Items.Clear()
+            STCTXTPTNO.Items.Clear()
+            For i As Integer = 0 To sheet1_tbl.Rows.Count - 1
+                STCTXTPTNAME.Items.Add(sheet1_tbl.Rows(i)("parti"))
+                STCTXTPTNO.Items.Add(sheet1_tbl.Rows(i)("part_no"))
+            Next
+            STCTXTPTNAME.Text = PLPTNAMETXT.Text
+            STCTXTPTNO.Text = PLPTNOTXT.Text
+            STCTXTMRP.Text = PLMRPTXT.Text
+            STCTXTGROP.Text = PLGROPTXT.Text
+            STCTXTTYPE.Text = PLTYPETXT.Text
+            STCTXTTAX.Text = PLTRATETXT.Text
+            STCTXTUNIT.Text = PLUNITTXT.Text
+            STCTXTSPRICE.Text = Format(Val(STCTXTMRP.Text) / (Val(STCTXTTAX.Text) + 100) * 100, "0.00")
+            STCTXTPPRICE.Text = Format(Val(STCTXTMRP.Text) / 122 * 100, "0.00")
+            txttval.Text = Format(Val(STCTXTSPRICE.Text) * Val(STCTXTTAX.Text) / 100, "0.00")
+            For Each c As Control In pnlPLLIST.Controls
+                If TypeOf c Is TextBox Then
+                    CType(c, TextBox).Text = ""
+                End If
+            Next
+            STOCKPOP.Show()
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+
+    Protected Sub STCTXTMRP_TextChanged(sender As Object, e As EventArgs) Handles STCTXTMRP.TextChanged
+        Try
+            STCTXTSPRICE.Text = Format(Val(STCTXTMRP.Text) / (Val(STCTXTTAX.Text) + 100) * 100, "0.00")
+            STCTXTPPRICE.Text = Format(Val(STCTXTMRP.Text) / 122 * 100, "0.00")
+            STCTXTTVAL.Text = Format(Val(STCTXTSPRICE.Text) * Val(STCTXTTAX.Text) / 100, "0.00")
+            STOCKPOP.Show()
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+
+    Protected Sub STCTXTQTY_TextChanged(sender As Object, e As EventArgs) Handles STCTXTQTY.TextChanged
+        STCTXTTOT.Text = Format(Val(STCTXTQTY.Text) * Val(STCTXTMRP.Text), "0.00")
+        STCTXTSTOT.Text = Format(Val(STCTXTSPRICE.Text) * Val(STCTXTQTY.Text), "0.00")
+        STCTXTUSER.Text = Session("user_name").ToString
+        STCTXTDPCODE.Text = "A1587"
+        STOCKPOP.Show()
+    End Sub
+
+    Protected Sub STCBTNSAVE_Click(sender As Object, e As EventArgs) Handles STCBTNSAVE.Click
+        Try
+            If STCTXTRID.Text = "" Then
+                If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+                Dim dr As DataRow = stock_tbl.NewRow
+                dr("parti") = STCTXTPTNAME.Text
+                dr("part_no") = STCTXTPTNO.Text
+                dr("mrp") = STCTXTMRP.Text
+                dr("qty") = STCTXTQTY.Text
+                dr("type") = STCTXTTYPE.Text
+                dr("total") = STCTXTTOT.Text
+                dr("rackno") = STCTXTRCNO.Text
+                dr("tax") = STCTXTTAX.Text
+                dr("tval") = STCTXTTVAL.Text
+                dr("stotal") = STCTXTSTOT.Text
+                dr("pprice") = STCTXTPPRICE.Text
+                dr("sprice") = STCTXTSPRICE.Text
+                dr("unit") = STCTXTUNIT.Text
+                dr("ssta") = "NEW"
+                dr("eor") = STCTXTEOR.Text
+                dr("rid") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+                dr("lmodi") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+                dr("grop") = STCTXTGROP.Text
+                dr("USER1") = STCTXTUSER.Text
+                dr("dpcode") = STCTXTDPCODE.Text
+                stock_tbl.Rows.Add(dr)
+                stock_adapter.Update(stock_tbl)
+                stock_tbl.AcceptChanges()
+                stock_tbl.Clear()
+                stock_adapter.Fill(stock_tbl)
+                txtptname.Items.Clear()
+                txtptno.Items.Clear()
+                For i As Integer = 0 To stock_tbl.Rows.Count - 1
+                    txtptname.Items.Add(stock_tbl.Rows(i)("PARTI"))
+                    txtptno.Items.Add(stock_tbl.Rows(i)("PART_NO"))
+                Next
+                txtptname.Items.Add("ADD NEW")
+                For Each c As Control In STOCKPNL.Controls
+                    If TypeOf c Is TextBox Then
+                        CType(c, TextBox).Text = ""
+                    End If
+                Next
+            Else
+                Dim dv1 As New DataView(stock_tbl)
+                dv1.RowFilter = "RID1='" & STCTXTRID.Text & "'"
+                dv1(0)("parti") = STCTXTPTNAME.Text
+                dv1(0)("part_no") = STCTXTPTNO.Text
+                dv1(0)("mrp") = STCTXTMRP.Text
+                dv1(0)("qty") = STCTXTQTY.Text
+                dv1(0)("type") = STCTXTTYPE.Text
+                dv1(0)("total") = STCTXTTOT.Text
+                dv1(0)("rackno") = STCTXTRCNO.Text
+                dv1(0)("tax") = STCTXTTAX.Text
+                dv1(0)("tval") = STCTXTTVAL.Text
+                dv1(0)("stotal") = STCTXTSTOT.Text
+                dv1(0)("pprice") = STCTXTPPRICE.Text
+                dv1(0)("sprice") = STCTXTSPRICE.Text
+                dv1(0)("unit") = STCTXTUNIT.Text
+                dv1(0)("ssta") = "NEW"
+                dv1(0)("eor") = STCTXTEOR.Text
+                dv1(0)("lmodi") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+                dv1(0)("grop") = STCTXTGROP.Text
+                dv1(0)("USER1") = STCTXTUSER.Text
+                dv1(0)("dpcode") = STCTXTDPCODE.Text
+                stock_adapter.Update(stock_tbl)
+                stock_tbl.AcceptChanges()
+                stock_tbl.Clear()
+                stock_adapter.Fill(stock_tbl)
+                txtptname.Items.Clear()
+                txtptno.Items.Clear()
+                For i As Integer = 0 To stock_tbl.Rows.Count - 1
+                    txtptname.Items.Add(stock_tbl.Rows(i)("PARTI"))
+                    txtptno.Items.Add(stock_tbl.Rows(i)("PART_NO"))
+                Next
+                txtptname.Items.Add("ADD NEW")
+                For Each c As Control In STOCKPNL.Controls
+                    If TypeOf c Is TextBox Then
+                        CType(c, TextBox).Text = ""
                     End If
                 Next
             End If

@@ -122,7 +122,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="bill.aspx">SALES</a></li>
                                 <li><a href="bill_pur.aspx">PURCHASE</a></li>
-                                 <li><a href="slreport.aspx">SALES REPORT</a></li>
+                                <li><a href="slreport.aspx">SALES REPORT</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -139,7 +139,7 @@
                 <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align: left; height: 233px; overflow: auto">
                     <asp:Panel ID="pnlAddEdit" runat="server" CssClass="panel" BorderStyle="Double" BorderColor="#2FBDF1">
                         <div class="header" style="background-color: #2FBDF1; color: white; height: 30PX; line-height: 30PX; text-align: center; font-weight: bold">
-                            Accounting & Inventory Details
+                            Accounting & Inventory Details (Sales)
                         </div>
                         <div class="table table-responsive ">
                             <table>
@@ -167,7 +167,7 @@
                                     </td>
                                     <td style="width: 2%"></td>
                                     <td>
-                                        <asp:TextBox ID="txtqty" runat="server" placeholder="Item Quantity" AutoPostBack="True" Width="100%"/>
+                                        <asp:TextBox ID="txtqty" runat="server" placeholder="Item Quantity" AutoPostBack="True" Width="100%" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -354,7 +354,7 @@
                                 <asp:BoundField DataField="UNIT" HeaderText="UNIT" SortExpression="UNIT" ItemStyle-Width="80px" />
                             </Columns>
                             <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
-                            <HeaderStyle BackColor="YellowGreen" Font-Bold="True" ForeColor="Red"  />
+                            <HeaderStyle BackColor="YellowGreen" Font-Bold="True" ForeColor="Red" />
                             <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
                             <RowStyle ForeColor="#8C4510" BackColor="#FFF7E7" />
                             <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
@@ -496,6 +496,215 @@
                     <asp:Button ID="btnerr" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
                     <asp:ModalPopupExtender ID="edtitmpop" runat="server" OkControlID="edtokbtn" PopupControlID="pnlitmedt" TargetControlID="edtitm"></asp:ModalPopupExtender>
                     <asp:Button ID="edtitm" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
+                  <asp:ModalPopupExtender ID="STOCKPOP" runat="server" OkControlID="btnCancel" PopupControlID="STOCKPNL" TargetControlID="BTNSTCPOP">
+            </asp:ModalPopupExtender>
+                    <asp:Panel ID="STOCKPNL" runat="server" CssClass="table-responsive" Style="display: none; background-color: #FFFFFF; border-color: aqua; border-style: double; text-align: left">
+                        <div class="header" style="background-color: aqua; height: 30px; text-align: center; font-weight: bold; color: red">
+                            Details
+                        </div>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>
+                                    <asp:Label ID="LBLRID" runat="server" Text="RECORD ID" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTRID" runat="server" PLACEHOLDER="RECORD ID" Width="100%" Enabled="false" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="LBLSTOT" runat="server" Text="SELL TOTAL" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTSTOT" runat="server" PLACEHOLDER="SELL TOTAL" Width="100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label11" runat="server" Text="PART NAME" />
+                                </td>
+                                <td>
+                                    <asp:ComboBox ID="STCTXTPTNAME" runat="server" AutoCompleteMode="SuggestAppend" AutoPostBack="true" OnSelectedIndexChanged ="STCTXTPTNAME_SelectedIndexChanged" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="Label12" runat="server" Text="TAX VALUE" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTTVAL" runat="server" PLACEHOLDER="TAX VALUE" Width="100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label13" runat="server" Text="PART NO" />
+                                </td>
+                                <td>
+                                    <asp:ComboBox ID="STCTXTPTNO" runat="server" AutoCompleteMode="SuggestAppend" AutoPostBack="true" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="LBLTYPE" runat="server" Text="ITEM TYPE" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTTYPE" runat="server" PLACEHOLDER="ITEM TYPE" Width="100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label14" runat="server" Text="MRP" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTMRP" runat="server" PLACEHOLDER="TXTMRP" Width="100%" AutoPostBack="true" OnTextChanged ="STCTXTMRP_TextChanged"/>
+                                </td>
+                                <td>
+                                    <asp:Label ID="LBLUNIT" runat="server" Text="UNIT" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTUNIT" runat="server" PLACEHOLDER="UNIT" Width="100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="LBLTAX" runat="server" Text="ITEM TAX RATE" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTTAX" runat="server" PLACEHOLDER="ITEM TAX RATE" Width="100%" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="LBLRCKNO" runat="server" Text="RACK NO" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTRCNO" runat="server" PLACEHOLDER="RACK NO" Width="100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="LBLSPRICE" runat="server" Text="SELL PRICE" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTSPRICE" runat="server" PLACEHOLDER="SELL PRICE" Width="70%" />
+                                    <asp:Button ID="STCBTNCACL" runat="server" Text="Calculate" CssClass="btn btn-info btn-xs" OnClick ="calc" />
+                                </td>
+
+                                <td>
+                                    <asp:Label ID="LBLEOR" runat="server" Text="ITEM E.O.R" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTEOR" runat="server" PLACEHOLDER="ITEM E.O.R" Width="100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="LBLPPRICE" runat="server" Text="PURCHASE PRICE" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTPPRICE" runat="server" PLACEHOLDER="PURCHASE PRICE" Width="100%" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="LBLGROP" runat="server" Text="ITEM GROUP" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTGROP" runat="server" PLACEHOLDER="ITEM GROUP" Width="100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label15" runat="server" Text="QUANTITY" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTQTY" runat="server" PLACEHOLDER="QUANTITY" Width="100%" AutoPostBack="true" OnTextChanged ="STCTXTQTY_TextChanged"/>
+                                </td>
+                                <td>
+                                    <asp:Label ID="LBLDPCODE" runat="server" Text="DEALER CODE" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTDPCODE" runat="server" PLACEHOLDER="DEALER CODE" Width="100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="LBLTOT" runat="server" Text="ITEM TOTAL" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTTOT" runat="server" PLACEHOLDER="ITEM TOTAL" Width="100%" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="LBLUSER" runat="server" Text="USER NAME" />
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="STCTXTUSER" runat="server" PLACEHOLDER="USER NAME" Width="100%" />
+                                </td>
+                            </tr>
+                        </table>
+                        <asp:Button ID="btnCancel" CssClass="btn btn btn-danger btn-xs" runat="server" Text="Cancel" />
+                        <asp:Button ID="btncls" CssClass="btn btn-primary  btn-xs " runat="server" Text="Clear" OnClick ="btncls_Click"/>
+                        <asp:Button ID="STCBTNSAVE" CssClass="btn btn-success btn-xs " runat="server" Text="Save" OnClick ="STCBTNSAVE_Click" />
+                        <asp:Button ID="nitem" runat="server" CssClass="btn btn-info btn-xs" Text="New Item" />
+                    </asp:Panel>
+                     <asp:Panel ID="PNLPLLIST" runat="server" CssClass="table-responsive" Style="display: none; background-color :#FFFFFF;border-color :aqua ;border-style :double ;text-align :left  ">
+                <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold; color:red ">
+                    Details
+                </div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            <asp:Label ID="PLRIDLBL" runat="server" Text="RECORD ID" />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="PLRIDTXT" runat="server" PLACEHOLDER="RECORD NO" Enabled="false" Width="100%" />
+                        </td>
+                        <td>
+                            <asp:Label ID="PLGROPLBL" runat="server" Text="ITEM GROUP" />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="PLGROPTXT" runat="server" PLACEHOLDER="ITEM GROUP" Width="100%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="PLPTNNAMELBL" runat="server" Text="PART NAME" />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="PLPTNAMETXT" runat="server" PLACEHOLDER="PART NAME" Width="100%" />
+                        </td>
+                        <td>
+                            <asp:Label ID="PLTYPELBL" runat="server" Text="ITEM TYPE" />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="PLTYPETXT" runat="server" PLACEHOLDER="ITEM TYPE" Width="100%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="PLPTNOLBL" runat="server" Text="PART NO" />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="PLPTNOTXT" runat="server" PLACEHOLDER="PART NO" Width="100%" />
+                        </td>
+                        <td>
+                            <asp:Label ID="PLTRATELBL" runat="server" Text="ITEM TAX RATE" />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="PLTRATETXT" runat="server" PLACEHOLDER="ITEM TAX RATE" Width="100%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="PLMRPLBL" runat="server" Text="MRP" />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="PLMRPTXT" runat="server" PLACEHOLDER="MRP" Width="100%" />
+                        </td>
+                        <td>
+                            <asp:Label ID="PLUNITLBL" runat="server" Text="UNIT" />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="PLUNITTXT" runat="server" PLACEHOLDER="UNIT" Width="100%" />
+                        </td>
+                    </tr>
+                </table>
+                <asp:Button ID="PLCANCEL" CssClass="btn btn btn-danger btn-xs" runat="server" Text="Cancel" />
+                <asp:Button ID="PLCLS" CssClass="btn btn-primary  btn-xs " runat="server" Text="Clear" />
+                <asp:Button ID="PLLISTSAVE" CssClass="btn btn-success btn-xs " runat="server" Text="Save" OnClick ="PLLISTSAVE_Click"/>
+            </asp:Panel>
+            <asp:ModalPopupExtender ID="PLPOP" runat="server" OkControlID="PLCANCEL" PopupControlID="pnlPLLIST" TargetControlID="nitem">
+            </asp:ModalPopupExtender>
                 </div>
                 <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align: center; padding: 5px; margin: 5px">
                     <asp:Button ID="NEW_BILL" runat="server" CssClass="btn btn-success btn-xs " Text="New Bill" OnClick="NEW_BILL_Click" />
@@ -503,6 +712,7 @@
                     <asp:Button ID="add_item" runat="server" CssClass="btn btn-info  btn-xs " Text="Add Item" OnClick="add_item_Click" />
                     <asp:Button ID="Print" runat="server" CssClass="btn btn-warning  btn-xs " Text="Print" OnClick="Print_Click" />
                     <asp:Button ID="bilcan" runat="server" CssClass="btn btn-primary  btn-xs " Text="Cancel Bill" OnClick="bilcan_Click" />
+                     <asp:Button ID="BTNSTCPOP" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
                 </div>
             </ContentTemplate>
             <Triggers>
@@ -532,12 +742,33 @@
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="Print" EventName="Click" />
             </Triggers>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID ="STCBTNCACL" EventName ="Click" />
+            </Triggers>
+            <Triggers >
+                <asp:AsyncPostBackTrigger ControlID ="STCTXTPTNAME" EventName ="SelectedIndexChanged" />
+            </Triggers>
+            <Triggers >
+                <asp:AsyncPostBackTrigger ControlID ="btncls" EventName ="Click" />
+            </Triggers>
+            <Triggers >
+                <asp:AsyncPostBackTrigger ControlID ="PLLISTSAVE" EventName ="Click" />
+            </Triggers>
+            <Triggers >
+                <asp:AsyncPostBackTrigger ControlID ="STCTXTMRP" EventName ="TextChanged" />
+            </Triggers>
+            <Triggers >
+                <asp:AsyncPostBackTrigger ControlID ="STCTXTQTY" EventName ="TextChanged" />
+            </Triggers>
+            <Triggers >
+                <asp:AsyncPostBackTrigger ControlID ="STCBTNSAVE" EventName ="Click" />
+            </Triggers>
         </asp:UpdatePanel>
         <asp:UpdateProgress ID="UpdateProgress1" runat="server">
             <ProgressTemplate>
-              <p style ="background-color :yellowgreen ; color :red ">
-                  Please Wait! Update in Progress........
-              </p>
+                <p style="background-color: yellowgreen; color: red">
+                    Please Wait! Update in Progress........
+                </p>
             </ProgressTemplate>
         </asp:UpdateProgress>
         <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align: center" class="table-responsive ">

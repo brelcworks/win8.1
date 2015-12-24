@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class BILL_PUR
-
+    
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''uname1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uname1 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''LoginStatus1 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LoginStatus1 As Global.System.Web.UI.WebControls.LoginStatus
-
+    
     '''<summary>
     '''tlsp2 control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tlsp2 As Global.AjaxControlToolkit.ToolkitScriptManager
-
+    
     '''<summary>
     '''upd1 control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents upd1 As Global.System.Web.UI.UpdatePanel
-
+    
     '''<summary>
     '''pnlAddEdit control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlAddEdit As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''lblbdate control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblbdate As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtbdate control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtbdate As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''cash control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cash As Global.System.Web.UI.WebControls.RadioButton
-
+    
     '''<summary>
     '''credit control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents credit As Global.System.Web.UI.WebControls.RadioButton
-
+    
     '''<summary>
     '''lblptname control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblptname As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtptname control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtptname As Global.AjaxControlToolkit.ComboBox
-
+    
     '''<summary>
     '''lblqty control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblqty As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtqty control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtqty As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblbno control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblbno As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtbno control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtbno As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblptno control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblptno As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtptno control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtptno As Global.AjaxControlToolkit.ComboBox
-
+    
     '''<summary>
     '''lbltval control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbltval As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txttval control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txttval As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''BTNITMCALC control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNITMCALC As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btnsave control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnsave As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''lblcname control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblcname As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtcname control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtcname As Global.AjaxControlToolkit.ComboBox
-
+    
     '''<summary>
     '''lblmrp control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblmrp As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtmrp control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtmrp As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblitot control.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblitot As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtitot control.
     '''</summary>
@@ -264,7 +264,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtitot As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lbladdr control.
     '''</summary>
@@ -273,7 +273,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbladdr As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtaddr control.
     '''</summary>
@@ -282,7 +282,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtaddr As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblrate control.
     '''</summary>
@@ -291,7 +291,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblrate As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtrate control.
     '''</summary>
@@ -300,7 +300,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtrate As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblgtot control.
     '''</summary>
@@ -309,7 +309,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblgtot As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtgtot control.
     '''</summary>
@@ -318,7 +318,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtgtot As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblsname control.
     '''</summary>
@@ -327,7 +327,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblsname As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtsname control.
     '''</summary>
@@ -336,7 +336,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtsname As Global.AjaxControlToolkit.ComboBox
-
+    
     '''<summary>
     '''lblinstock control.
     '''</summary>
@@ -345,7 +345,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblinstock As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtinstock control.
     '''</summary>
@@ -354,7 +354,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtinstock As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lvlntval control.
     '''</summary>
@@ -363,7 +363,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lvlntval As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtntval control.
     '''</summary>
@@ -372,7 +372,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtntval As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblbal control.
     '''</summary>
@@ -381,7 +381,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblbal As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtbal control.
     '''</summary>
@@ -390,7 +390,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtbal As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lbltrate control.
     '''</summary>
@@ -399,7 +399,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbltrate As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txttrate control.
     '''</summary>
@@ -408,7 +408,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txttrate As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblround control.
     '''</summary>
@@ -417,7 +417,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblround As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtround control.
     '''</summary>
@@ -426,7 +426,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtround As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblvno control.
     '''</summary>
@@ -435,7 +435,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblvno As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtvno control.
     '''</summary>
@@ -444,7 +444,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtvno As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lbtunit control.
     '''</summary>
@@ -453,7 +453,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbtunit As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtunit control.
     '''</summary>
@@ -462,7 +462,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtunit As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblntot control.
     '''</summary>
@@ -471,7 +471,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblntot As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtntot control.
     '''</summary>
@@ -480,7 +480,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtntot As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''bid control.
     '''</summary>
@@ -489,7 +489,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents bid As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''pnldg control.
     '''</summary>
@@ -498,7 +498,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnldg As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''dg1 control.
     '''</summary>
@@ -507,7 +507,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents dg1 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''Panel1 control.
     '''</summary>
@@ -516,7 +516,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''DG2 control.
     '''</summary>
@@ -525,7 +525,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DG2 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''err control.
     '''</summary>
@@ -534,7 +534,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents err As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''errdisplay control.
     '''</summary>
@@ -543,7 +543,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents errdisplay As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''btnerrcls control.
     '''</summary>
@@ -552,7 +552,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnerrcls As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''pnlitmedt control.
     '''</summary>
@@ -561,7 +561,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlitmedt As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''lblrec control.
     '''</summary>
@@ -570,7 +570,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblrec As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtrec control.
     '''</summary>
@@ -579,7 +579,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtrec As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label1 control.
     '''</summary>
@@ -588,7 +588,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtptnameedt control.
     '''</summary>
@@ -597,7 +597,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtptnameedt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label2 control.
     '''</summary>
@@ -606,7 +606,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtptnoedt control.
     '''</summary>
@@ -615,7 +615,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtptnoedt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label3 control.
     '''</summary>
@@ -624,7 +624,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtmrpedt control.
     '''</summary>
@@ -633,7 +633,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtmrpedt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label4 control.
     '''</summary>
@@ -642,7 +642,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtqtyedt control.
     '''</summary>
@@ -651,7 +651,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtqtyedt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label7 control.
     '''</summary>
@@ -660,7 +660,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txttaxedt control.
     '''</summary>
@@ -669,7 +669,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txttaxedt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label5 control.
     '''</summary>
@@ -678,7 +678,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtrateedt control.
     '''</summary>
@@ -687,7 +687,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtrateedt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''calcedt control.
     '''</summary>
@@ -696,7 +696,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents calcedt As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Label8 control.
     '''</summary>
@@ -705,7 +705,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txttvaledt control.
     '''</summary>
@@ -714,7 +714,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txttvaledt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label10 control.
     '''</summary>
@@ -723,7 +723,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtstotedt control.
     '''</summary>
@@ -732,7 +732,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtstotedt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label6 control.
     '''</summary>
@@ -741,7 +741,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txttotedt control.
     '''</summary>
@@ -750,7 +750,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txttotedt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Label9 control.
     '''</summary>
@@ -759,7 +759,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtunitedt control.
     '''</summary>
@@ -768,7 +768,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtunitedt As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''hgtot control.
     '''</summary>
@@ -777,7 +777,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hgtot As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''hqty control.
     '''</summary>
@@ -786,7 +786,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hqty As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''edtokbtn control.
     '''</summary>
@@ -795,7 +795,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents edtokbtn As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''edtupdbtn control.
     '''</summary>
@@ -804,7 +804,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents edtupdbtn As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''edtdelbtn control.
     '''</summary>
@@ -813,7 +813,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents edtdelbtn As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''errpopup control.
     '''</summary>
@@ -822,7 +822,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents errpopup As Global.AjaxControlToolkit.ModalPopupExtender
-
+    
     '''<summary>
     '''btnerr control.
     '''</summary>
@@ -831,7 +831,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnerr As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''edtitmpop control.
     '''</summary>
@@ -840,7 +840,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents edtitmpop As Global.AjaxControlToolkit.ModalPopupExtender
-
+    
     '''<summary>
     '''edtitm control.
     '''</summary>
@@ -849,7 +849,583 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents edtitm As Global.System.Web.UI.WebControls.Button
-
+    
+    '''<summary>
+    '''STOCKPOP control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STOCKPOP As Global.AjaxControlToolkit.ModalPopupExtender
+    
+    '''<summary>
+    '''STOCKPNL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STOCKPNL As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''LBLRID control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLRID As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTRID control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTRID As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLSTOT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLSTOT As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTSTOT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTSTOT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Label11 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTPTNAME control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTPTNAME As Global.AjaxControlToolkit.ComboBox
+    
+    '''<summary>
+    '''Label12 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTTVAL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTTVAL As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Label13 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTPTNO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTPTNO As Global.AjaxControlToolkit.ComboBox
+    
+    '''<summary>
+    '''LBLTYPE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLTYPE As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTTYPE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTTYPE As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Label14 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTMRP control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTMRP As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLUNIT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLUNIT As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTUNIT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTUNIT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLTAX control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLTAX As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTTAX control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTTAX As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLRCKNO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLRCKNO As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTRCNO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTRCNO As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLSPRICE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLSPRICE As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTSPRICE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTSPRICE As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''STCBTNCACL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCBTNCACL As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''LBLEOR control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLEOR As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTEOR control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTEOR As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLPPRICE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLPPRICE As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTPPRICE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTPPRICE As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLGROP control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLGROP As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTGROP control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTGROP As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Label15 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label15 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTQTY control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTQTY As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLDPCODE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLDPCODE As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTDPCODE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTDPCODE As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLTOT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLTOT As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTTOT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTTOT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''LBLUSER control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LBLUSER As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''STCTXTUSER control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCTXTUSER As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btnCancel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancel As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btncls control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btncls As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''STCBTNSAVE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents STCBTNSAVE As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''nitem control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents nitem As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''PNLPLLIST control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PNLPLLIST As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''PLRIDLBL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLRIDLBL As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PLRIDTXT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLRIDTXT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''PLGROPLBL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLGROPLBL As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PLGROPTXT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLGROPTXT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''PLPTNNAMELBL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLPTNNAMELBL As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PLPTNAMETXT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLPTNAMETXT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''PLTYPELBL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLTYPELBL As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PLTYPETXT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLTYPETXT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''PLPTNOLBL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLPTNOLBL As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PLPTNOTXT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLPTNOTXT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''PLTRATELBL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLTRATELBL As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PLTRATETXT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLTRATETXT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''PLMRPLBL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLMRPLBL As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PLMRPTXT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLMRPTXT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''PLUNITLBL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLUNITLBL As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''PLUNITTXT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLUNITTXT As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''PLCANCEL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLCANCEL As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''PLCLS control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLCLS As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''PLLISTSAVE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLLISTSAVE As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''PLPOP control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PLPOP As Global.AjaxControlToolkit.ModalPopupExtender
+    
     '''<summary>
     '''NEW_BILL control.
     '''</summary>
@@ -858,7 +1434,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents NEW_BILL As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Del_bill control.
     '''</summary>
@@ -867,7 +1443,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Del_bill As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''add_item control.
     '''</summary>
@@ -876,7 +1452,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents add_item As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Print control.
     '''</summary>
@@ -885,7 +1461,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Print As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''bilcan control.
     '''</summary>
@@ -894,7 +1470,16 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents bilcan As Global.System.Web.UI.WebControls.Button
-
+    
+    '''<summary>
+    '''BTNSTCPOP control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNSTCPOP As Global.System.Web.UI.WebControls.Button
+    
     '''<summary>
     '''UpdateProgress1 control.
     '''</summary>
@@ -903,7 +1488,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UpdateProgress1 As Global.System.Web.UI.UpdateProgress
-
+    
     '''<summary>
     '''pnlprint control.
     '''</summary>
@@ -912,7 +1497,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlprint As Global.System.Web.UI.WebControls.Panel
-
+    
     '''<summary>
     '''lblprint control.
     '''</summary>
@@ -921,7 +1506,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblprint As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''challan control.
     '''</summary>
@@ -930,7 +1515,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents challan As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''bill control.
     '''</summary>
@@ -939,7 +1524,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents bill As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btnprintcnl control.
     '''</summary>
@@ -948,7 +1533,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnprintcnl As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Button1 control.
     '''</summary>
@@ -957,7 +1542,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''popchallan control.
     '''</summary>
@@ -966,7 +1551,7 @@ Partial Public Class BILL_PUR
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents popchallan As Global.AjaxControlToolkit.ModalPopupExtender
-
+    
     '''<summary>
     '''challan1 control.
     '''</summary>

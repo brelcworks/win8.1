@@ -602,16 +602,19 @@ Public Class POP
                     Else
                         Dim I As Integer = DV.Count - 1
                         Dim lastsd As Date
+                        Dim lasth As String
                         If DV(I)("cdati") = cdati.Text Then
                             If DV.Count > 1 Then
                                 lastsd = DV(I - 1)("cdati") & ""
+                                lasth = DV(I - 1)("HMR") & ""
                             Else
                                 lastsd = doc
+                                lasth = "2"
                             End If
                         Else
                             lastsd = DV(I)("cdati") & ""
+                            lasth = DV(I)("HMR") & ""
                         End If
-                        Dim lasth As String = DV(I)("HMR") & ""
                         Dim csd As Date = cdati.Text
                         If Val(HMR.Text) < Val(lasth) Then
                             ClientScript.RegisterStartupScript(Page.[GetType](), "validation", "<script language='javascript'>alert('Current Hmr is Lower Then The Privious HMR! Please Review')</script>")

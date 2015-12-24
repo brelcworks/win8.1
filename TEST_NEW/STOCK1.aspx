@@ -309,6 +309,7 @@
                 <asp:Button ID="btnCancel" CssClass="btn btn btn-danger btn-xs" runat="server" Text="Cancel" />
                 <asp:Button ID="btncls" CssClass="btn btn-primary  btn-xs " runat="server" Text="Clear" />
                 <asp:Button ID="btnSave" CssClass="btn btn-success btn-xs " runat="server" Text="Save" />
+                <asp:Button ID="BTNDEL" CssClass ="btn btn-warning btn-xs " runat ="server" Text ="Delete" />
                 <asp:Button ID="nitem" runat="server" CssClass="btn btn-info btn-xs" Text="New Item" />
             </asp:Panel>
             <asp:ModalPopupExtender ID="popup" runat="server" OkControlID="btnCancel" PopupControlID="pnlAddEdit" TargetControlID="btnAdd">

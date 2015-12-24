@@ -188,7 +188,7 @@ Public Class STOCK1
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             If TXTRID.Text = "" Then
-                If OLEDBCON.State <> ConnectionState.Open Then OLEDBCON.Open()
+                If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
                 Dim dr As DataRow = stock_tbl.NewRow
                 dr("parti") = TXTPTNAME.Text
                 dr("part_no") = TXTPTNO.Text
@@ -324,6 +324,32 @@ Public Class STOCK1
             Response.AppendHeader("content-disposition", "attachment; filename=db1.sdf")
             Response.WriteFile(x)
             Response.End()
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub BTNDEL_Click(sender As Object, e As EventArgs) Handles BTNDEL.Click
+        Try
+            If TXTRID.Text <> "" Then
+                For i As Integer = 0 To stock_tbl.Rows.Count - 1
+                    If stock_tbl(i)("RID1") = TXTRID.Text Then
+                        stock_tbl(i).Delete()
+                        stock_adapter.Update(stock_tbl)
+                        stock_tbl.AcceptChanges()
+                        stock_tbl.Clear()
+                        stock_adapter.Fill(stock_tbl)
+                        DG1.DataSource = stock_tbl
+                        DG1.DataBind()
+                        For Each c As Control In pnlAddEdit.Controls
+                            If TypeOf c Is TextBox Then
+                                CType(c, TextBox).Text = ""
+                            End If
+                        Next
+                        Exit Sub
+                    End If
+                Next
+            End If
         Catch ex As Exception
             err_display(ex.ToString)
         End Try

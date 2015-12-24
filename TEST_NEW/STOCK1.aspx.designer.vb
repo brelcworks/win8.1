@@ -473,6 +473,15 @@ Partial Public Class STOCK1
     Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''BTNDEL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTNDEL As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''nitem control.
     '''</summary>
     '''<remarks>
