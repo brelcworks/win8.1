@@ -1,0 +1,1 @@
+﻿<sessionState  mode="SQLServer" allowCustomSqlDatabase ="true" sqlConnectionString ="Data Source=(localdb)\MSSQLLocalDB;Integrated Security=SSPI;Initial Catalog=SQLSTATE;" cookieless="false" timeout ="120"/>

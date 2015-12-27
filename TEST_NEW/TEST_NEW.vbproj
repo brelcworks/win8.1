@@ -56,8 +56,20 @@
       <Private>True</Private>
       <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="LiteDB, Version=1.0.4.0, Culture=neutral, PublicKeyToken=5c2fff750805920e, processorArchitecture=MSIL">
       <HintPath>..\packages\LiteDB.1.0.4\lib\net40\LiteDB.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.8\lib\net40\MySql.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -74,6 +86,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -127,6 +143,8 @@
     <Content Include="Design\PANEL.jpg" />
     <Content Include="Design\TRANSFORMER.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FLLIST.aspx" />
+    <Content Include="JUNK\SQLSTATE.txt" />
     <Content Include="Login.aspx" />
     <Content Include="MAIN.aspx" />
     <Content Include="NEW_MAIN.aspx" />
@@ -195,6 +213,13 @@
     <Compile Include="Default.aspx.vb">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="FLLIST.aspx.designer.vb">
+      <DependentUpon>FLLIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FLLIST.aspx.vb">
+      <DependentUpon>FLLIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.vb">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -323,7 +348,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DATA\" />
-    <Folder Include="JUNK\" />
     <Folder Include="obj\" />
   </ItemGroup>
   <PropertyGroup>

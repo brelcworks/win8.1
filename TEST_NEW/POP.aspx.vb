@@ -6,9 +6,11 @@ Public Class POP
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If Not Me.Page.User.Identity.IsAuthenticated Then
+                err_display("APPLICATION SESSION EXPIRED! PLEASE RE-LOGIN")
                 FormsAuthentication.RedirectToLoginPage()
             Else
                 If Session("user_name") = "" Then
+                    err_display("USER SESSION EXPIRED! PLEASE RE-LOGIN")
                     FormsAuthentication.RedirectToLoginPage()
                     Exit Sub
                 End If

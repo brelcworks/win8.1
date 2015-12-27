@@ -830,10 +830,10 @@ Public Class BILL
                 Dim lq1 As String = String.Empty
                 For i As Integer = 0 To dg1.Rows.Count - 1
                     Dim dv1 As New DataView(stock_tbl, "", "part_no", DataViewRowState.CurrentRows)
-                    Dim index1 As Integer = dv1.Find(dg1.Rows(i).Cells(0).Text)
+                    Dim index1 As Integer = dv1.Find(dg1.Rows(i).Cells(1).Text)
                     If Not index1 = -1 Then
                         Dim lq As String = dv1(index1)("qty").ToString
-                        dv1(index1)("qty") = Val(lq) + Val(dg1.Rows(i).Cells(2).Text)
+                        dv1(index1)("qty") = Val(lq) + Val(dg1.Rows(i).Cells(3).Text)
                         lq1 = dv1(index1)("qty").ToString
                         dv1(index1)("total") = Val(lq1) * Val(dv1(index1)(3).ToString)
                         dv1(index1)("stotal") = Val(lq1) * Val(dv1(index1)(4).ToString)
@@ -971,7 +971,7 @@ Public Class BILL
             STCTXTUNIT.Text = PLUNITTXT.Text
             STCTXTSPRICE.Text = Format(Val(STCTXTMRP.Text) / (Val(STCTXTTAX.Text) + 100) * 100, "0.00")
             STCTXTPPRICE.Text = Format(Val(STCTXTMRP.Text) / 122 * 100, "0.00")
-            txttval.Text = Format(Val(STCTXTSPRICE.Text) * Val(STCTXTTAX.Text) / 100, "0.00")
+            STCTXTTVAL.Text = Format(Val(STCTXTSPRICE.Text) * Val(STCTXTTAX.Text) / 100, "0.00")
             For Each c As Control In pnlPLLIST.Controls
                 If TypeOf c Is TextBox Then
                     CType(c, TextBox).Text = ""
@@ -1028,10 +1028,6 @@ Public Class BILL
                 dr("USER1") = STCTXTUSER.Text
                 dr("dpcode") = STCTXTDPCODE.Text
                 stock_tbl.Rows.Add(dr)
-                stock_adapter.Update(stock_tbl)
-                stock_tbl.AcceptChanges()
-                stock_tbl.Clear()
-                stock_adapter.Fill(stock_tbl)
                 txtptname.Items.Clear()
                 txtptno.Items.Clear()
                 For i As Integer = 0 To stock_tbl.Rows.Count - 1
@@ -1066,10 +1062,6 @@ Public Class BILL
                 dv1(0)("grop") = STCTXTGROP.Text
                 dv1(0)("USER1") = STCTXTUSER.Text
                 dv1(0)("dpcode") = STCTXTDPCODE.Text
-                stock_adapter.Update(stock_tbl)
-                stock_tbl.AcceptChanges()
-                stock_tbl.Clear()
-                stock_adapter.Fill(stock_tbl)
                 txtptname.Items.Clear()
                 txtptno.Items.Clear()
                 For i As Integer = 0 To stock_tbl.Rows.Count - 1

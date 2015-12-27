@@ -56,6 +56,12 @@
                                  <li><a href="slreport.aspx">SALES REPORT</a></li>
                             </ul>
                         </li>
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="fllist.aspx">FILE MANAGEMENT</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class=" navbar-form navbar-right" role="status">
                         <asp:Label ID="uname1" runat="server" CssClass="label label-success" />

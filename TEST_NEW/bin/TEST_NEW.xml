@@ -3138,6 +3138,123 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:TEST_NEW.FLLIST._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._tlsp2">
+<summary>
+tlsp2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._uname1">
+<summary>
+uname1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._LoginStatus1">
+<summary>
+LoginStatus1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._PNLSHOW">
+<summary>
+PNLSHOW control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._DG1">
+<summary>
+DG1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._err">
+<summary>
+err control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._errdisplay">
+<summary>
+errdisplay control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._btnerrcls">
+<summary>
+btnerrcls control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._errpopup">
+<summary>
+errpopup control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._btnupd">
+<summary>
+btnupd control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._btnerr">
+<summary>
+btnerr control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:TEST_NEW.FLLIST._TST">
+<summary>
+TST control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:TEST_NEW.Login._form1">
 <summary>
 form1 control.
