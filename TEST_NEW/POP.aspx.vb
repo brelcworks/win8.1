@@ -843,7 +843,7 @@ Public Class POP
     End Sub
 
     Private Sub ExporttoExcel()
-        Dim con As New SqlCEConnection(ConfigurationManager.ConnectionStrings("APPHARBOR").ConnectionString)
+        Dim con As New SqlCeConnection(ConfigurationManager.ConnectionStrings("SQLCE").ConnectionString)
         con.Open()
         Dim DA As New SqlCeDataAdapter("SELECT cname as CUSTOMER, sname as SITE_NAME, SID AS SITE_ID, ENS AS ENGINE_NO, RAT_PH AS RATING, PHASE, MODEL, DIST AS DISTRICT, STATE, CPN AS CONTACT_PERSON, PHNO AS PHONE_NO, addr as ADDRESS, AMAKE AS ALT_MAKE, ALSN AS ALT_SR_NO, BSN AS BATTERY_SR_NO, DGNO AS DG_SET_NO, CHMR AS CURRENT_HMR, LHMR AS LAST_PM_HMR, LSD AS LAST_PM_DATE, NSD AS NEXT_PM_DATE, AHM AS AVG_HMR, HMAGE AS HMR_AGEING  FROM MAINPOPU", con)
         Dim dt As New DataTable

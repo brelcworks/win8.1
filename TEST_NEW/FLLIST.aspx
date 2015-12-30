@@ -144,7 +144,6 @@
         <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align: left; border-style :double ;border-color :red ">
             <asp:Button ID="btnupd" runat ="server" Text ="UPLOAD FILES" CssClass ="btn btn-primary btn-xs " OnClick ="UploadFile"  />
              <asp:Button ID="btnerr" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
-            <asp:Button ID="TST" runat ="server" Text ="TEST" />
         </div>
     </form>
 </body>

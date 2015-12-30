@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FLLIST
-    
+
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-    
+
     '''<summary>
     '''tlsp2 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents tlsp2 As Global.AjaxControlToolkit.ToolkitScriptManager
-    
+
     '''<summary>
     '''uname1 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents uname1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LoginStatus1 control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LoginStatus1 As Global.System.Web.UI.WebControls.LoginStatus
-    
+
     '''<summary>
     '''PNLSHOW control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents PNLSHOW As Global.System.Web.UI.WebControls.Panel
-    
+
     '''<summary>
     '''DG1 control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DG1 As Global.System.Web.UI.WebControls.GridView
-    
+
     '''<summary>
     '''err control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents err As Global.System.Web.UI.WebControls.Panel
-    
+
     '''<summary>
     '''errdisplay control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents errdisplay As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''btnerrcls control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnerrcls As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''errpopup control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents errpopup As Global.AjaxControlToolkit.ModalPopupExtender
-    
+
     '''<summary>
     '''btnupd control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnupd As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btnerr control.
     '''</summary>
@@ -120,13 +120,4 @@ Partial Public Class FLLIST
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnerr As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''TST control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TST As Global.System.Web.UI.WebControls.Button
 End Class

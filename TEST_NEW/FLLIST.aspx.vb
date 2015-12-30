@@ -52,6 +52,7 @@ Public Class FLLIST
 
     Protected Sub DG1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DG1.SelectedIndexChanged
         Try
+            If SQLCE.State = ConnectionState.Open Then SQLCE.Close()
             Response.Clear()
             Dim filePath As String = DG1.SelectedRow.Cells(1).Text
             Response.ContentType = ContentType
@@ -59,6 +60,7 @@ Public Class FLLIST
             Response.WriteFile(filePath)
             Response.Flush()
             HttpContext.Current.ApplicationInstance.CompleteRequest()
+            If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
         Catch ex As Exception
             err_display(ex.Message)
         End Try
@@ -154,30 +156,5 @@ Public Class FLLIST
     Protected Sub err_display(ByVal msg As String)
         errdisplay.Text = msg
         errpopup.Show()
-    End Sub
-
-    Private Sub TST_Click(sender As Object, e As EventArgs) Handles TST.Click
-        Try
-            Dim conn As SqlConnection = Nothing
-            Dim v As Object = Nothing
-            conn = New SqlConnection("Data Source=(localdb)\MSSQLLocalDB;Integrated Security=SSPI;")
-            Dim c As String = "SELECT COUNT (*) FROM sys.sysdatabases where name='" & "ASPDB" & "'"
-            conn.Open()
-            Dim cmd As SqlCommand = New SqlCommand(c, conn)
-            v = cmd.ExecuteScalar()
-            If v = Nothing Then
-                Dim obj As SqlCommand
-                Dim strSQL As String
-                obj = conn.CreateCommand()
-                strSQL = "CREATE DATABASE ASPDB ON PRIMARY" + "(Name=ASPDB, filename = '" & Server.MapPath("~/APP_DATA/ASPDB.mdf") & "', size=3, maxsize=5, filegrowth=10%)log on (name=mydbb_log, filename='" & Server.MapPath("~/APP_DATA/ASPDB_log.ldf") & "',size=3, maxsize=20,filegrowth=1)"
-                obj.CommandText = strSQL
-                obj.ExecuteNonQuery()
-                conn.Close()
-                obj.Dispose()
-                err_display("OK")
-            End If
-        Catch ex As Exception
-            err_display(ex.ToString)
-        End Try
     End Sub
 End Class
