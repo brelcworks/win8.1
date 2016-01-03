@@ -70,18 +70,22 @@
             }
  .left
     {
+     margin-left :2px;
         float:left;
         width:600px;
-        margin:0;
         padding:1em;
         border:2px double red;
+        height :305px;
+        overflow :auto ;
     }
     .right
     {
-        width:728px;
-        margin-left:602px;
+        width:748px;
+        margin-left:604px;
         padding:1em;
         border:2px double red;
+         height :305px;
+        overflow :auto ;
     }
     </style>
 </head>
@@ -331,8 +335,8 @@
                     </asp:Panel>
                 </div>
 
-                <div style="width: 99%; margin-right: 1%; margin-left: 1%; text-align: left; height: 305px; overflow: auto; padding: 5px; margin: 5px">
-                    <asp:Panel ID="pnldg" runat="server" CssClass="left">
+                <div class ="left">
+                    <asp:Panel ID="pnldg" runat="server" CssClass="table-responsive">
                         <div class="header" style="background-color: #2FBDF1; color: white; height: 30PX; line-height: 30PX; text-align: center; font-weight: bold">
                             Invoice Summery
                         </div>
@@ -364,7 +368,9 @@
                             <SortedDescendingHeaderStyle BackColor="#93451F" />
                         </asp:GridView>
                     </asp:Panel>
-                    <asp:Panel ID="Panel1" runat="server" CssClass="right">
+                    </div>
+                <div class ="right">
+                    <asp:Panel ID="Panel1" runat="server" CssClass="table-responsive">
                         <div class="header" style="background-color: #2FBDF1; color: white; height: 30PX; line-height: 30PX; text-align: center; font-weight: bold">
                             Invoice Details
                         </div>
