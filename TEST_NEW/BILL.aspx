@@ -73,6 +73,7 @@
      margin-left :2px;
         float:left;
         width:600px;
+        margin-top :0px;
         padding:1em;
         border:2px double red;
         height :305px;
@@ -80,11 +81,12 @@
     }
     .right
     {
-        width:748px;
+        width:740px;
         margin-left:604px;
+        margin-top :0px;
         padding:1em;
         border:2px double red;
-         height :305px;
+        height :305px;
         overflow :auto ;
     }
     </style>
