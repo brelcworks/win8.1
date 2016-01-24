@@ -25,8 +25,8 @@ Public Class BILL
                 If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
                 If Not Me.IsPostBack Then
                     For i As Integer = 0 To sheet1_tbl.Rows.Count - 1
-                        STCTXTPTNAME.Items.Add(sheet1_tbl(i)("parti"))
-                        STCTXTPTNO.Items.Add(sheet1_tbl(i)("part_no"))
+                        If Not IsDBNull(sheet1_tbl(i)("parti")) Then STCTXTPTNAME.Items.Add(sheet1_tbl(i)("parti"))
+                        If Not IsDBNull(sheet1_tbl(i)("part_no")) Then STCTXTPTNO.Items.Add(sheet1_tbl(i)("part_no"))
                     Next
                 End If
                 DV.RowFilter = "bill_no='" & txtbno.Text & "'"
