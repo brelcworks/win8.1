@@ -5,6 +5,8 @@ Imports System.Web.Security
 Imports System.Data.SqlServerCe
 Imports ClosedXML.Excel
 Imports System.IO
+Imports System.Web.Services
+Imports System.Web.Script.Services
 
 Public Class BILL
     Inherits System.Web.UI.Page
@@ -22,15 +24,6 @@ Public Class BILL
                 uname1.Text = Session("user_name").ToString
                 If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
                 If Not Me.IsPostBack Then
-                    For i As Integer = 0 To BILL1_tbl.Rows.Count - 1
-                        If Not IsDBNull(BILL1_tbl.Rows(i)("cust")) Then txtcname.Items.Add(BILL1_tbl.Rows(i)("cust"))
-                        If Not IsDBNull(BILL1_tbl.Rows(i)("SNAME")) Then txtsname.Items.Add(BILL1_tbl.Rows(i)("SNAME"))
-                    Next
-                    txtptname.Items.Add("ADD NEW")
-                    For i As Integer = 0 To stock_tbl.Rows.Count - 1
-                        txtptname.Items.Add(stock_tbl.Rows(i)("PARTI"))
-                        txtptno.Items.Add(stock_tbl.Rows(i)("PART_NO"))
-                    Next
                     For i As Integer = 0 To sheet1_tbl.Rows.Count - 1
                         STCTXTPTNAME.Items.Add(sheet1_tbl(i)("parti"))
                         STCTXTPTNO.Items.Add(sheet1_tbl(i)("part_no"))
@@ -47,64 +40,8 @@ Public Class BILL
         End Try
     End Sub
 
-    Protected Sub txtcname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtcname.SelectedIndexChanged
-        Try
-            If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
-            Dim DV1 As New DataView(BILL1_tbl)
-            DV1.RowFilter = "cust='" & txtcname.SelectedValue.ToString & "'"
-
-            If DV1.Count > 0 Then
-                txtaddr.Text = DV1(0)("ADDRESS")
-                txtvno.Text = DV1(0)("VNO")
-                txtsname.Items.Clear()
-                For I As Integer = 0 To DV1.Count - 1
-                    If Not IsDBNull(DV1(I)("SNAME")) Then txtsname.Items.Add(DV1(I)("SNAME"))
-                Next
-                Dim X As New SqlCeCommand("SELECT SUM(NTOT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", SQLCE)
-                Dim X1 As String = X.ExecuteScalar & ""
-                Dim Y As New SqlCeCommand("SELECT SUM(PAYMENT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", SQLCE)
-                Dim Y1 As String = Y.ExecuteScalar & ""
-                txtbal.Text = Val(X1) - Val(Y1)
-            End If
-        Catch ex As Exception
-            err_display(ex.ToString)
-        End Try
-    End Sub
-
     Private Sub txtcname_TextChanged(sender As Object, e As EventArgs) Handles txtcname.TextChanged
 
-    End Sub
-
-    
-
-    Protected Sub txtptname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtptname.SelectedIndexChanged
-        Try
-            If txtptname.SelectedValue.ToString = "ADD NEW" Then
-                STOCKPOP.Show()
-            Else
-                Dim dv1 As New DataView(stock_tbl, "", "parti", DataViewRowState.CurrentRows)
-                Dim index As Integer = dv1.Find(txtptname.SelectedValue.ToString)
-                If Not index = -1 Then
-                    txtptno.Text = dv1(index)("PART_NO")
-                    txtmrp.Text = dv1(index)("MRP")
-                    txttrate.Text = dv1(index)("TAX")
-                    txtrate.Text = dv1(index)("SPRICE")
-                    txtunit.Text = dv1(index)("UNIT")
-                    txtinstock.Text = dv1(index)("QTY").ToString
-                End If
-            End If
-        Catch ex As Exception
-            err_display(ex.ToString)
-        End Try
-    End Sub
-
-    Protected Sub BTNITMCALC_Click(sender As Object, e As EventArgs) Handles BTNITMCALC.Click
-        Try
-            txttval.Text = Val(txtqty.Text) * Val(txtrate.Text) * Val(txttrate.Text) / 100
-            txtitot.Text = Val(txtqty.Text) * Val(txtrate.Text)
-        Catch ex As Exception
-            err_display(ex.ToString)
-        End Try
     End Sub
 
     Protected Sub add_item_Click(sender As Object, e As EventArgs) Handles add_item.Click
@@ -149,7 +86,7 @@ Public Class BILL
                 DV1(index)("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
             End If
 
-            dv.RowFilter = "bill_no='" & txtbno.Text & "'"
+            DV.RowFilter = "bill_no='" & txtbno.Text & "'"
             dg1.DataBind()
             txtgtot.Text = Val(txtgtot.Text) + Val(txtitot.Text)
             txtntval.Text = Val(txttval.Text) + Val(txtntval.Text)
@@ -163,8 +100,8 @@ Public Class BILL
             txtunit.Text = ""
             txttval.Text = ""
             txtitot.Text = ""
-            txtptname.SelectedValue = Nothing
-            txtptno.SelectedValue = Nothing
+            txtptname.Text = ""
+            txtptno.Text = ""
         Catch ex As Exception
             err_display(ex.ToString)
         End Try
@@ -206,8 +143,8 @@ Public Class BILL
                 txtntval.Text = "0.00"
                 txtround.Text = "0.00"
                 txtntot.Text = "0.00"
-                txtcname.SelectedValue = Nothing
-                txtsname.SelectedValue = Nothing
+                txtcname.Text = ""
+                txtsname.Text = ""
             Else
                 If bid.Text = "" Then
                     Dim DR As DataRow = BILL1_tbl.NewRow
@@ -343,7 +280,7 @@ Public Class BILL
     End Sub
 
     Private Sub challan1_Click(sender As Object, e As EventArgs) Handles challan1.Click
-        
+
     End Sub
     Protected Sub Edit_itm(sender As Object, e As EventArgs)
         Try
@@ -370,72 +307,6 @@ Public Class BILL
             err_display(ex.ToString)
         End Try
     End Sub
-
-    Protected Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
-        Try
-            txttval.Text = Val(txtqty.Text) * Val(txtrate.Text) * Val(txttrate.Text) / 100
-            txtitot.Text = Val(txtqty.Text) * Val(txtrate.Text)
-            Dim dr As DataRow = BILL_tbl.NewRow
-            dr("bid") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
-            dr("bill_no") = txtbno.Text
-            dr("bdate") = txtbdate.Text
-            dr("dname") = txtcname.Text
-            dr("cust") = txtsname.Text
-            dr("part_no") = txtptno.Text
-            dr("parti") = txtptname.Text
-            dr("qty") = txtqty.Text
-            dr("mrp") = txtmrp.Text
-            dr("sprice") = txtrate.Text
-            dr("total") = Val(txtqty.Text) * Val(txtmrp.Text)
-            dr("tax") = txttrate.Text
-            dr("tval") = txttval.Text
-            dr("stot") = txtitot.Text
-            dr("cmp") = "EICHER"
-            dr("UNIT") = txtunit.Text
-            dr("USER1") = "ANJAN PAUL"
-            If cash.Checked = True Then
-                dr("MODE") = "CASH"
-            Else
-                dr("MODE") = "CREDIT"
-            End If
-            dr("SSTA") = "NEW"
-            dr("DPCODE") = "A1587"
-            dr("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
-            BILL_tbl.Rows.Add(dr)
-
-            Dim DV1 As New DataView(stock_tbl, "", "part_no", DataViewRowState.CurrentRows)
-            Dim index As Integer = DV1.Find(txtptno.Text)
-            If Not index = -1 Then
-                Dim Z As String = CType(DV1(index)("qty"), String)
-                DV1(index)("qty") = Val(Z) - Val(txtqty.Text)
-                Dim x1 As String = CType(DV1(index)("qty"), String)
-                DV1(index)("stotal") = Val(x1) * CType(DV1(index)("SPRICE"), String)
-                DV1(index)("total") = Val(x1) * CType(DV1(index)("mrp"), String)
-                DV1(index)("SSTA") = "MOD"
-                DV1(index)("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
-            End If
-
-            DV.RowFilter = "bill_no='" & txtbno.Text & "'"
-            dg1.DataBind()
-            txtgtot.Text = Val(txtgtot.Text) + Val(txtitot.Text)
-            txtntval.Text = Val(txttval.Text) + Val(txtntval.Text)
-            txtntot.Text = Math.Round(Val(txtgtot.Text) + Val(txtntval.Text))
-            txtround.Text = FormatNumber(Val(txtntot.Text) - (Val(txtgtot.Text) + Val(txtntval.Text)), 2)
-            txtmrp.Text = ""
-            txtrate.Text = ""
-            txtqty.Text = ""
-            txtinstock.Text = ""
-            txttrate.Text = ""
-            txtunit.Text = ""
-            txttval.Text = ""
-            txtitot.Text = ""
-            txtptname.SelectedValue = Nothing
-            txtptno.SelectedValue = Nothing
-        Catch ex As Exception
-            err_display(ex.ToString)
-        End Try
-    End Sub
-
     Private Sub challan_Click(sender As Object, e As EventArgs) Handles challan.Click
         Try
             If dg1.Rows.Count > 12 Then
@@ -972,7 +843,7 @@ Public Class BILL
             STCTXTSPRICE.Text = Format(Val(STCTXTMRP.Text) / (Val(STCTXTTAX.Text) + 100) * 100, "0.00")
             STCTXTPPRICE.Text = Format(Val(STCTXTMRP.Text) / 122 * 100, "0.00")
             STCTXTTVAL.Text = Format(Val(STCTXTSPRICE.Text) * Val(STCTXTTAX.Text) / 100, "0.00")
-            For Each c As Control In pnlPLLIST.Controls
+            For Each c As Control In PNLPLLIST.Controls
                 If TypeOf c Is TextBox Then
                     CType(c, TextBox).Text = ""
                 End If
@@ -1028,13 +899,6 @@ Public Class BILL
                 dr("USER1") = STCTXTUSER.Text
                 dr("dpcode") = STCTXTDPCODE.Text
                 stock_tbl.Rows.Add(dr)
-                txtptname.Items.Clear()
-                txtptno.Items.Clear()
-                For i As Integer = 0 To stock_tbl.Rows.Count - 1
-                    txtptname.Items.Add(stock_tbl.Rows(i)("PARTI"))
-                    txtptno.Items.Add(stock_tbl.Rows(i)("PART_NO"))
-                Next
-                txtptname.Items.Add("ADD NEW")
                 For Each c As Control In STOCKPNL.Controls
                     If TypeOf c Is TextBox Then
                         CType(c, TextBox).Text = ""
@@ -1062,13 +926,6 @@ Public Class BILL
                 dv1(0)("grop") = STCTXTGROP.Text
                 dv1(0)("USER1") = STCTXTUSER.Text
                 dv1(0)("dpcode") = STCTXTDPCODE.Text
-                txtptname.Items.Clear()
-                txtptno.Items.Clear()
-                For i As Integer = 0 To stock_tbl.Rows.Count - 1
-                    txtptname.Items.Add(stock_tbl.Rows(i)("PARTI"))
-                    txtptno.Items.Add(stock_tbl.Rows(i)("PART_NO"))
-                Next
-                txtptname.Items.Add("ADD NEW")
                 For Each c As Control In STOCKPNL.Controls
                     If TypeOf c Is TextBox Then
                         CType(c, TextBox).Text = ""
@@ -1079,4 +936,131 @@ Public Class BILL
             err_display(ex.ToString)
         End Try
     End Sub
+
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function GETPTNO(ByVal pre As String) As List(Of String)
+        Dim cmd As SqlCeCommand = New SqlCeCommand
+        cmd.CommandText = "select PART_NO from TABLE1 where PART_NO like '%" & pre & "%'"
+        If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+        cmd.Connection = SQLCE
+        Dim customers As List(Of String) = New List(Of String)
+        Dim sdr As SqlCeDataReader = cmd.ExecuteReader
+        While sdr.Read
+            customers.Add(sdr("PART_NO").ToString)
+        End While
+        Return customers
+    End Function
+
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function GETPARTI(ByVal pre As String) As List(Of String)
+        Dim cmd As SqlCeCommand = New SqlCeCommand
+        cmd.CommandText = "select PARTI from TABLE1 where PARTI like '%" & pre & "%'"
+        If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+        cmd.Connection = SQLCE
+        Dim customers As List(Of String) = New List(Of String)
+        Dim sdr As SqlCeDataReader = cmd.ExecuteReader
+        While sdr.Read
+            customers.Add(sdr("parti").ToString)
+        End While
+        Return customers
+    End Function
+
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function gdata2(aData As String) As List(Of TABLE1)
+        Dim dr As SqlCeDataReader
+        Dim STLIST As New List(Of TABLE1)()
+        Dim cmd As New SqlCeCommand()
+        cmd.CommandText = "select * from TABLE1 where PART_no='" & aData & "'"
+        cmd.Connection = SQLCE
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+            STLIST.Add(New TABLE1() With {
+                       .PARTI = dr("parti").ToString(),
+                        .MRP = dr("mrp").ToString(),
+                        .QTY = dr("QTY").ToString(),
+                        .SPRICE = dr("SPRICE").ToString(),
+                        .TAX = dr("TAX").ToString(),
+                        .UNIT = dr("UNIT").ToString()
+                    })
+        End While
+        Return STLIST
+    End Function
+
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function gdata1(aData As String) As List(Of TABLE1)
+        Dim dr As SqlCeDataReader
+        Dim STLIST As New List(Of TABLE1)()
+        Dim cmd As New SqlCeCommand()
+        cmd.CommandText = "select * from TABLE1 where PARTi='" & aData & "'"
+        cmd.Connection = SQLCE
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+            STLIST.Add(New TABLE1() With {
+                       .PART_NO = dr("part_no").ToString(),
+                        .MRP = dr("mrp").ToString(),
+                        .QTY = dr("QTY").ToString(),
+                        .SPRICE = dr("SPRICE").ToString(),
+                        .TAX = dr("TAX").ToString(),
+                        .UNIT = dr("UNIT").ToString()
+                    })
+        End While
+        Return STLIST
+    End Function
+
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function GETCUST(ByVal pre As String) As List(Of String)
+        Dim cmd As SqlCeCommand = New SqlCeCommand
+        cmd.CommandText = "select CUST from BILL1 where CUST like '%" & pre & "%'"
+        If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+        cmd.Connection = SQLCE
+        Dim customers As List(Of String) = New List(Of String)
+        Dim sdr As SqlCeDataReader = cmd.ExecuteReader
+        While sdr.Read
+            customers.Add(sdr("CUST").ToString)
+        End While
+        Return customers
+    End Function
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function GETSNAME(ByVal pre As String) As List(Of String)
+        Dim cmd As SqlCeCommand = New SqlCeCommand
+        cmd.CommandText = "select SNAME from BILL1 where SNAME like '%" & pre & "%'"
+        If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+        cmd.Connection = SQLCE
+        Dim customers As List(Of String) = New List(Of String)
+        Dim sdr As SqlCeDataReader = cmd.ExecuteReader
+        While sdr.Read
+            customers.Add(sdr("SNAME").ToString)
+        End While
+        Return customers
+    End Function
+
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function RETCUST(aData As String) As List(Of BILL1)
+        Dim dr As SqlCeDataReader
+        Dim STLIST As New List(Of BILL1)()
+        Dim cmd As New SqlCeCommand()
+        cmd.CommandText = "select * from BILL1 where CUST='" & aData & "'"
+        cmd.Connection = SQLCE
+        dr = cmd.ExecuteReader()
+        Dim X As New SqlCeCommand("SELECT SUM(NTOT) FROM BILL1 WHERE cust='" & aData & "'", SQLCE)
+        Dim X1 As String = X.ExecuteScalar & ""
+        Dim Y As New SqlCeCommand("SELECT SUM(PAYMENT) FROM BILL1 WHERE cust='" & aData & "'", SQLCE)
+        Dim Y1 As String = Y.ExecuteScalar & ""
+        Dim Z As String = Val(X1) - Val(Y1)
+        While dr.Read()
+            STLIST.Add(New BILL1() With {
+                       .ADDRESS = dr("ADDRESS").ToString(),
+                        .VNO = dr("VNO").ToString(),
+                        .TOTAL = Z
+                    })
+        End While
+        Return STLIST
+    End Function
 End Class

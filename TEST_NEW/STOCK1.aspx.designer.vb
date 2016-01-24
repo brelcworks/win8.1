@@ -41,13 +41,13 @@ Partial Public Class STOCK1
     Protected WithEvents LoginStatus1 As Global.System.Web.UI.WebControls.LoginStatus
     
     '''<summary>
-    '''tlsp2 control.
+    '''hfCustomerId control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents tlsp2 As Global.AjaxControlToolkit.ToolkitScriptManager
+    Protected WithEvents hfCustomerId As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
     '''DG1 control.
@@ -104,6 +104,15 @@ Partial Public Class STOCK1
     Protected WithEvents errpopup As Global.AjaxControlToolkit.ModalPopupExtender
     
     '''<summary>
+    '''popup control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents popup As Global.AjaxControlToolkit.ModalPopupExtender
+    
+    '''<summary>
     '''pnlAddEdit control.
     '''</summary>
     '''<remarks>
@@ -149,22 +158,22 @@ Partial Public Class STOCK1
     Protected WithEvents TXTSTOT As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''LBLPTNAME control.
+    '''LBLPTNO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBLPTNAME As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LBLPTNO As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''TXTPTNAME control.
+    '''TXTPTNO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TXTPTNAME As Global.AjaxControlToolkit.ComboBox
+    Protected WithEvents TXTPTNO As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''LBLTVAL control.
@@ -185,22 +194,22 @@ Partial Public Class STOCK1
     Protected WithEvents TXTTVAL As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''LBLPTNO control.
+    '''LBLPTNAME control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LBLPTNO As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LBLPTNAME As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''TXTPTNO control.
+    '''TXTPTNAME control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TXTPTNO As Global.AjaxControlToolkit.ComboBox
+    Protected WithEvents TXTPTNAME As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''LBLTYPE control.
@@ -491,15 +500,6 @@ Partial Public Class STOCK1
     Protected WithEvents nitem As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''popup control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents popup As Global.AjaxControlToolkit.ModalPopupExtender
-    
-    '''<summary>
     '''pnlPLLIST control.
     '''</summary>
     '''<remarks>
@@ -714,4 +714,13 @@ Partial Public Class STOCK1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BTNPLIST As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''tlsp2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tlsp2 As Global.AjaxControlToolkit.ToolkitScriptManager
 End Class

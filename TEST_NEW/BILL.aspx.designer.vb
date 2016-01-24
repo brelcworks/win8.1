@@ -104,22 +104,22 @@ Partial Public Class BILL
     Protected WithEvents credit As Global.System.Web.UI.WebControls.RadioButton
     
     '''<summary>
-    '''lblptname control.
+    '''lblptno control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblptname As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblptno As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''txtptname control.
+    '''txtptno control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtptname As Global.AjaxControlToolkit.ComboBox
+    Protected WithEvents txtptno As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''lblqty control.
@@ -158,22 +158,22 @@ Partial Public Class BILL
     Protected WithEvents txtbno As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''lblptno control.
+    '''lblptname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblptno As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblptname As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''txtptno control.
+    '''txtptname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtptno As Global.AjaxControlToolkit.ComboBox
+    Protected WithEvents txtptname As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''lbltval control.
@@ -194,24 +194,6 @@ Partial Public Class BILL
     Protected WithEvents txttval As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''BTNITMCALC control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BTNITMCALC As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btnsave control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnsave As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
     '''lblcname control.
     '''</summary>
     '''<remarks>
@@ -227,7 +209,7 @@ Partial Public Class BILL
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtcname As Global.AjaxControlToolkit.ComboBox
+    Protected WithEvents txtcname As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''lblmrp control.
@@ -320,22 +302,22 @@ Partial Public Class BILL
     Protected WithEvents txtgtot As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''lblsname control.
+    '''lblvno control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblsname As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblvno As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''txtsname control.
+    '''txtvno control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtsname As Global.AjaxControlToolkit.ComboBox
+    Protected WithEvents txtvno As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''lblinstock control.
@@ -428,22 +410,22 @@ Partial Public Class BILL
     Protected WithEvents txtround As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''lblvno control.
+    '''lblsname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblvno As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblsname As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''txtvno control.
+    '''txtsname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtvno As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtsname As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''lbtunit control.

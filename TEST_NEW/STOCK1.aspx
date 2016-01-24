@@ -9,12 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>B & R ELECTRICAL WORKS (STOCK MANAGEMENT)</title>
-    <link href="content/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="~/DESIGN/favicon.ico" />
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script src="Scripts/jquery-2.1.4.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.2.0.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+    <link href="Content/jquery-ui.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery.number.js"></script>
     <style type="text/css">
     body
     {
@@ -67,10 +67,181 @@
     .modalPopup td
     {
         text-align:left;
-    }   
+    } 
+    .focus {
+border: 2px solid red;
+background-color: #FEFED5;
+}  
 </style>
 </head>
 <body style="background-color: lightcyan">
+    <script type="text/javascript">
+        $(function () {
+            $('#<%=TXTPTNAME.ClientID%>').autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "STOCK1.aspx/GETPARTI",
+                        data: "{ 'pre':'" + request.term + "'}",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            response($.map(data.d, function (item) {
+                                return { value: item }
+                            }))
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+                }
+            });
+        });
+
+        $(function () {
+            $("#<%=TXTPTNAME.ClientID %>").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    $(function (e1) {
+                     var name = document.getElementById("<%=TXTPTNAME.ClientID %>").value;
+                        $.ajax({
+                            type: "POST",  
+                            url: "STOCK1.aspx/gdata1",
+                            data: "{ 'aData':'" + name + "'}",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json", 
+                            success: function (data) {
+                                $("#<%=TXTMRP.ClientID %>").val(data.d[0].MRP)
+                                $("#<%=TXTGROP.ClientID %>").val(data.d[0].GROP)
+                                $("#<%=TXTTYPE.ClientID %>").val(data.d[0].CATE)
+                                $("#<%=TXTUNIT.ClientID %>").val(data.d[0].unit)
+                                $("#<%=TXTTAX.ClientID %>").val(data.d[0].TRATE)
+                                $("#<%=TXTPTNO.ClientID %>").val(data.d[0].PART_NO)
+                                $("#<%=TXTPPRICE.ClientID %>").focus()
+                                 var rmrp = parseFloat($("#<%=TXTMRP.ClientID %>").val())
+                                var rtax = parseFloat($("#<%=TXTTAX.ClientID %>").val())+100
+                                var rsprice = parseFloat(rmrp / rtax * 100)
+                                $("#<%=TXTSPRICE.ClientID %>").val(rsprice)
+                                $("#<%=TXTTVAL.ClientID %>").val(parseFloat(rsprice) * parseFloat($("#<%=TXTTAX.ClientID %>").val()) / 100)
+                                $("#<%=TXTSPRICE.ClientID %>").number(true, 2);
+                                $("#<%=TXTTVAL.ClientID %>").number(true, 2);
+                            },
+                            error: function OnErrorCall(response) {
+                                alert(response.status + " " + response.responseText);
+                            }
+                        });
+                    });
+                }
+            });
+        });
+
+         $(function () {
+            $('#<%=TXTPTNO.ClientID%>').autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "STOCK1.aspx/GETPTNO",
+                        data: "{ 'pre':'" + request.term + "'}",
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            response($.map(data.d, function (item) {
+                                return { value: item }
+                            }))
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+                }
+            });
+         });
+
+         $(function () {
+            $("#<%=TXTPTNO.ClientID %>").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    $(function (e1) {
+                     var name = document.getElementById("<%=TXTPTNO.ClientID %>").value;
+                        $.ajax({
+                            type: "POST",  
+                            url: "STOCK1.aspx/gdata2",
+                            data: "{ 'aData':'" + name + "'}",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json", 
+                            success: function (data) {
+                                $("#<%=TXTMRP.ClientID %>").val(data.d[0].MRP)
+                                $("#<%=TXTGROP.ClientID %>").val(data.d[0].GROP)
+                                $("#<%=TXTTYPE.ClientID %>").val(data.d[0].CATE)
+                                $("#<%=TXTUNIT.ClientID %>").val(data.d[0].unit)
+                                $("#<%=TXTTAX.ClientID %>").val(data.d[0].TRATE)
+                                $("#<%=TXTPTNAME.ClientID %>").val(data.d[0].PARTI)
+                                $("#<%=TXTPPRICE.ClientID %>").focus()
+                                var rmrp = parseFloat($("#<%=TXTMRP.ClientID %>").val())
+                                var rtax = parseFloat($("#<%=TXTTAX.ClientID %>").val())+100
+                                var rsprice = parseFloat(rmrp / rtax * 100)
+                                $("#<%=TXTSPRICE.ClientID %>").val(rsprice)
+                                $("#<%=TXTTVAL.ClientID %>").val(parseFloat(rsprice) * parseFloat($("#<%=TXTTAX.ClientID %>").val()) / 100)
+                                $("#<%=TXTSPRICE.ClientID %>").number(true, 2);
+                                $("#<%=TXTTVAL.ClientID %>").number(true, 2);
+                            },
+                            error: function OnErrorCall(response) {
+                                alert(response.status + " " + response.responseText);
+                            }
+                        });
+                    });
+                }
+            });
+         });
+
+        $(document).ready(function () {
+            $('INPUT[type="text"]').focus(function () {
+                $(this).addClass("focus");
+            });
+
+            $('INPUT[type="text"]').blur(function () {
+                $(this).removeClass("focus");
+            });
+        });
+
+        $(function () {
+            $("#<%=TXTQTY.ClientID %>").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    var rmrp = $("#<%=TXTMRP.ClientID %>").val()
+                    var rsprice = $("#<%=TXTSPRICE.ClientID %>").val()
+                    $("#TXTTOT").val(parseFloat($("#<%=TXTQTY.ClientID %>").val()) * parseFloat(rmrp))
+                    $("#TXTSTOT").val(parseFloat($("#<%=TXTQTY.ClientID %>").val()) * parseFloat(rsprice))
+                    $("#TXTDPCODE").val("A1587")
+                    $("#TXTRCNO").focus()
+                    $("#TXTSTOT").number(true, 2);
+                    $("#TXTUSER").val($("#<%=uname1.ClientID %>").text())
+                }
+            });
+        });
+
+         $(function () {
+            $("#<%=TXTPPRICE.ClientID %>").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    $("#TXTQTY").focus()
+                }
+            });
+         });
+
+        $(function () {
+            $("#<%=TXTRCNO.ClientID %>").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    $("#TXTEOR").focus()
+                }
+            });
+        });
+
+         $(function () {
+            $("#<%=TXTEOR.ClientID %>").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    $('#btnSave').click();
+                }
+            });
+        });
+        btnSave
+    </script>
     <form id="form1" runat="server">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -107,22 +278,23 @@
                             <ul class="dropdown-menu">
                                 <li><a href="bill.aspx">SALES</a></li>
                                 <li><a href="bill_pur.aspx">PURCHASE</a></li>
-                                 <li><a href="slreport.aspx">SALES REPORT</a></li>
+                                <li><a href="slreport.aspx">SALES REPORT</a></li>
                             </ul>
                         </li>
                     </ul>
                     <div class=" navbar-form navbar-right" role="status">
                         <asp:Label ID="uname1" runat="server" CssClass="label label-success" />
-                        <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="label label-warning " />
+                       <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="label label-warning " />
                     </div>
                 </div>
             </div>
         </nav>
         <div style="width: 98%; margin-right: 1%; margin-left: 1%; text-align: center; height: 565px; overflow: auto">
-            <asp:ToolkitScriptManager ID="tlsp2" runat="server"></asp:ToolkitScriptManager>
+
             <p>
                 STOCK MANAGEMENT
             </p>
+            <asp:HiddenField ID="hfCustomerId" runat="server" />
             <asp:GridView ID="DG1" runat="server" AutoGenerateColumns="False" AllowSorting="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="RID1" CssClass="table table-hover table-responsive " RowStyle-Wrap="false" Font-Size="Smaller" HeaderStyle-Wrap="false">
                 <Columns>
                     <asp:TemplateField ItemStyle-Width="30PX" HeaderText="Details">
@@ -172,8 +344,10 @@
                 <asp:Button ID="btnerr" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
             </asp:Panel>
             <asp:ModalPopupExtender ID="errpopup" runat="server" OkControlID="btnerrcls" PopupControlID="err" TargetControlID="btnerr"></asp:ModalPopupExtender>
-            <asp:Panel ID="pnlAddEdit" runat="server" CssClass="table-responsive" Style="display: none; background-color :#FFFFFF;border-color :aqua ;border-style :double ;text-align :left  ">
-                <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold; color:red ">
+            <asp:ModalPopupExtender ID="popup" runat="server" OkControlID="btnCancel" PopupControlID="pnlAddEdit" TargetControlID="btnAdd">
+            </asp:ModalPopupExtender>
+            <asp:Panel ID="pnlAddEdit" runat="server" CssClass="table-responsive ui-front" Style="display: none; background-color: #FFFFFF; border-color: aqua; border-style: double; text-align: left">
+                <div class="header" style="background-color: aqua; height: 30px; text-align: center; font-weight: bold; color: red">
                     Details
                 </div>
                 <table class="table table-bordered">
@@ -192,11 +366,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <asp:Label ID="LBLPTNAME" runat="server" Text="PART NAME" />
+                         <td>
+                            <asp:Label ID="LBLPTNO" runat="server" Text="PART NO" />
                         </td>
                         <td>
-                            <asp:ComboBox ID="TXTPTNAME" runat="server" AutoCompleteMode="SuggestAppend" AutoPostBack="true" />
+                            <asp:TextBox  ID="TXTPTNO" runat="server" Width="100%" Placeholder="PART NO"/>
                         </td>
                         <td>
                             <asp:Label ID="LBLTVAL" runat="server" Text="TAX VALUE" />
@@ -206,11 +380,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <asp:Label ID="LBLPTNO" runat="server" Text="PART NO" />
+                       <td>
+                            <asp:Label ID="LBLPTNAME" runat="server" Text="PART NAME" />
                         </td>
                         <td>
-                            <asp:ComboBox ID="TXTPTNO" runat="server" AutoCompleteMode="SuggestAppend" AutoPostBack="true" />
+                            <asp:TextBox ID="TXTPTNAME" runat="server" CssClass="textboxAuto" Width="100%" Placeholder="PART NAME"/>
                         </td>
                         <td>
                             <asp:Label ID="LBLTYPE" runat="server" Text="ITEM TYPE" />
@@ -253,7 +427,7 @@
                         </td>
                         <td>
                             <asp:TextBox ID="TXTSPRICE" runat="server" PLACEHOLDER="SELL PRICE" Width="70%" />
-                            <asp:Button ID="BTNCACL" runat ="server" Text="Calculate" CssClass ="btn btn-info btn-xs" />
+                            <asp:Button ID="BTNCACL" runat="server" Text="Calculate" CssClass="btn btn-info btn-xs" />
                         </td>
 
                         <td>
@@ -282,7 +456,7 @@
                             <asp:Label ID="LBLQTY" runat="server" Text="QUANTITY" />
                         </td>
                         <td>
-                            <asp:TextBox ID="TXTQTY" runat="server" PLACEHOLDER="QUANTITY" Width="100%" AutoPostBack="true" />
+                            <asp:TextBox ID="TXTQTY" runat="server" PLACEHOLDER="QUANTITY" Width="100%"/>
                         </td>
                         <td>
                             <asp:Label ID="LBLDPCODE" runat="server" Text="DEALER CODE" />
@@ -309,13 +483,12 @@
                 <asp:Button ID="btnCancel" CssClass="btn btn btn-danger btn-xs" runat="server" Text="Cancel" />
                 <asp:Button ID="btncls" CssClass="btn btn-primary  btn-xs " runat="server" Text="Clear" />
                 <asp:Button ID="btnSave" CssClass="btn btn-success btn-xs " runat="server" Text="Save" />
-                <asp:Button ID="BTNDEL" CssClass ="btn btn-warning btn-xs " runat ="server" Text ="Delete" />
+                <asp:Button ID="BTNDEL" CssClass="btn btn-warning btn-xs " runat="server" Text="Delete" />
                 <asp:Button ID="nitem" runat="server" CssClass="btn btn-info btn-xs" Text="New Item" />
             </asp:Panel>
-            <asp:ModalPopupExtender ID="popup" runat="server" OkControlID="btnCancel" PopupControlID="pnlAddEdit" TargetControlID="btnAdd">
-            </asp:ModalPopupExtender>
-            <asp:Panel ID="pnlPLLIST" runat="server" CssClass="table-responsive" Style="display: none; background-color :#FFFFFF;border-color :aqua ;border-style :double ;text-align :left  ">
-                <div class="header" style ="background-color :aqua; height :30px;text-align :center;font-weight :bold; color:red ">
+
+            <asp:Panel ID="pnlPLLIST" runat="server" CssClass="table-responsive" Style="display: none; background-color: #FFFFFF; border-color: aqua; border-style: double; text-align: left">
+                <div class="header" style="background-color: aqua; height: 30px; text-align: center; font-weight: bold; color: red">
                     Details
                 </div>
                 <table class="table table-bordered">
@@ -388,6 +561,7 @@
             <asp:Button ID="btnexport" runat="server" Text="Export" CssClass="btn btn-info btn-xs" />
             <asp:Button ID="BTNPLIST" runat="server" BackColor="LightCyan" BorderStyle="None" CssClass="btn btn-warning btn-xs" />
         </div>
+        <asp:ToolkitScriptManager ID="tlsp2" runat="server" EnablePageMethods="true"></asp:ToolkitScriptManager>
     </form>
 </body>
 </html>

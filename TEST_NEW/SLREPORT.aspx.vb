@@ -25,46 +25,7 @@ Public Class SLREPORT
             err_display(ex.ToString)
         End Try
     End Sub
-    Protected Sub LOADBILLTBL()
-        Try
-            Dim LDB = New LiteDatabase(Server.MapPath("~/App_Data/DB1.db"))
-            Dim list = LDB.GetCollection(Of BILLM)("BILL").FindAll().ToList
-            For Each P In list
-                Dim DR As DataRow = BILL_tbl_M.NewRow
-                DR("BILLID") = P.BILLID
-                DR("BID") = P.BID
-                DR("BILL_NO") = P.BILL_NO
-                DR("BDATE") = P.BDATE
-                DR("_id") = P.Id
-                DR("DNAME") = P.DNAME
-                DR("CUST") = P.CUST
-                DR("PART_NO") = P.PART_NO
-                DR("PARTI") = P.PARTI
-                DR("QTY") = P.QTY
-                DR("MRP") = P.MRP
-                DR("SPRICE") = P.SPRICE
-                DR("TOTAL") = P.TOTAL
-                DR("TAX") = P.TAX
-                DR("TVAL") = P.TVAL
-                DR("STOT") = P.STOT
-                DR("CMP") = P.CMP
-                DR("UNIT") = P.UNIT
-                DR("USER1") = P.USER
-                DR("MODE") = P.MODE
-                DR("SSTA") = P.MODE
-                DR("DPCODE") = P.DPCODE
-                DR("LMODI") = P.LMODI
-                DR("AEDT") = P.AEDT
-                BILL_tbl_M.Rows.Add(DR)
-            Next
-            DG1.DataSource = Nothing
-            DG1.DataBind()
-            DG1.DataSource = BILL_tbl
-            DG1.DataBind()
-        Catch ex As Exception
-            err_display(ex.ToString)
-        End Try
-    End Sub
+
 
     Private Sub FND_Click(sender As Object, e As EventArgs) Handles FND.Click
         Try

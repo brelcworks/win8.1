@@ -1,8 +1,11 @@
-﻿Imports System.Data.SqlClient
+Imports System.Data.SqlClient
 Imports System.Web.Security
 Imports System.Data.OleDb
 Imports ClosedXML.Excel
 Imports System.IO
+Imports System.Data.SqlServerCe
+Imports System.Web.Script.Services
+Imports System.Web.Services
 Public Class STOCK1
     Inherits System.Web.UI.Page
 
@@ -17,10 +20,6 @@ Public Class STOCK1
                 End If
                 uname1.Text = Session("user_name").ToString
                 If Not Me.IsPostBack Then
-                    For i As Integer = 0 To sheet1_tbl.Rows.Count - 1
-                        TXTPTNAME.Items.Add(sheet1_tbl.Rows(i)("parti"))
-                        TXTPTNO.Items.Add(sheet1_tbl.Rows(i)("part_no"))
-                    Next
                     DG1.DataSource = stock_tbl
                     DG1.DataBind()
                 End If
@@ -69,24 +68,6 @@ Public Class STOCK1
         End Try
     End Sub
 
-    Private Sub TXTPTNO_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TXTPTNO.SelectedIndexChanged
-        Try
-            Dim DV As New DataView(sheet1_tbl)
-            DV.RowFilter = "part_no='" & TXTPTNO.SelectedValue.ToString & "'"
-            If DV.Count > 0 Then
-                TXTPTNAME.Text = DV(0)("parti")
-                TXTMRP.Text = DV(0)("mrp")
-                TXTTAX.Text = DV(0)("trate")
-                TXTUNIT.Text = DV(0)("UNIT")
-                TXTTYPE.Text = DV(0)("cate")
-                TXTGROP.Text = DV(0)("grop")
-            End If
-            popup.Show()
-        Catch ex As Exception
-            err_display(ex.ToString)
-        End Try
-    End Sub
-
     Private Sub btncls_Click(sender As Object, e As EventArgs) Handles btncls.Click
         For Each c As Control In pnlAddEdit.Controls
             If TypeOf c Is TextBox Then
@@ -94,24 +75,6 @@ Public Class STOCK1
             End If
         Next
         popup.Show()
-    End Sub
-
-    Private Sub TXTPTNAME_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TXTPTNAME.SelectedIndexChanged
-        Try
-            Dim DV As New DataView(sheet1_tbl)
-            DV.RowFilter = "parti='" & TXTPTNAME.SelectedValue.ToString & "'"
-            If DV.Count > 0 Then
-                TXTPTNO.Text = DV(0)("part_no")
-                TXTMRP.Text = DV(0)("mrp")
-                TXTTAX.Text = DV(0)("trate")
-                TXTUNIT.Text = DV(0)("UNIT")
-                TXTTYPE.Text = DV(0)("cate")
-                TXTGROP.Text = DV(0)("grop")
-            End If
-            popup.Show()
-        Catch ex As Exception
-            err_display(ex.ToString)
-        End Try
     End Sub
 
     Private Sub PLLISTSAVE_Click(sender As Object, e As EventArgs) Handles PLLISTSAVE.Click
@@ -132,12 +95,8 @@ Public Class STOCK1
             sheet1_tbl.AcceptChanges()
             sheet1_tbl.Clear()
             sheet1_adapter.Fill(sheet1_tbl)
-            TXTPTNAME.Items.Clear()
-            TXTPTNO.Items.Clear()
-            For i As Integer = 0 To sheet1_tbl.Rows.Count - 1
-                TXTPTNAME.Items.Add(sheet1_tbl.Rows(i)("parti"))
-                TXTPTNO.Items.Add(sheet1_tbl.Rows(i)("part_no"))
-            Next
+            TXTPTNAME.Text = ""
+            TXTPTNO.Text = ""
             TXTPTNAME.Text = PLPTNAMETXT.Text
             TXTPTNO.Text = PLPTNOTXT.Text
             TXTMRP.Text = PLMRPTXT.Text
@@ -159,16 +118,7 @@ Public Class STOCK1
         End Try
     End Sub
 
-    Private Sub TXTMRP_TextChanged(sender As Object, e As EventArgs) Handles TXTMRP.TextChanged
-        Try
-            TXTSPRICE.Text = Format(Val(TXTMRP.Text) / (Val(TXTTAX.Text) + 100) * 100, "0.00")
-            TXTPPRICE.Text = Format(Val(TXTMRP.Text) / 122 * 100, "0.00")
-            TXTTVAL.Text = Format(Val(TXTSPRICE.Text) * Val(TXTTAX.Text) / 100, "0.00")
-            popup.Show()
-        Catch ex As Exception
-            err_display(ex.ToString)
-        End Try
-    End Sub
+
 
     Private Sub BTNCACL_Click(sender As Object, e As EventArgs) Handles BTNCACL.Click
         TXTSPRICE.Text = Format(Val(TXTMRP.Text) / (Val(TXTTAX.Text) + 100) * 100, "0.00")
@@ -177,13 +127,7 @@ Public Class STOCK1
         popup.Show()
     End Sub
 
-    Private Sub TXTQTY_TextChanged(sender As Object, e As EventArgs) Handles TXTQTY.TextChanged
-        TXTTOT.Text = Format(Val(TXTQTY.Text) * Val(TXTMRP.Text), "0.00")
-        TXTSTOT.Text = Format(Val(TXTSPRICE.Text) * Val(TXTQTY.Text), "0.00")
-        TXTUSER.Text = Session("user_name").ToString
-        TXTDPCODE.Text = "A1587"
-        popup.Show()
-    End Sub
+
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
@@ -354,4 +298,109 @@ Public Class STOCK1
             err_display(ex.ToString)
         End Try
     End Sub
+    <System.Web.Script.Services.ScriptMethod()>
+    <System.Web.Services.WebMethod()>
+    Public Shared Function SearchCustomers(ByVal prefixText As String) As List(Of String)
+        Dim cmd As SqlCeCommand = New SqlCeCommand
+        cmd.CommandText = "select PARTI from TABLE1 where PARTI like @SearchText+'%'"
+        cmd.Parameters.AddWithValue("@SearchText", prefixText)
+        cmd.Connection = SQLCE
+        Dim customers As List(Of String) = New List(Of String)
+        Dim sdr As SqlCeDataReader = cmd.ExecuteReader
+        While sdr.Read
+            customers.Add(sdr("parti").ToString)
+        End While
+        Return customers
+    End Function
+    <System.Web.Services.WebMethodAttribute()>
+    <System.Web.Script.Services.ScriptMethodAttribute()>
+    Public Shared Function GetCompletionList(prefixText As String, count As Integer) As List(Of String)
+        Using con As New SqlCeConnection()
+            con.ConnectionString = ConfigurationManager.ConnectionStrings("SQLCE").ConnectionString
+            Using com As New SqlCeCommand()
+                com.CommandText = "select parti from table1 where parti like '%" & "@Search" & "%'"
+                com.Parameters.AddWithValue("@Search", prefixText)
+                com.Connection = con
+                con.Open()
+                Dim countryNames As New List(Of String)()
+                Using sdr As SqlCeDataReader = com.ExecuteReader()
+                    While sdr.Read()
+                        countryNames.Add(sdr("parti").ToString())
+                    End While
+                End Using
+                con.Close()
+                Return countryNames
+            End Using
+        End Using
+    End Function
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function GETPARTI(ByVal pre As String) As List(Of String)
+        Dim cmd As SqlCeCommand = New SqlCeCommand
+        cmd.CommandText = "select PARTI from SHEET1 where PARTI like '%" & pre & "%'"
+        If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+        cmd.Connection = SQLCE
+        Dim customers As List(Of String) = New List(Of String)
+        Dim sdr As SqlCeDataReader = cmd.ExecuteReader
+        While sdr.Read
+            customers.Add(sdr("parti").ToString)
+        End While
+        Return customers
+    End Function
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function GETPTNO(ByVal pre As String) As List(Of String)
+        Dim cmd As SqlCeCommand = New SqlCeCommand
+        cmd.CommandText = "select PART_NO from SHEET1 where PART_NO like '%" & pre & "%'"
+        If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+        cmd.Connection = SQLCE
+        Dim customers As List(Of String) = New List(Of String)
+        Dim sdr As SqlCeDataReader = cmd.ExecuteReader
+        While sdr.Read
+            customers.Add(sdr("PART_NO").ToString)
+        End While
+        Return customers
+    End Function
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function gdata1(aData As String) As List(Of SHEET1)
+        Dim dr As SqlCeDataReader
+        Dim STLIST As New List(Of SHEET1)()
+        Dim cmd As New SqlCeCommand()
+        cmd.CommandText = "select * from sheet1 where PARTi='" & aData & "'"
+        cmd.Connection = SQLCE
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+            STLIST.Add(New SHEET1() With {
+                       .PART_NO = dr("part_no").ToString(),
+                        .MRP = dr("mrp").ToString(),
+                        .GROP = dr("GROP").ToString(),
+                        .CATE = dr("CATE").ToString(),
+                        .TRATE = dr("TRATE").ToString(),
+                        .unit = dr("UNIT").ToString()
+                    })
+        End While
+        Return STLIST
+    End Function
+    <WebMethod>
+    <ScriptMethod(ResponseFormat:=ResponseFormat.Json)>
+    Public Shared Function gdata2(aData As String) As List(Of SHEET1)
+        Dim dr As SqlCeDataReader
+        Dim STLIST As New List(Of SHEET1)()
+        Dim cmd As New SqlCeCommand()
+        cmd.CommandText = "select * from sheet1 where PART_no='" & aData & "'"
+        cmd.Connection = SQLCE
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+            STLIST.Add(New SHEET1() With {
+                       .PARTI = dr("parti").ToString(),
+                        .MRP = dr("mrp").ToString(),
+                        .GROP = dr("GROP").ToString(),
+                        .CATE = dr("CATE").ToString(),
+                        .TRATE = dr("TRATE").ToString(),
+                        .unit = dr("UNIT").ToString()
+                    })
+        End While
+        Return STLIST
+    End Function
 End Class

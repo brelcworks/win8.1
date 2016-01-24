@@ -1,0 +1,137 @@
+﻿ Protected Sub txtptname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtptname.SelectedIndexChanged
+        Try
+            If txtptname.SelectedValue.ToString = "ADD NEW" Then
+                STOCKPOP.Show()
+            Else
+                Dim dv1 As New DataView(stock_tbl, "", "parti", DataViewRowState.CurrentRows)
+                Dim index As Integer = dv1.Find(txtptname.SelectedValue.ToString)
+                If Not index = -1 Then
+                    txtptno.Text = dv1(index)("PART_NO")
+                    txtmrp.Text = dv1(index)("MRP")
+                    txttrate.Text = dv1(index)("TAX")
+                    txtrate.Text = dv1(index)("SPRICE")
+                    txtunit.Text = dv1(index)("UNIT")
+                    txtinstock.Text = dv1(index)("QTY").ToString
+                End If
+            End If
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+
+	Protected Sub txtcname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtcname.SelectedIndexChanged
+        Try
+            If SQLCE.State <> ConnectionState.Open Then SQLCE.Open()
+            Dim DV1 As New DataView(BILL1_tbl)
+            DV1.RowFilter = "cust='" & txtcname.Text & "'"
+
+            If DV1.Count > 0 Then
+                txtaddr.Text = DV1(0)("ADDRESS")
+                txtvno.Text = DV1(0)("VNO")
+                Dim X As New SqlCeCommand("SELECT SUM(NTOT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", SQLCE)
+                Dim X1 As String = X.ExecuteScalar & ""
+                Dim Y As New SqlCeCommand("SELECT SUM(PAYMENT) FROM BILL1 WHERE cust='" & txtcname.Text & "'", SQLCE)
+                Dim Y1 As String = Y.ExecuteScalar & ""
+                txtbal.Text = Val(X1) - Val(Y1)
+            End If
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+
+	  Protected Sub BTNITMCALC_Click(sender As Object, e As EventArgs) Handles BTNITMCALC.Click
+        Try
+            txttval.Text = Val(txtqty.Text) * Val(txtrate.Text) * Val(txttrate.Text) / 100
+            txtitot.Text = Val(txtqty.Text) * Val(txtrate.Text)
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+
+	 Protected Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+        Try
+            txttval.Text = Val(txtqty.Text) * Val(txtrate.Text) * Val(txttrate.Text) / 100
+            txtitot.Text = Val(txtqty.Text) * Val(txtrate.Text)
+            Dim dr As DataRow = BILL_tbl.NewRow
+            dr("bid") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+            dr("bill_no") = txtbno.Text
+            dr("bdate") = txtbdate.Text
+            dr("dname") = txtcname.Text
+            dr("cust") = txtsname.Text
+            dr("part_no") = txtptno.Text
+            dr("parti") = txtptname.Text
+            dr("qty") = txtqty.Text
+            dr("mrp") = txtmrp.Text
+            dr("sprice") = txtrate.Text
+            dr("total") = Val(txtqty.Text) * Val(txtmrp.Text)
+            dr("tax") = txttrate.Text
+            dr("tval") = txttval.Text
+            dr("stot") = txtitot.Text
+            dr("cmp") = "EICHER"
+            dr("UNIT") = txtunit.Text
+            dr("USER1") = "ANJAN PAUL"
+            If cash.Checked = True Then
+                dr("MODE") = "CASH"
+            Else
+                dr("MODE") = "CREDIT"
+            End If
+            dr("SSTA") = "NEW"
+            dr("DPCODE") = "A1587"
+            dr("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+            BILL_tbl.Rows.Add(dr)
+
+            Dim DV1 As New DataView(stock_tbl, "", "part_no", DataViewRowState.CurrentRows)
+            Dim index As Integer = DV1.Find(txtptno.Text)
+            If Not index = -1 Then
+                Dim Z As String = CType(DV1(index)("qty"), String)
+                DV1(index)("qty") = Val(Z) - Val(txtqty.Text)
+                Dim x1 As String = CType(DV1(index)("qty"), String)
+                DV1(index)("stotal") = Val(x1) * CType(DV1(index)("SPRICE"), String)
+                DV1(index)("total") = Val(x1) * CType(DV1(index)("mrp"), String)
+                DV1(index)("SSTA") = "MOD"
+                DV1(index)("LMODI") = Format(Now, "ddMMyyyyhhmmssfff") & "A1587"
+            End If
+
+            DV.RowFilter = "bill_no='" & txtbno.Text & "'"
+            dg1.DataBind()
+            txtgtot.Text = Val(txtgtot.Text) + Val(txtitot.Text)
+            txtntval.Text = Val(txttval.Text) + Val(txtntval.Text)
+            txtntot.Text = Math.Round(Val(txtgtot.Text) + Val(txtntval.Text))
+            txtround.Text = FormatNumber(Val(txtntot.Text) - (Val(txtgtot.Text) + Val(txtntval.Text)), 2)
+            txtmrp.Text = ""
+            txtrate.Text = ""
+            txtqty.Text = ""
+            txtinstock.Text = ""
+            txttrate.Text = ""
+            txtunit.Text = ""
+            txttval.Text = ""
+            txtitot.Text = ""
+            txtptname.Text = ""
+            txtptno.Text = ""
+        Catch ex As Exception
+            err_display(ex.ToString)
+        End Try
+    End Sub
+
+	$("#<%=txtcname.ClientID %>").keypress(function (e) {
+                    if (e.keyCode == 13) {
+                        $(function (e1) {
+                            var name = document.getElementById("<%=txtcname.ClientID %>").value;
+                        $.ajax({
+                            type: "POST",
+                            url: "BILL.aspx/RETCUST",
+                            data: "{ 'aData':'" + name + "'}",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (data) {
+                                var str = (data.d);
+                                var splt = str.split("~");
+                                alert(splt)
+                            },
+                            error: function OnErrorCall(response) {
+                                alert(response.status + " " + response.responseText);
+                            }
+                        });
+                    });
+                }
+                });
